@@ -18,6 +18,32 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Article.h" />
+    <ClInclude Include="..\CAD.h" />
+    <ClInclude Include="..\Client.h" />
+    <ClInclude Include="..\Commande.h" />
+    <ClInclude Include="..\Facture.h" />
+    <ClInclude Include="..\Mappage.h" />
+    <ClInclude Include="..\Personnel.h" />
+    <ClInclude Include="..\tools.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Article.cpp" />
+    <ClCompile Include="..\Client.cpp" />
+    <ClCompile Include="..\Commande.cpp" />
+    <ClCompile Include="..\Facture.cpp" />
+    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\Mappage.cpp" />
+    <ClCompile Include="..\Personnel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <ProjectGuid>{ED5E01D5-1E66-4E77-AB75-2BD14788BCAF}</ProjectGuid>
@@ -82,6 +108,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>WinMain</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -111,8 +139,6 @@
       <AdditionalDependencies />
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
