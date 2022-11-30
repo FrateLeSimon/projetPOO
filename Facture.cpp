@@ -86,7 +86,7 @@ int Facture::getNbr_Paiements()
 
 }
 
-void Facture::getSomme_Paiements()
+int Facture::getSomme_Paiements()
 {
 
 }
