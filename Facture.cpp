@@ -91,7 +91,8 @@ int Facture::getSomme_Paiements()
 
 }
 
-string Facture::getMoyen()
+void Facture::getMoyen()
 {
 
 }
+
