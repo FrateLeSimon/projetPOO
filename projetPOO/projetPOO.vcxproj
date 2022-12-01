@@ -27,6 +27,9 @@
     <ClInclude Include="..\Mappage.h" />
     <ClInclude Include="..\Personnel.h" />
     <ClInclude Include="..\tools.h" />
+    <ClInclude Include="ConnexionForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Article.cpp" />
@@ -36,6 +39,7 @@
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\Mappage.cpp" />
     <ClCompile Include="..\Personnel.cpp" />
+    <ClCompile Include="ConnexionForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,6 +47,11 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ConnexionForm.resx">
+      <DependentUpon>ConnexionForm.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
