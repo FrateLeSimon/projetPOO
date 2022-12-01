@@ -3,7 +3,8 @@
 class Commande
 {
 private:
-	string id_Commande;
+	int id_Commande;
+	string reference;
 	string date_livraison;
 	string date_emission;
 	int montant_ht;
@@ -11,16 +12,18 @@ private:
 public:
 	Commande();
 	Commande(string, string, string, int, int);
-	void setId_Commande(string);
+	void setId_Commande(int);
+	void setReference(string);
 	void setDate_Livraison(string);
 	void setDate_Emission(string);
 	void setMontant_HT(int);
 	void setMontant_TTC(int);
-	string getId_Commande();
+	int getId_Commande();
+	string getReference();
 	string getDate_Livraison();
 	string getDate_Emission();
-	string getMontant_HT(int);
-	string getMontant_TTC(int);
+	int getMontant_HT();
+	int getMontant_TTC();
 	string Insert();
 	string Select();
 	string Update();

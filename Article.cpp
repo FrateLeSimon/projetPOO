@@ -1,6 +1,7 @@
 #include "Article.h"
 
-void Article::setId_Article(int arg1)
+
+void Article::setId_Article(int a)
 {
 
 }
@@ -10,17 +11,17 @@ void Article::setNom_Article(string a)
 
 }
 
-void Article::setQuantite_Stock(int arg1)
+void Article::setQuantite_Stock(int a)
 {
 
 }
 
-void Article::setPrixArticle(int arg1)
+void Article::setPrixArticle(int a)
 {
 
 }
 
-void Article::setSeuil(int arg1)
+void Article::setSeuil(int a)
 {
 
 }

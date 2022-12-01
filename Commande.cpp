@@ -1,7 +1,12 @@
 #include "tools.h"
 #include "Commande.h"
 
-void Commande::setId_Commande(string a)
+void Commande::setId_Commande(int a)
+{
+
+}
+
+void Commande::setReference(string a)
 {
 
 }
@@ -16,37 +21,42 @@ void Commande::setDate_Emission(string a)
 
 }
 
-void Commande::setMontant_HT(int arg1)
+void Commande::setMontant_HT(int a)
 {
 
 }
 
-void Commande::setMontant_TTC(int arg1)
+void Commande::setMontant_TTC(int a)
 {
 
 }
 
-void Commande::getId_Commande()
+int Commande::getId_Commande()
 {
 
 }
 
-void Commande::getDate_Emission()
+string Commande::getReference()
 {
 
 }
 
-void Commande::getDate_Livraison()
+string Commande::getDate_Emission()
 {
 
 }
 
-void Commande::getMontant_HT(int arg1)
+string Commande::getDate_Livraison()
 {
 
 }
 
-void Commande::getMontant_TTC(int arg1)
+int Commande::getMontant_HT()
+{
+
+}
+
+int Commande::getMontant_TTC()
 {
 
 }

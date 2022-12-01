@@ -26,7 +26,7 @@ void Facture::setVille_Societe(string a)
 
 }
 
-void Facture::setCode_Postal_Societe(int arg1)
+void Facture::setCode_Postal_Societe(int a)
 {
 
 }
@@ -36,12 +36,12 @@ void Facture::setLogo_Societe(string a)
 
 }
 
-void Facture::setNbr_Paiements(int arg1)
+void Facture::setNbr_Paiements(int a)
 {
 
 }
 
-void Facture::setSomme_Paiements(int arg1)
+void Facture::setSomme_Paiements(int a)
 {
 
 }

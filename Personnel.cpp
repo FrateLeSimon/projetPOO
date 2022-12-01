@@ -16,7 +16,7 @@ void Personnel::setPrenom(string a)
 	
 }
 
-void Personnel::setId_Superieur(int arg1)
+void Personnel::setId_Superieur(int a)
 {
 
 }
