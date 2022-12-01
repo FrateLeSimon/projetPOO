@@ -10,7 +10,7 @@ private:
 	string ville_societe;
 	int code_postal_societe;
 	string logo_societe;
-	int nbr_paiement;
+	int nbr_paiements;
 	int somme_paiements;
 	string moyen;
 public:

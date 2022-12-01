@@ -3,7 +3,7 @@
 class Commande
 {
 private:
-	int id_Commande;
+	int id_commande;
 	string reference;
 	string date_livraison;
 	string date_emission;
