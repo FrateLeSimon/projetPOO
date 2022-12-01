@@ -18,7 +18,8 @@ Client::Client()
 	date_premier_achat = "";
 }
 
-Client::Client(int id_cl, string v_nom, string v_prenom, string num_r_l, string num_r_f, string nom_r_l, string nom_r_f, string ville_l, string ville_f, int code_post_l, int code_post_f, string date_n, string date_p_a)
+Client::Client(int id_cl, string v_nom, string v_prenom, string num_r_l, string num_r_f, string nom_r_l, string nom_r_f, string ville_l, string ville_f, 
+	int code_post_l, int code_post_f, string date_n, string date_p_a)
 {
 	id_client = id_cl;
 	nom = v_nom;

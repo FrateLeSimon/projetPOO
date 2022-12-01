@@ -15,7 +15,8 @@ Personnel::Personnel()
     admin = false;
 }
 
-Personnel::Personnel(int id_per, string v_nom, string v_prenom, int id_sup, string num_r, string nom_r, string v_ville, int code_post, string date_emb, bool adm)
+Personnel::Personnel(int id_per, string v_nom, string v_prenom, int id_sup, string num_r, string nom_r, string v_ville, int code_post, string date_emb, 
+	bool adm)
 {
 	id_personnel = id_per;
 	nom = v_nom;
