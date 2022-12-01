@@ -13,6 +13,8 @@ private:
     string date_embauche;
     bool admin;
 public:
+    Personnel();
+    Personnel(int, string, string, int, string, string, string, int, string, bool);
     void setId_Personnel();
     void setNom(string);
     void setPrenom(string);

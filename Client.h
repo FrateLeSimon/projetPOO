@@ -17,6 +17,8 @@ private:
 	string date_naissance;
 	string date_premier_achat;
 public:
+	Client();
+	Client(int, string, string, string, string, string, string, string, string, int, int, string, string);
 	void setId_Client(int);
 	void setNom(string);
 	void setPrenom(string);

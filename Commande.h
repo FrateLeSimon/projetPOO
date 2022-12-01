@@ -9,6 +9,8 @@ private:
 	int montant_ht;
 	int montant_ttc;
 public:
+	Commande();
+	Commande(string, string, string, int, int);
 	void setId_Commande(string);
 	void setDate_Livraison(string);
 	void setDate_Emission(string);

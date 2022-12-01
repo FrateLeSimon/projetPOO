@@ -10,7 +10,7 @@ private:
 	int seuil;
 	string couleur;
 public:
-	Arcticle();
+	Article();
 	Article(int, string, int, int, int, string);
 	void setId_Article(int);
 	void setNom_Article(string);

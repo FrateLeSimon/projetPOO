@@ -14,6 +14,8 @@ private:
 	int somme_paiements;
 	string moyen;
 public:
+	Facture();
+	Facture(string, string, string, string, string, int, string, int, int, string);
 	void setId_Facture(string);
 	void setNom_Societe(string);
 	void setNum_Rue_Societe(string);
