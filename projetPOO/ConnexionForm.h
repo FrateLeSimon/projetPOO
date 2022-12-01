@@ -57,9 +57,12 @@ namespace projetPOO {
 			this->ClientSize = System::Drawing::Size(474, 261);
 			this->Name = L"ConnexionForm";
 			this->Text = L"ConnexionForm";
+			this->Load += gcnew System::EventHandler(this, &ConnexionForm::ConnexionForm_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void ConnexionForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }
