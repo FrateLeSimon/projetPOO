@@ -1,5 +1,14 @@
 #include "Article.h"
 
+Article::Article()
+{
+	id_article = 0;
+	nom_article = "";
+	quantite_stock = 0;
+	prix_article = 0;
+	seuil = 0;
+	couleur = "";
+}
 
 void Article::setId_Article(int a)
 {

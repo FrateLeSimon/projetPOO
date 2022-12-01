@@ -1,6 +1,16 @@
 #include "tools.h"
 #include "Commande.h"
 
+Commande::Commande()
+{
+	id_Commande = 0;
+	reference = "";
+	date_livraison = "";
+	date_emission = "";
+	montant_ht = 0;
+	montant_ttc = 0;
+}
+
 void Commande::setId_Commande(int a)
 {
 	this->id_commande = a;

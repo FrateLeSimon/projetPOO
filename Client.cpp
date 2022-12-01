@@ -1,7 +1,24 @@
 #include "tools.h"
 #include "Client.h"
 
-void Client::setId_Client(int a)
+Client::Client()
+{
+	id_client = 0;
+	nom = "";
+	prenom = "";
+	num_rue_livraison = "";
+	num_rue_facturation = "";
+	nom_rue_livraison = "";
+	nom_rue_facturation = "";
+	ville_livraison = "";
+	ville_facturation = "";
+	code_postal_livraison = 0;
+	code_postal_facturation = 0;
+	date_naissance = "";
+	date_premier_achat = "";
+}
+
+void Client::setId_Client(int arg1)
 {
 	this->id_client = a;
 }

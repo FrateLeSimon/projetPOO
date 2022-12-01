@@ -1,7 +1,21 @@
 #include "tools.h"
 #include "Personnel.h"
 
-void Personnel::setId_Personnel(int a)
+Personnel::Personnel()
+{
+    id_personnel = 0;
+    nom = "";
+    prenom = "";
+    id_personnel_superieur = "";
+    num_rue = "";
+    nom_rue = "";
+    ville = "";
+    code_postal = 0;
+    date_embauche = "";
+    admin = false;
+}
+
+void Personnel::setId_Personnel()
 {
 	this->id_personnel = a;
 }
