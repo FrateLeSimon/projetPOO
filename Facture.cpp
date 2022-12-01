@@ -15,6 +15,19 @@ Facture::Facture()
 	moyen = "";
 }
 
+Facture::Facture(string id_fact, string nom_soc, string num_r_s, string nom_r_s, string ville_s, int code_post_s, string logo, int nbr_pai, int somme_pai, string moy)
+{
+	id_facture = id_fact;
+	nom_societe = nom_soc;
+	num_rue_societe = num_r_s;
+	nom_rue_societe = nom_r_s;
+	ville_societe = ville_s;
+	code_postal_societe = code_post_s;
+	logo_societe = logo;
+	somme_paiements = somme_pai;
+	moyen = moy;
+}
+
 void Facture::setId_Facture(string a)
 {
 	this->id_facture = a;

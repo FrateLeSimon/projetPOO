@@ -11,7 +11,7 @@ private:
 	int montant_ttc;
 public:
 	Commande();
-	Commande(string, string, string, int, int);
+	Commande(int, string, string, string, int, int);
 	void setId_Commande(int);
 	void setReference(string);
 	void setDate_Livraison(string);

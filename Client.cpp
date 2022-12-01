@@ -18,6 +18,23 @@ Client::Client()
 	date_premier_achat = "";
 }
 
+Client::Client(int id_cl, string v_nom, string v_prenom, string num_r_l, string num_r_f, string nom_r_l, string nom_r_f, string ville_l, string ville_f, int code_post_l, int code_post_f, string date_n, string date_p_a)
+{
+	id_client = id_cl;
+	nom = v_nom;
+	prenom = v_prenom;
+	num_rue_livraison = num_r_l;
+	num_rue_facturation = num_r_f;
+	nom_rue_livraison = nom_r_l;
+	nom_rue_facturation = nom_r_f;
+	ville_livraison = ville_l;
+	ville_facturation = ville_f;
+	code_postal_livraison = code_post_l;
+	code_postal_facturation = code_post_f;
+	date_naissance = date_n;
+	date_premier_achat = date_p_a;
+}
+
 void Client::setId_Client(int a)
 {
 	this->id_client = a;
