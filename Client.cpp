@@ -66,67 +66,67 @@ void Client::setDate_Premier_Achat(string a)
 
 }
 
-void Client::getId_Client()
+int Client::getId_Client()
 {
 
 }
 
-void Client::getNom()
+string Client::getNom()
 {
 
 }
 
-void Client::getPrenom()
+string Client::getPrenom()
 {
 
 }
 
-void Client::getNum_Rue_Livraison()
+int Client::getNum_Rue_Livraison()
 {
 
 }
 
-void Client::getNum_Rue_Factorisation()
+int Client::getNum_Rue_Factorisation()
 {
 
 }
 
-void Client::getNom_Rue_Factorisation()
+string Client::getNom_Rue_Factorisation()
 {
 
 }
 
-void Client::getNom_Rue_Livraison()
+string Client::getNom_Rue_Livraison()
 {
 
 }
 
-void Client::getVille_Livraison()
+string Client::getVille_Livraison()
 {
 
 }
 
-void Client::getVille_Factorisation()
+string Client::getVille_Factorisation()
 {
 
 }
 
-void Client::getCode_Postal_Facturation()
+int Client::getCode_Postal_Facturation()
 {
 
 }
 
-void Client::getCode_Postal_Livraison()
+int Client::getCode_Postal_Livraison()
 {
 
 }
 
-void Client::getDate_Naissance()
+string Client::getDate_Naissance()
 {
 
 }
 
-void Client::getDate_Premier_Achat()
+string Client::getDate_Premier_Achat()
 {
 
 }

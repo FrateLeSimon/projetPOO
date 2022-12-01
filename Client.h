@@ -35,12 +35,12 @@ public:
 	int getId_Client();
 	string getNom();
 	string getPrenom();
-	string getNum_Rue_Livraison();
-	string getNum_Rue_Factorisation();
+	int getNum_Rue_Livraison();
+	int getNum_Rue_Factorisation();
 	string getNom_Rue_Livraison();
 	string getNom_Rue_Factorisation();
-	void getVille_Livraison();
-	void getVille_Factorisation();
+	string getVille_Livraison();
+	string getVille_Factorisation();
 	int getCode_Postal_Livraison();
 	int getCode_Postal_Facturation();
 	string getDate_Naissance();
