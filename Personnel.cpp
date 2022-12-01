@@ -6,7 +6,7 @@ Personnel::Personnel()
     id_personnel = 0;
     nom = "";
     prenom = "";
-    id_personnel_superieur = "";
+    id_superieur = 0;
     num_rue = "";
     nom_rue = "";
     ville = "";
@@ -15,7 +15,7 @@ Personnel::Personnel()
     admin = false;
 }
 
-void Personnel::setId_Personnel()
+void Personnel::setId_Personnel(int a)
 {
 	this->id_personnel = a;
 }

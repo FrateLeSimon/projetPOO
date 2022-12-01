@@ -28,8 +28,8 @@ public:
 	void setNom_Rue_Facturation(string);
 	void setVille_Livraison(string);
 	void setVille_Facturation(string);
-	void setCode_Postal_Facturation(string);
-	void setCode_Postal_Livraison(string);
+	void setCode_Postal_Facturation(int);
+	void setCode_Postal_Livraison(int);
 	void setDate_Naissance(string);
 	void setDate_Premier_Achat(string);
 	int getId_Client();

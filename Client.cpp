@@ -18,7 +18,7 @@ Client::Client()
 	date_premier_achat = "";
 }
 
-void Client::setId_Client(int arg1)
+void Client::setId_Client(int a)
 {
 	this->id_client = a;
 }
@@ -63,12 +63,12 @@ void Client::setVille_Facturation(string a)
 	this->ville_facturation = a;
 }
 
-void Client::setCode_Postal_Facturation(string a)
+void Client::setCode_Postal_Facturation(int a)
 {
 	this->code_postal_facturation = a;
 }
 
-void Client::setCode_Postal_Livraison(string a)
+void Client::setCode_Postal_Livraison(int a)
 {
 	this->code_postal_livraison = a;
 }

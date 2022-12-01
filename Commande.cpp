@@ -3,7 +3,7 @@
 
 Commande::Commande()
 {
-	id_Commande = 0;
+	id_commande = 0;
 	reference = "";
 	date_livraison = "";
 	date_emission = "";

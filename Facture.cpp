@@ -10,7 +10,7 @@ Facture::Facture()
 	ville_societe = "";
 	code_postal_societe = 0;
 	logo_societe = "";
-	nbr_paiement = 0;
+	nbr_paiements = 0;
 	somme_paiements = 0;
 	moyen = "";
 }
