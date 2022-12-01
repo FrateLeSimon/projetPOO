@@ -18,12 +18,12 @@ public:
 	void setPrixArticle(int);
 	void setSeuil(int);
 	void setCouleur(string);
-	int getId_Article(int);
-	string getNom_Article(string);
-	int getQuantite_Stock(int);
-	int getPrix_Article(int);
-	int getSeuil(int);
-	string getCouleur(string);
+	int getId_Article();
+	string getNom_Article();
+	int getQuantite_Stock();
+	int getPrix_Article();
+	int getSeuil();
+	string getCouleur();
 	string Insert();
 	string Select();
 	string Update();

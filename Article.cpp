@@ -30,32 +30,32 @@ void Article::setCouleur(string a)
 
 }
 
-void Article::getId_Article(int arg1)
+int Article::getId_Article()
 {
 
 }
 
-void Article::getNom_Article(string a)
+string Article::getNom_Article()
 {
 
 }
 
-void Article::getQuantite_Stock(int arg1)
+int Article::getQuantite_Stock()
 {
 
 }
 
-void Article::getPrix_Article(int arg1)
+int Article::getPrix_Article()
 {
 
 }
 
-void Article::getSeuil(int arg1)
+int Article::getSeuil()
 {
 
 }
 
-void Article::getCouleur(string a)
+string Article::getCouleur()
 {
 
 }
