@@ -1,5 +1,8 @@
 ### ProjetPOO
 
--
+---
 
-Arthur, Bastien, JB, Simon
+- Arthur
+- Bastien
+- JB
+- Simon
