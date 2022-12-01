@@ -10,6 +10,8 @@ private:
 	int seuil;
 	string couleur;
 public:
+	Arcticle();
+	Article(int, string, int, int, int, string);
 	void setId_Article(int);
 	void setNom_Article(string);
 	void setQuantite_Stock(int);
