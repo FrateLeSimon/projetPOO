@@ -18,15 +18,15 @@ Facture::Facture()
 Facture::Facture(System::String^ id_fact, System::String^ nom_soc, System::String^ num_r_s, System::String^ nom_r_s, System::String^ ville_s, int code_post_s, System::String^ logo, int nbr_pai, int somme_pai, 
 	System::String^ moy)
 {
-	id_facture = id_fact;
-	nom_societe = nom_soc;
-	num_rue_societe = num_r_s;
-	nom_rue_societe = nom_r_s;
-	ville_societe = ville_s;
-	code_postal_societe = code_post_s;
-	logo_societe = logo;
-	somme_paiements = somme_pai;
-	moyen = moy;
+	this->id_facture = id_fact;
+	this->nom_societe = nom_soc;
+	this->num_rue_societe = num_r_s;
+	this->nom_rue_societe = nom_r_s;
+	this->ville_societe = ville_s;
+	this->code_postal_societe = code_post_s;
+	this->logo_societe = logo;
+	this->somme_paiements = somme_pai;
+	this->moyen = moy;
 }
 
 void Facture::setId_Facture(System::String^ a)

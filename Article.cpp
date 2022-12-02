@@ -12,12 +12,12 @@ Article::Article()
 
 Article::Article(int id_art, System::String^ nom_art, int quant_st, int prix_art, int v_seuil, System::String^ v_couleur)
 {
-	id_article = id_art;
-	nom_article = nom_art;
-	quantite_stock = quant_st;
-	prix_article = prix_art;
-	seuil = v_seuil;
-	couleur = v_couleur;
+	this ->id_article = id_art;
+	this ->nom_article = nom_art;
+	this ->quantite_stock = quant_st;
+	this ->prix_article = prix_art;
+	this ->seuil = v_seuil;
+	this ->couleur = v_couleur;
 }
 
 void Article::setId_Article(int a)
