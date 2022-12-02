@@ -21,19 +21,19 @@ Client::Client()
 Client::Client(int id_cl, System::String^ v_nom, System::String^ v_prenom, System::String^ num_r_l, System::String^ num_r_f, System::String^ nom_r_l, System::String^ nom_r_f, System::String^ ville_l, System::String^ ville_f, 
 	int code_post_l, int code_post_f, System::String^ date_n, System::String^ date_p_a)
 {
-	id_client = id_cl;
-	nom = v_nom;
-	prenom = v_prenom;
-	num_rue_livraison = num_r_l;
-	num_rue_facturation = num_r_f;
-	nom_rue_livraison = nom_r_l;
-	nom_rue_facturation = nom_r_f;
-	ville_livraison = ville_l;
-	ville_facturation = ville_f;
-	code_postal_livraison = code_post_l;
-	code_postal_facturation = code_post_f;
-	date_naissance = date_n;
-	date_premier_achat = date_p_a;
+	setId_Client(id_cl);
+	setNom(v_nom);
+	setPrenom(v_prenom);
+	setNum_Rue_Livraison(num_r_l);
+	setNum_Rue_Facturation(num_r_f);
+	setNom_Rue_Livraison(nom_r_l);
+	setNom_Rue_Facturation(nom_r_f);
+	setVille_Livraison(ville_l);
+	setVille_Facturation(ville_f);
+	setCode_Postal_Livraison(code_post_l);
+	setCode_Postal_Facturation(code_post_f);
+	setDate_Naissance(date_n);
+	setDate_Premier_Achat(date_p_a);
 }
 
 void Client::setId_Client(int a)
