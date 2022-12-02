@@ -21,19 +21,19 @@ Client::Client()
 Client::Client(int id_cl, string v_nom, string v_prenom, string num_r_l, string num_r_f, string nom_r_l, string nom_r_f, string ville_l, string ville_f, 
 	int code_post_l, int code_post_f, string date_n, string date_p_a)
 {
-	setId_Client(id_cl);
-	setNom(v_nom);
-	setPrenom(v_prenom);
-	setNum_Rue_Livraison(num_r_l);
-	setNum_Rue_Facturation(num_r_f);
-	setNom_Rue_Livraison(nom_r_l);
-	setNom_Rue_Facturation(nom_r_f);
-	setVille_Livraison(ville_l);
-	setVille_Facturation(ville_f);
-	setCode_Postal_Livraison(code_post_l);
-	setCode_Postal_Facturation(code_post_f);
-	setDate_Naissance(date_n);
-	setDate_Premier_Achat(date_p_a);
+	this->id_client = id_cl;
+	this->nom = v_nom;
+	this->prenom = v_prenom;
+	this->num_rue_livraison = num_r_l;
+	this->num_rue_facturation = num_r_f;
+	this->nom_rue_livraison = nom_r_l;
+	this->nom_rue_facturation = nom_r_f;
+	this->ville_livraison = ville_l;
+	this->ville_facturation = ville_f;
+	this->code_postal_livraison = code_post_l;
+	this->code_postal_facturation = code_post_f;
+	this->date_naissance = date_n;
+	this->date_premier_achat = date_p_a;
 }
 
 void Client::setId_Client(int a)
