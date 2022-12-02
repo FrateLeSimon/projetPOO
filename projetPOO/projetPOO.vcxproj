@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="..\CAD.h" />
     <ClInclude Include="..\CL.h" />
+    <ClInclude Include="..\CLmap.h" />
     <ClInclude Include="..\Mappage.h" />
     <ClInclude Include="..\tools.h" />
     <ClInclude Include="ConnexionForm.h">
@@ -35,6 +36,7 @@
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\Mappage.cpp" />
     <ClCompile Include="..\Personnel.cpp" />
+    <ClCompile Include="..\CAD.cpp" />
     <ClCompile Include="ConnexionForm.cpp" />
   </ItemGroup>
   <ItemGroup>
