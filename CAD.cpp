@@ -4,7 +4,7 @@
 
 NS_Comp_Data::CLcad::CLcad(void)
 {
-	this->sCnx = "Data Source=PC-ARNAUD\\MSSQL_CPI;User ID=CNX_P6;Password=8BkrG%@Jwgk8na@*N^X$Av8Gt^8qCsf6$W;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+	this->sCnx = "Data Source=34.155.198.90;User ID=default;Password=ProjetPOO;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
 	this->sSql = "Rien";
 
