@@ -5,3 +5,19 @@ string Mappage::Insert()
 {
 
 }
+
+string Mappage::Select()
+{
+
+}
+
+string Mappage::Update()
+{
+
+}
+
+string Mappage::Delete()
+{
+
+}
+
