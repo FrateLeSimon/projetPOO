@@ -187,7 +187,6 @@ namespace projetPOO {
 		else if (Identifiant == "A" && Motdepasse == "08") {
 			PersonnelForm^ maPersonnelForm = gcnew PersonnelForm();
 			maPersonnelForm->Show();
-			this.Close();
 		}
 
 		else {
