@@ -1,3 +1,5 @@
+#include "ClientForm.h"
+
 #pragma once
 
 namespace projetPOO {
@@ -185,6 +187,9 @@ namespace projetPOO {
 		else if (Identifiant == "A" && Motdepasse == "08") {
 			MessageBox::Show("vasy",
 				"YES", MessageBoxButtons::OK);
+			ClientForm^ maForm2 = gcnew ClientForm();
+			maForm2->Show();
+
 		}
 
 		else if (Identifiant != "A" || Motdepasse != "08") {
