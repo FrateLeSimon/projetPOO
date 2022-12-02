@@ -18,16 +18,16 @@ Personnel::Personnel()
 Personnel::Personnel(int id_per, string v_nom, string v_prenom, int id_sup, string num_r, string nom_r, string v_ville, int code_post, string date_emb, 
 	bool adm)
 {
-	id_personnel = id_per;
-	nom = v_nom;
-	prenom = v_prenom;
-	id_superieur = id_sup;
-	num_rue = num_r;
-	nom_rue = nom_r;
-	ville = v_ville;
-	code_postal = code_post;
-	date_embauche = date_emb;
-	admin = adm;
+	this->id_personnel = id_per;
+	this->nom = v_nom;
+	this->prenom = v_prenom;
+	this->id_superieur = id_sup;
+	this->num_rue = num_r;
+	this->nom_rue = nom_r;
+	this->ville = v_ville;
+	this->code_postal = code_post;
+	this->date_embauche = date_emb;
+	this->admin = adm;
 }
 
 void Personnel::setId_Personnel(int a)

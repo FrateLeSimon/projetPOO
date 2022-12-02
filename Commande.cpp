@@ -13,12 +13,12 @@ Commande::Commande()
 
 Commande::Commande(int id_com, string ref, string date_l, string date_em, int mont_ht, int mont_ttc)
 {
-	id_commande = id_com;
-	reference = ref;
-	date_livraison = date_l;
-	date_emission = date_em;
-	montant_ht = mont_ht;
-	montant_ttc = mont_ttc;
+	this->id_commande = id_com;
+	this->reference = ref;
+	this->date_livraison = date_l;
+	this->date_emission = date_em;
+	this->montant_ht = mont_ht;
+	this->montant_ttc = mont_ttc;
 }
 
 void Commande::setId_Commande(int a)
