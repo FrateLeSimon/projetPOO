@@ -27,9 +27,6 @@
     <ClInclude Include="..\Mappage.h" />
     <ClInclude Include="..\Personnel.h" />
     <ClInclude Include="..\tools.h" />
-    <ClInclude Include="ClientForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="ConnexionForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -43,7 +40,6 @@
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\Mappage.cpp" />
     <ClCompile Include="..\Personnel.cpp" />
-    <ClCompile Include="ClientForm.cpp" />
     <ClCompile Include="ConnexionForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -54,9 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ClientForm.resx">
-      <DependentUpon>ClientForm.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ConnexionForm.resx">
       <DependentUpon>ConnexionForm.h</DependentUpon>
     </EmbeddedResource>
