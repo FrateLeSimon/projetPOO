@@ -10,7 +10,7 @@ Article::Article()
 	couleur = "";
 }
 
-Article::Article(int id_art, string nom_art, int quant_st, int prix_art, int v_seuil, string v_couleur)
+Article::Article(int id_art, System::String^ nom_art, int quant_st, int prix_art, int v_seuil, System::String^ v_couleur)
 {
 	this ->id_article = id_art;
 	this ->nom_article = nom_art;
@@ -25,7 +25,7 @@ void Article::setId_Article(int a)
 	this->id_article = a;
 }
 
-void Article::setNom_Article(string a)
+void Article::setNom_Article(System::String^ a)
 {
 	this->nom_article = a;
 }
@@ -45,7 +45,7 @@ void Article::setSeuil(int a)
 	this->seuil = a;
 }
 
-void Article::setCouleur(string a)
+void Article::setCouleur(System::String^ a)
 {
 	this->couleur = a;
 }
@@ -55,7 +55,7 @@ int Article::getId_Article()
 	return this->id_article;
 }
 
-string Article::getNom_Article()
+System::String^ Article::getNom_Article()
 {
 	return this->nom_article;
 }
@@ -75,27 +75,27 @@ int Article::getSeuil()
 	return this->seuil;
 }
 
-string Article::getCouleur()
+System::String^ Article::getCouleur()
 {
 	return this->couleur;
 }
 
-string Article::Insert()
+System::String^ Article::Insert()
 {
 	return "insert";
 }
 
-string Article::Select()
+System::String^ Article::Select()
 {
 	return "select";
 }
 
-string Article::Update()
+System::String^ Article::Update()
 {
 	return "update";
 }
 
-string Article::Delete()
+System::String^ Article::Delete()
 {
 	return "delete";
 }

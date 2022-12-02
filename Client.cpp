@@ -18,8 +18,8 @@ Client::Client()
 	date_premier_achat = "";
 }
 
-Client::Client(int id_cl, string v_nom, string v_prenom, string num_r_l, string num_r_f, string nom_r_l, string nom_r_f, string ville_l, string ville_f, 
-	int code_post_l, int code_post_f, string date_n, string date_p_a)
+Client::Client(int id_cl, System::String^ v_nom, System::String^ v_prenom, System::String^ num_r_l, System::String^ num_r_f, System::String^ nom_r_l, System::String^ nom_r_f, System::String^ ville_l, System::String^ ville_f, 
+	int code_post_l, int code_post_f, System::String^ date_n, System::String^ date_p_a)
 {
 	this->id_client = id_cl;
 	this->nom = v_nom;
@@ -41,42 +41,42 @@ void Client::setId_Client(int a)
 	this->id_client = a;
 }
 
-void Client::setNom(string a)
+void Client::setNom(System::String^ a)
 {
 	this->nom = a;
 }
 
-void Client::setPrenom(string a)
+void Client::setPrenom(System::String^ a)
 {
 	this->prenom = a;
 }
 
-void Client::setNum_Rue_Livraison(string a)
+void Client::setNum_Rue_Livraison(System::String^ a)
 {
 	this->num_rue_livraison = a;
 }
 
-void Client::setNum_Rue_Facturation(string a)
+void Client::setNum_Rue_Facturation(System::String^ a)
 {
 	this->num_rue_facturation = a;
 }
 
-void Client::setNom_Rue_Livraison(string a)
+void Client::setNom_Rue_Livraison(System::String^ a)
 {
 	this->nom_rue_livraison = a;
 }
 
-void Client::setNom_Rue_Facturation(string a)
+void Client::setNom_Rue_Facturation(System::String^ a)
 {
 	this->nom_rue_facturation = a;
 }
 
-void Client::setVille_Livraison(string a)
+void Client::setVille_Livraison(System::String^ a)
 {
 	this->ville_livraison = a;
 }
 
-void Client::setVille_Facturation(string a)
+void Client::setVille_Facturation(System::String^ a)
 {
 	this->ville_facturation = a;
 }
@@ -91,12 +91,12 @@ void Client::setCode_Postal_Livraison(int a)
 	this->code_postal_livraison = a;
 }
 
-void Client::setDate_Naissance(string a)
+void Client::setDate_Naissance(System::String^ a)
 {
 	this->date_naissance = a;
 }
 
-void Client::setDate_Premier_Achat(string a)
+void Client::setDate_Premier_Achat(System::String^ a)
 {
 	this->date_premier_achat = a;
 }
@@ -106,42 +106,42 @@ int Client::getId_Client()
 	return this->id_client;
 }
 
-string Client::getNom()
+System::String^ Client::getNom()
 {
 	return this->nom;
 }
 
-string Client::getPrenom()
+System::String^ Client::getPrenom()
 {
 	return this->prenom;
 }
 
-string Client::getNum_Rue_Livraison()
+System::String^ Client::getNum_Rue_Livraison()
 {
 	return this->num_rue_livraison;
 }
 
-string Client::getNum_Rue_Facturation()
+System::String^ Client::getNum_Rue_Facturation()
 {
 	return this->num_rue_facturation;
 }
 
-string Client::getNom_Rue_Facturation()
+System::String^ Client::getNom_Rue_Facturation()
 {
 	return this->nom_rue_facturation;
 }
 
-string Client::getNom_Rue_Livraison()
+System::String^ Client::getNom_Rue_Livraison()
 {
 	return this->nom_rue_livraison;
 }
 
-string Client::getVille_Livraison()
+System::String^ Client::getVille_Livraison()
 {
 	return this->ville_livraison;
 }
 
-string Client::getVille_Factorisation()
+System::String^ Client::getVille_Factorisation()
 {
 	return this->ville_facturation;
 }
@@ -156,32 +156,32 @@ int Client::getCode_Postal_Livraison()
 	return this->code_postal_livraison;
 }
 
-string Client::getDate_Naissance()
+System::String^ Client::getDate_Naissance()
 {
 	return this->date_naissance;
 }
 
-string Client::getDate_Premier_Achat()
+System::String^ Client::getDate_Premier_Achat()
 {
 	return this->date_premier_achat;
 }
 
-string Client::Insert()
+System::String^ Client::Insert()
 {
 	return "insert";
 }
 
-string Client::Select()
+System::String^ Client::Select()
 {
 	return "select";
 }
 
-string Client::Update()
+System::String^ Client::Update()
 {
 	return "update";
 }
 
-string Client::Delete()
+System::String^ Client::Delete()
 {
 	return "delete";
 }

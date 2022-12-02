@@ -11,7 +11,7 @@ Commande::Commande()
 	montant_ttc = 0;
 }
 
-Commande::Commande(int id_com, string ref, string date_l, string date_em, int mont_ht, int mont_ttc)
+Commande::Commande(int id_com, System::String^ ref, System::String^ date_l, System::String^ date_em, int mont_ht, int mont_ttc)
 {
 	this->id_commande = id_com;
 	this->reference = ref;
@@ -26,17 +26,17 @@ void Commande::setId_Commande(int a)
 	this->id_commande = a;
 }
 
-void Commande::setReference(string a)
+void Commande::setReference(System::String^ a)
 {
 	this->reference = a;
 }
 
-void Commande::setDate_Livraison(string a)
+void Commande::setDate_Livraison(System::String^ a)
 {
 	this->date_livraison = a;
 }
 
-void Commande::setDate_Emission(string a)
+void Commande::setDate_Emission(System::String^ a)
 {
 	this->date_emission = a;
 }
@@ -56,17 +56,17 @@ int Commande::getId_Commande()
 	return this->id_commande;
 }
 
-string Commande::getReference()
+System::String^ Commande::getReference()
 {
 	return this->reference;
 }
 
-string Commande::getDate_Emission()
+System::String^ Commande::getDate_Emission()
 {
 	return this->date_emission;
 }
 
-string Commande::getDate_Livraison()
+System::String^ Commande::getDate_Livraison()
 {
 	return this->date_livraison;
 }
@@ -81,22 +81,22 @@ int Commande::getMontant_TTC()
 	return this->montant_ttc;
 }
 
-string Commande::Insert()
+System::String^ Commande::Insert()
 {
 	return "insert";
 }
 
-string Commande::Select()
+System::String^ Commande::Select()
 {
 	return "select";
 }
 
-string Commande::Update()
+System::String^ Commande::Update()
 {
 	return "update";
 }
 
-string Commande::Delete()
+System::String^ Commande::Delete()
 {
 	return "delete";
 }

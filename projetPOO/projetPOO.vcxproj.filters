@@ -68,5 +68,8 @@
     <ClCompile Include="ConnexionForm.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Prosit 6\Prosit 6 demo\CAD.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
