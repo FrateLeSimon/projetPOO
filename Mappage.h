@@ -4,8 +4,8 @@
 class Mappage
 {
 public:
-	virtual string Insert() = 0;
-	virtual string Select() = 0;
-	virtual string Update() = 0;
-	virtual string Delete() = 0;
+	string Insert();
+	string Select();
+	string Update();
+	string Delete();
 };
