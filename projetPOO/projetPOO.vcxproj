@@ -19,20 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Article.h" />
     <ClInclude Include="..\CAD.h" />
-    <ClInclude Include="..\Client.h" />
-    <ClInclude Include="..\Commande.h" />
-    <ClInclude Include="..\Facture.h" />
+    <ClInclude Include="..\CL.h" />
     <ClInclude Include="..\Mappage.h" />
-    <ClInclude Include="..\Personnel.h" />
     <ClInclude Include="..\tools.h" />
     <ClInclude Include="ConnexionForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Prosit 6\Prosit 6 demo\CAD.cpp" />
     <ClCompile Include="..\Article.cpp" />
     <ClCompile Include="..\Client.cpp" />
     <ClCompile Include="..\Commande.cpp" />

@@ -1,5 +1,4 @@
-#include "tools.h"
-#include "Facture.h"
+#include "CL.h"
 
 Facture::Facture()
 {
@@ -15,8 +14,8 @@ Facture::Facture()
 	moyen = "";
 }
 
-Facture::Facture(System::String^ id_fact, System::String^ nom_soc, System::String^ num_r_s, System::String^ nom_r_s, System::String^ ville_s, int code_post_s, System::String^ logo, int nbr_pai, int somme_pai, 
-	System::String^ moy)
+Facture::Facture(string id_fact, string nom_soc, string num_r_s, string nom_r_s, string ville_s, int code_post_s, string logo, int nbr_pai, int somme_pai, 
+	string moy)
 {
 	this->id_facture = id_fact;
 	this->nom_societe = nom_soc;
@@ -29,27 +28,27 @@ Facture::Facture(System::String^ id_fact, System::String^ nom_soc, System::Strin
 	this->moyen = moy;
 }
 
-void Facture::setId_Facture(System::String^ a)
+void Facture::setId_Facture(string a)
 {
 	this->id_facture = a;
 }
 
-void Facture::setNom_Societe(System::String^ a)
+void Facture::setNom_Societe(string a)
 {
 	this->nom_societe = a;
 }
 
-void Facture::setNum_Rue_Societe(System::String^ a)
+void Facture::setNum_Rue_Societe(string a)
 {
 	this->num_rue_societe = a;
 }
 
-void Facture::setNom_Rue_Societe(System::String^ a)
+void Facture::setNom_Rue_Societe(string a)
 {
 	this->nom_rue_societe = a;
 }
 
-void Facture::setVille_Societe(System::String^ a)
+void Facture::setVille_Societe(string a)
 {
 	this->ville_societe = a;
 }
@@ -59,7 +58,7 @@ void Facture::setCode_Postal_Societe(int a)
 	this->code_postal_societe = a;
 }
 
-void Facture::setLogo_Societe(System::String^ a)
+void Facture::setLogo_Societe(string a)
 {
 	this->logo_societe = a;
 }
@@ -74,27 +73,27 @@ void Facture::setSomme_Paiements(int a)
 	this->somme_paiements = a;
 }
 
-void Facture::setMoyen(System::String^ a)
+void Facture::setMoyen(string a)
 {
 	this->moyen = a;
 }
 
-System::String^ Facture::getId_Facture()
+string Facture::getId_Facture()
 {
 	return this->id_facture;
 }
 
-System::String^ Facture::getNum_Rue_Societe()
+string Facture::getNum_Rue_Societe()
 {
 	return this->num_rue_societe;
 }
 
-System::String^ Facture::getNom_Rue_Societe()
+string Facture::getNom_Rue_Societe()
 {
 	return this->nom_rue_societe;
 }
 
-System::String^ Facture::getVille_Societe()
+string Facture::getVille_Societe()
 {
 	return this->ville_societe;
 }
@@ -104,7 +103,7 @@ int Facture::getCode_Postal()
 	return this->code_postal_societe;
 }
 
-System::String^ Facture::getLogo_Societe()
+string Facture::getLogo_Societe()
 {
 	return this->logo_societe;
 }
@@ -119,7 +118,7 @@ int Facture::getSomme_Paiements()
 	return this->somme_paiements;
 }
 
-System::String^ Facture::getMoyen()
+string Facture::getMoyen()
 {
 	return this->moyen;
 }
