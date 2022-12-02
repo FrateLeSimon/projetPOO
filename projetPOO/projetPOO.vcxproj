@@ -27,6 +27,9 @@
     <ClInclude Include="ConnexionForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PersonnelForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Article.cpp" />
@@ -38,6 +41,7 @@
     <ClCompile Include="..\Personnel.cpp" />
     <ClCompile Include="..\CAD.cpp" />
     <ClCompile Include="ConnexionForm.cpp" />
+    <ClCompile Include="PersonnelForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,6 +53,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ConnexionForm.resx">
       <DependentUpon>ConnexionForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonnelForm.resx">
+      <DependentUpon>PersonnelForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup Label="Globals">

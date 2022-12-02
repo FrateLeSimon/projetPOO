@@ -1,3 +1,5 @@
+#include "PersonnelForm.h"
+
 #pragma once
 
 namespace projetPOO {
@@ -183,8 +185,9 @@ namespace projetPOO {
 		}
 
 		else if (Identifiant == "A" && Motdepasse == "08") {
-			MessageBox::Show("vasy",
-				"YES", MessageBoxButtons::OK);
+			PersonnelForm^ maPersonnelForm = gcnew PersonnelForm();
+			maPersonnelForm->Show();
+			this.Close();
 		}
 
 		else {
