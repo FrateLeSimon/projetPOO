@@ -3,36 +3,36 @@
 class Facture
 {
 private:
-	string id_facture;
-	string nom_societe;
-	string num_rue_societe;
-	string nom_rue_societe;
-	string ville_societe;
+	System::String^ id_facture;
+	System::String^ nom_societe;
+	System::String^ num_rue_societe;
+	System::String^ nom_rue_societe;
+	System::String^ ville_societe;
 	int code_postal_societe;
-	string logo_societe;
+	System::String^ logo_societe;
 	int nbr_paiements;
 	int somme_paiements;
-	string moyen;
+	System::String^ moyen;
 public:
 	Facture();
-	Facture(string, string, string, string, string, int, string, int, int, string);
-	void setId_Facture(string);
-	void setNom_Societe(string);
-	void setNum_Rue_Societe(string);
-	void setNom_Rue_Societe(string);
-	void setVille_Societe(string);
+	Facture(System::String^, System::String^, System::String^, System::String^, System::String^, int, System::String^, int, int, System::String^);
+	void setId_Facture(System::String^);
+	void setNom_Societe(System::String^);
+	void setNum_Rue_Societe(System::String^);
+	void setNom_Rue_Societe(System::String^);
+	void setVille_Societe(System::String^);
 	void setCode_Postal_Societe(int);
-	void setLogo_Societe(string);
+	void setLogo_Societe(System::String^);
 	void setNbr_Paiements(int);
 	void setSomme_Paiements(int);
-	void setMoyen(string);
-	string getId_Facture();
-	string getNum_Rue_Societe();
-	string getNom_Rue_Societe();
-	string getVille_Societe();
+	void setMoyen(System::String^);
+	System::String^ getId_Facture();
+	System::String^ getNum_Rue_Societe();
+	System::String^ getNom_Rue_Societe();
+	System::String^ getVille_Societe();
 	int getCode_Postal();
-	string getLogo_Societe();
+	System::String^ getLogo_Societe();
 	int getNbr_Paiements();
 	int getSomme_Paiements();
-	string getMoyen();
+	System::String^ getMoyen();
 };

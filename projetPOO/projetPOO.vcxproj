@@ -32,6 +32,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Prosit 6\Prosit 6 demo\CAD.cpp" />
     <ClCompile Include="..\Article.cpp" />
     <ClCompile Include="..\Client.cpp" />
     <ClCompile Include="..\Commande.cpp" />

@@ -4,28 +4,28 @@ class Commande
 {
 private:
 	int id_commande;
-	string reference;
-	string date_livraison;
-	string date_emission;
+	System::String^ reference;
+	System::String^ date_livraison;
+	System::String^ date_emission;
 	int montant_ht;
 	int montant_ttc;
 public:
 	Commande();
-	Commande(int, string, string, string, int, int);
+	Commande(int, System::String^, System::String^, System::String^, int, int);
 	void setId_Commande(int);
-	void setReference(string);
-	void setDate_Livraison(string);
-	void setDate_Emission(string);
+	void setReference(System::String^);
+	void setDate_Livraison(System::String^);
+	void setDate_Emission(System::String^);
 	void setMontant_HT(int);
 	void setMontant_TTC(int);
 	int getId_Commande();
-	string getReference();
-	string getDate_Livraison();
-	string getDate_Emission();
+	System::String^ getReference();
+	System::String^ getDate_Livraison();
+	System::String^ getDate_Emission();
 	int getMontant_HT();
 	int getMontant_TTC();
-	string Insert();
-	string Select();
-	string Update();
-	string Delete();
+	System::String^ Insert();
+	System::String^ Select();
+	System::String^ Update();
+	System::String^ Delete();
 };

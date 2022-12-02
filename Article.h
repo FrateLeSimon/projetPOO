@@ -4,28 +4,28 @@ class Article
 {
 private:
 	int id_article;
-	string nom_article;
+	System::String^ nom_article;
 	int quantite_stock;
 	int prix_article;
 	int seuil;
-	string couleur;
+	System::String^ couleur;
 public:
 	Article();
-	Article(int, string, int, int, int, string);
+	Article(int, System::String^, int, int, int, System::String^);
 	void setId_Article(int);
-	void setNom_Article(string);
+	void setNom_Article(System::String^);
 	void setQuantite_Stock(int);
 	void setPrixArticle(int);
 	void setSeuil(int);
-	void setCouleur(string);
+	void setCouleur(System::String^);
 	int getId_Article();
-	string getNom_Article();
+	System::String^ getNom_Article();
 	int getQuantite_Stock();
 	int getPrix_Article();
 	int getSeuil();
-	string getCouleur();
-	string Insert();
-	string Select();
-	string Update();
-	string Delete();
+	System::String^ getCouleur();
+	System::String^ Insert();
+	System::String^ Select();
+	System::String^ Update();
+	System::String^ Delete();
 };

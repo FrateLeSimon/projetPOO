@@ -15,7 +15,7 @@ Personnel::Personnel()
     admin = false;
 }
 
-Personnel::Personnel(int id_per, string v_nom, string v_prenom, int id_sup, string num_r, string nom_r, string v_ville, int code_post, string date_emb, 
+Personnel::Personnel(int id_per, System::String^ v_nom, System::String^ v_prenom, int id_sup, System::String^ num_r, System::String^ nom_r, System::String^ v_ville, int code_post, System::String^ date_emb, 
 	bool adm)
 {
 	id_personnel = id_per;
@@ -35,12 +35,12 @@ void Personnel::setId_Personnel(int a)
 	this->id_personnel = a;
 }
 
-void Personnel::setNom(string a)
+void Personnel::setNom(System::String^ a)
 {
 	this->nom = a;
 }
 
-void Personnel::setPrenom(string a)
+void Personnel::setPrenom(System::String^ a)
 {
 	this->prenom = a;
 }
@@ -50,22 +50,22 @@ void Personnel::setId_Superieur(int a)
 	this->id_superieur = a;
 }
 
-void Personnel::setNum_Rue(string a)
+void Personnel::setNum_Rue(System::String^ a)
 {
 	this->num_rue = a;
 }
 
-void Personnel::setNom_Rue(string a)
+void Personnel::setNom_Rue(System::String^ a)
 {
 	this->nom_rue = a;
 }
 
-void Personnel::setVille(string a)
+void Personnel::setVille(System::String^ a)
 {
 	this->ville = a;
 }
 
-void Personnel::setDate_Embauche(string a)
+void Personnel::setDate_Embauche(System::String^ a)
 {
 	this->date_embauche = a;
 }
@@ -80,12 +80,12 @@ int Personnel::getId_Personnel()
 	return this->id_personnel;
 }
 
-string Personnel::getNom()
+System::String^ Personnel::getNom()
 {
 	return this->nom;
 }
 
-string Personnel::getPrenom()
+System::String^ Personnel::getPrenom()
 {
 	return this->prenom;
 }
@@ -95,17 +95,17 @@ int Personnel::getId_Superieur()
 	return this->id_superieur;
 }
 
-string Personnel::getNum_Rue()
+System::String^ Personnel::getNum_Rue()
 {
 	return this->num_rue;
 }
 
-string Personnel::getNom_Rue()
+System::String^ Personnel::getNom_Rue()
 {
 	return this->nom_rue;
 }
 
-string Personnel::getVille()
+System::String^ Personnel::getVille()
 {
 	return this->ville;
 }
@@ -115,7 +115,7 @@ int Personnel::getCodePostal()
 	return this->code_postal;
 }
 
-string Personnel::getDate_Embauche()
+System::String^ Personnel::getDate_Embauche()
 {
 	return this->date_embauche;
 }
@@ -125,22 +125,22 @@ bool Personnel::getAdmin()
 	return this->admin;
 }
 
-string Personnel::Insert()
+System::String^ Personnel::Insert()
 {
 	return "insert";
 }
 
-string Personnel::Select()
+System::String^ Personnel::Select()
 {
 	return "select";
 }
 
-string Personnel::Update()
+System::String^ Personnel::Update()
 {
 	return "update";
 }
 
-string Personnel::Delete()
+System::String^ Personnel::Delete()
 {
 	return "delete";
 }
