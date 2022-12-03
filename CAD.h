@@ -1,7 +1,6 @@
 #include "tools.h"
 
-namespace NS_Comp_Data
-{
+
 	ref class CLcad
 	{
 	private:
