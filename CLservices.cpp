@@ -191,11 +191,11 @@ articleServices::articleServices()
 	this->oCad = gcnew CLcad();
 	this->oArticle = gcnew articleMap();
 }
-System::Data::DataSet^ commandeServices::selectionnerToutesLesCommandes(System::String^ dataTableName)
+System::Data::DataSet^ articleServices::selectionnerTousLesArticles(System::String^ dataTableName)
 {
 	System::String^ sql;
 
-	sql = this->oCommande->Select();
+	sql = this->oArticle->Select();
 	return this->oCad->getRows(sql, dataTableName);
 }
 void articleServices::ajouterUnArticle(System::String^ v_nom_art, System::Int32^ v_quantite_stock, System::Int32^ v_prix_art, System::Int32^ v_seuil, System::String^ v_couleur)

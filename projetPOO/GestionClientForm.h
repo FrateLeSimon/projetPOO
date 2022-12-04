@@ -88,6 +88,7 @@ namespace projetPOO {
 	private: System::Windows::Forms::MonthCalendar^ MC_1achat;
 
 	private: System::Windows::Forms::Label^ L_1achat;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
 
@@ -104,7 +105,7 @@ namespace projetPOO {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -113,9 +114,11 @@ namespace projetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionClientForm::typeid));
 			this->TB_NomClient = (gcnew System::Windows::Forms::TextBox());
 			this->DGV_BDD = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_client = (gcnew System::Windows::Forms::GroupBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->MC_1achat = (gcnew System::Windows::Forms::MonthCalendar());
 			this->L_1achat = (gcnew System::Windows::Forms::Label());
 			this->GB_Afacturation = (gcnew System::Windows::Forms::GroupBox());
@@ -139,6 +142,7 @@ namespace projetPOO {
 			this->B_delete = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->BeginInit();
 			this->GB_client->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->GB_Afacturation->SuspendLayout();
 			this->GB_Alivraison->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->BeginInit();
@@ -167,6 +171,7 @@ namespace projetPOO {
 			// 
 			// GB_client
 			// 
+			this->GB_client->Controls->Add(this->pictureBox1);
 			this->GB_client->Controls->Add(this->MC_1achat);
 			this->GB_client->Controls->Add(this->L_1achat);
 			this->GB_client->Controls->Add(this->GB_Afacturation);
@@ -186,6 +191,17 @@ namespace projetPOO {
 			this->GB_client->TabStop = false;
 			this->GB_client->Text = L"Client";
 			this->GB_client->Enter += gcnew System::EventHandler(this, &GestionClientForm::GB_client_Enter);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(646, 126);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(197, 162);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 22;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &GestionClientForm::pictureBox1_Click);
 			// 
 			// MC_1achat
 			// 
@@ -443,6 +459,7 @@ namespace projetPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->ClientSize = System::Drawing::Size(1081, 479);
 			this->Controls->Add(this->B_delete);
 			this->Controls->Add(this->B_update);
@@ -456,6 +473,7 @@ namespace projetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->EndInit();
 			this->GB_client->ResumeLayout(false);
 			this->GB_client->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->GB_Afacturation->ResumeLayout(false);
 			this->GB_Afacturation->PerformLayout();
 			this->GB_Alivraison->ResumeLayout(false);
@@ -514,6 +532,8 @@ namespace projetPOO {
 	private: System::Void L_1achat_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void MC_1achat_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
+	}
+	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }
