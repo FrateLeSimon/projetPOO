@@ -195,7 +195,7 @@ namespace projetPOO {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(646, 126);
+			this->pictureBox1->Location = System::Drawing::Point(573, 126);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(197, 162);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -415,7 +415,7 @@ namespace projetPOO {
 			this->B_load->Name = L"B_load";
 			this->B_load->Size = System::Drawing::Size(202, 107);
 			this->B_load->TabIndex = 7;
-			this->B_load->Text = L"Enregistrer";
+			this->B_load->Text = L"Charger";
 			this->B_load->UseVisualStyleBackColor = true;
 			this->B_load->Click += gcnew System::EventHandler(this, &GestionClientForm::B_load_Click);
 			// 
@@ -439,7 +439,7 @@ namespace projetPOO {
 			this->B_update->Name = L"B_update";
 			this->B_update->Size = System::Drawing::Size(174, 58);
 			this->B_update->TabIndex = 9;
-			this->B_update->Text = L"Mise à jour";
+			this->B_update->Text = L"Modifier";
 			this->B_update->UseVisualStyleBackColor = true;
 			this->B_update->Click += gcnew System::EventHandler(this, &GestionClientForm::B_update_Click);
 			// 
