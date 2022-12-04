@@ -183,3 +183,56 @@ void commandeServices::supprimerUneCommande(int id)
 
 	this->oCad->actionRows(sql);
 }
+
+
+
+articleServices::articleServices()
+{
+	this->oCad = gcnew CLcad();
+	this->oArticle = gcnew articleMap();
+}
+System::Data::DataSet^ commandeServices::selectionnerToutesLesCommandes(System::String^ dataTableName)
+{
+	System::String^ sql;
+
+	sql = this->oCommande->Select();
+	return this->oCad->getRows(sql, dataTableName);
+}
+void articleServices::ajouterUnArticle(System::String^ v_nom_art, System::Int32^ v_quantite_stock, System::Int32^ v_prix_art, System::Int32^ v_seuil, System::String^ v_couleur)
+{
+	System::String^ sql;
+
+	this->oArticle->setNom_Article(v_nom_art);
+	this->oArticle->setQuantite_Stock(v_quantite_stock);
+	this->oArticle->setPrix_Article(v_prix_art);
+	this->oArticle->setSeuil(v_seuil);
+	this->oArticle->setCouleur(v_couleur);
+
+	sql = this->oArticle->Insert();
+
+	this->oCad->actionRows(sql);
+}
+void articleServices::modifierUnArticle(int id, System::String^ v_nom_art, System::Int32^ v_quantite_stock, System::Int32^ v_prix_art, System::Int32^ v_seuil, System::String^ v_couleur)
+{
+	System::String^ sql;
+
+	this->oArticle->setNom_Article(v_nom_art);
+	this->oArticle->setQuantite_Stock(v_quantite_stock);
+	this->oArticle->setPrix_Article(v_prix_art);
+	this->oArticle->setSeuil(v_seuil);
+	this->oArticle->setCouleur(v_couleur);
+
+	this->oArticle->setId_Article(Convert::ToInt32(id));
+	sql = this->oArticle->Update();
+
+	this->oCad->actionRows(sql);
+}
+void articleServices::supprimerUnArticle(int id)
+{
+	System::String^ sql;
+
+	this->oArticle->setId_Article(Convert::ToInt32(id));
+	sql = this->oArticle->Delete();
+
+	this->oCad->actionRows(sql);
+}
