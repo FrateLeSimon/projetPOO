@@ -1,8 +1,7 @@
+#include "..\CLservices.cpp"
 #include "GestionClientForm.h"
-#include "GestionStockForm.h"
 #include "GestionCommandeForm.h"
-
-#pragma once
+#include "GestionStockForm.h"
 
 namespace projetPOO {
 

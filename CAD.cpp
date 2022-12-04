@@ -2,7 +2,7 @@
 #include "CAD.h"
 
 
-CLcad::CLcad(void)
+NS_Comp_Data::CLcad::CLcad(void)
 {
 	this->sCnx = "Data Source=34.155.198.90;User ID=default;Password=ProjetPOO;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
@@ -16,7 +16,7 @@ CLcad::CLcad(void)
 	this->oCmd->CommandType = System::Data::CommandType::Text;
 }
 
-System::Data::DataSet^ CLcad::getRows(System::String^ sSql, System::String^ sDataTableName)
+System::Data::DataSet^ NS_Comp_Data::CLcad::getRows(System::String^ sSql, System::String^ sDataTableName)
 {
 	this->oDs->Clear();
 	this->sSql = sSql;
@@ -27,7 +27,7 @@ System::Data::DataSet^ CLcad::getRows(System::String^ sSql, System::String^ sDat
 	return this->oDs;
 }
 
-void CLcad::actionRows(System::String^ sSql)
+void NS_Comp_Data::CLcad::actionRows(System::String^ sSql)
 {
 	this->sSql = sSql;
 	this->oCmd->CommandText = this->sSql;

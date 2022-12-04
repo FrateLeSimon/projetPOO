@@ -6,7 +6,7 @@
 ref class clientServices
 {
 private:
-	CLcad^ oCad;
+	NS_Comp_Data::CLcad^ oCad;
 	clientMap^ oClient;
 public:
 	clientServices(void);
@@ -20,7 +20,7 @@ public:
 ref class personnelServices
 {
 private:
-	CLcad^ oCad;
+	NS_Comp_Data::CLcad^ oCad;
 	personnelMap^ oPersonnel;
 public:
 	personnelServices(void);
@@ -34,7 +34,7 @@ public:
 ref class commandeServices
 {
 private:
-	CLcad^ oCad;
+	NS_Comp_Data::CLcad^ oCad;
 	commandeMap^ oCommande;
 public:
 	commandeServices(void);
@@ -48,7 +48,7 @@ public:
 ref class articleServices
 {
 private:
-	CLcad^ oCad;
+	NS_Comp_Data::CLcad^ oCad;
 	articleMap^ oArticle;
 public:
 	articleServices(void);

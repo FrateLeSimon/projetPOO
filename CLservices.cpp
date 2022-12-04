@@ -3,7 +3,7 @@
 
 clientServices::clientServices()
 {
-	this->oCad = gcnew CLcad();
+	this->oCad = gcnew NS_Comp_Data::CLcad();
 	this->oClient = gcnew clientMap();
 }
 System::Data::DataSet^ clientServices::selectionnerTousLesClients(System::String^ dataTableName)
@@ -72,7 +72,7 @@ void clientServices::supprimerUnClient(int id)
 
 personnelServices::personnelServices()
 {
-	this->oCad = gcnew CLcad();
+	this->oCad = gcnew NS_Comp_Data::CLcad();
 	this->oPersonnel = gcnew personnelMap();
 }
 System::Data::DataSet^ personnelServices::selectionnerTousLesPersonnels(System::String^ dataTableName)
@@ -135,7 +135,7 @@ void personnelServices::supprimerUnPersonnel(int id)
 
 commandeServices::commandeServices()
 {
-	this->oCad = gcnew CLcad();
+	this->oCad = gcnew NS_Comp_Data::CLcad();
 	this->oCommande = gcnew commandeMap();
 }
 System::Data::DataSet^ commandeServices::selectionnerToutesLesCommandes(System::String^ dataTableName)
@@ -188,7 +188,7 @@ void commandeServices::supprimerUneCommande(int id)
 
 articleServices::articleServices()
 {
-	this->oCad = gcnew CLcad();
+	this->oCad = gcnew NS_Comp_Data::CLcad();
 	this->oArticle = gcnew articleMap();
 }
 System::Data::DataSet^ articleServices::selectionnerTousLesArticles(System::String^ dataTableName)

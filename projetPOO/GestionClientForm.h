@@ -1,6 +1,5 @@
 #pragma once
-#include "..\CAD.cpp"
-#include "..\CLservices.h"
+
 
 namespace projetPOO {
 
