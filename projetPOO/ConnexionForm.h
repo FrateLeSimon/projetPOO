@@ -1,6 +1,4 @@
-
 #include "PersonnelForm.h"
-
 
 namespace projetPOO {
 

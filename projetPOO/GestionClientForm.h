@@ -1,5 +1,6 @@
 #pragma once
-
+#include "..\CLservices.cpp"
+#include "..\tools.h"
 
 namespace projetPOO {
 
