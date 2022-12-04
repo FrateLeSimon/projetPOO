@@ -1,0 +1,2 @@
+#include "GestionStockForm.h"
+

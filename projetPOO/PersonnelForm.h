@@ -1,4 +1,6 @@
 #include "GestionClientForm.h"
+#include "GestionStockForm.h"
+#include "GestionCommandeForm.h"
 
 #pragma once
 
@@ -146,22 +148,16 @@ namespace projetPOO {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void B_GestionClient_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("Bouton client",
-			"YES", MessageBoxButtons::OK);
 		GestionClientForm^ maGestionClientForm = gcnew GestionClientForm();
 		maGestionClientForm->Show();
 	}
 	private: System::Void B_GestionStock_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("Bouton stock",
-			"YES", MessageBoxButtons::OK);
-		//PersonnelForm^ maPersonnelForm = gcnew PersonnelForm();
-		//maPersonnelForm->Show();
+		GestionStockForm^ maGestionStockForm = gcnew GestionStockForm();
+		maGestionStockForm->Show();
 	}
 	private: System::Void B_GestionCommande_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("Bouton commande",
-			"YES", MessageBoxButtons::OK);
-		//PersonnelForm^ maPersonnelForm = gcnew PersonnelForm();
-		//maPersonnelForm->Show();
+		GestionCommandeForm^ maGestionCommandeForm = gcnew GestionCommandeForm();
+		maGestionCommandeForm->Show();
 	}
 	private: System::Void GB_personnel_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}

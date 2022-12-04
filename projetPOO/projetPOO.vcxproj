@@ -30,6 +30,12 @@
     <ClInclude Include="GestionClientForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="GestionCommandeForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GestionStockForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PersonnelForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -41,6 +47,8 @@
     <ClCompile Include="..\CAD.cpp" />
     <ClCompile Include="ConnexionForm.cpp" />
     <ClCompile Include="GestionClientForm.cpp" />
+    <ClCompile Include="GestionCommandeForm.cpp" />
+    <ClCompile Include="GestionStockForm.cpp" />
     <ClCompile Include="PersonnelForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +64,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionClientForm.resx">
       <DependentUpon>GestionClientForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionCommandeForm.resx">
+      <DependentUpon>GestionCommandeForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionStockForm.resx">
+      <DependentUpon>GestionStockForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonnelForm.resx">
       <DependentUpon>PersonnelForm.h</DependentUpon>
