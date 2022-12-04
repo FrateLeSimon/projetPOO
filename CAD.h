@@ -15,4 +15,3 @@
 		System::Data::DataSet^ getRows(System::String^, System::String^);
 		void actionRows(System::String^);
 	};
-}

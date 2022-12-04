@@ -48,6 +48,7 @@ public:
 	System::Int32^ getCode_Postal_Facturation();
 	System::String^ getDate_Naissance();
 	System::String^ getDate_Premier_Achat();
+
 	System::String^ Insert();
 	System::String^ Select();
 	System::String^ Update();
@@ -89,6 +90,7 @@ public:
 	System::Int32^ getCodePostal();
 	System::String^ getDate_Embauche();
 	System::Boolean^ getAdmin();
+
 	System::String^ Insert();
 	System::String^ Select();
 	System::String^ Update();
@@ -120,6 +122,7 @@ public:
 	System::String^ getDate_Emission();
 	System::Int32^ getMontant_HT();
 	System::Int32^ getMontant_TTC();
+
 	System::String^ Insert();
 	System::String^ Select();
 	System::String^ Update();
@@ -155,6 +158,7 @@ public:
 	System::Int32^ getPrix_Article();
 	System::Int32^ getSeuil();
 	System::String^ getCouleur();
+
 	System::String^ Insert();
 	System::String^ Select();
 	System::String^ Update();
