@@ -85,6 +85,10 @@ namespace projetPOO {
 	private: System::Windows::Forms::Button^ B_insert;
 	private: System::Windows::Forms::Button^ B_update;
 	private: System::Windows::Forms::Button^ B_delete;
+	private: System::Windows::Forms::MonthCalendar^ MC_1achat;
+
+	private: System::Windows::Forms::Label^ L_1achat;
+
 
 
 
@@ -112,6 +116,8 @@ namespace projetPOO {
 			this->TB_NomClient = (gcnew System::Windows::Forms::TextBox());
 			this->DGV_BDD = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_client = (gcnew System::Windows::Forms::GroupBox());
+			this->MC_1achat = (gcnew System::Windows::Forms::MonthCalendar());
+			this->L_1achat = (gcnew System::Windows::Forms::Label());
 			this->GB_Afacturation = (gcnew System::Windows::Forms::GroupBox());
 			this->TB_NumRueF = (gcnew System::Windows::Forms::TextBox());
 			this->CB_CpostalF = (gcnew System::Windows::Forms::ComboBox());
@@ -155,12 +161,14 @@ namespace projetPOO {
 			this->DGV_BDD->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->DGV_BDD->Location = System::Drawing::Point(12, 12);
 			this->DGV_BDD->Name = L"DGV_BDD";
-			this->DGV_BDD->Size = System::Drawing::Size(880, 150);
+			this->DGV_BDD->Size = System::Drawing::Size(1058, 150);
 			this->DGV_BDD->TabIndex = 5;
 			this->DGV_BDD->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionClientForm::dataGridView1_CellContentClick);
 			// 
 			// GB_client
 			// 
+			this->GB_client->Controls->Add(this->MC_1achat);
+			this->GB_client->Controls->Add(this->L_1achat);
 			this->GB_client->Controls->Add(this->GB_Afacturation);
 			this->GB_client->Controls->Add(this->GB_Alivraison);
 			this->GB_client->Controls->Add(this->L_DdNaissance);
@@ -173,11 +181,30 @@ namespace projetPOO {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->GB_client->Location = System::Drawing::Point(221, 168);
 			this->GB_client->Name = L"GB_client";
-			this->GB_client->Size = System::Drawing::Size(671, 300);
+			this->GB_client->Size = System::Drawing::Size(849, 300);
 			this->GB_client->TabIndex = 6;
 			this->GB_client->TabStop = false;
 			this->GB_client->Text = L"Client";
 			this->GB_client->Enter += gcnew System::EventHandler(this, &GestionClientForm::GB_client_Enter);
+			// 
+			// MC_1achat
+			// 
+			this->MC_1achat->Location = System::Drawing::Point(261, 126);
+			this->MC_1achat->Name = L"MC_1achat";
+			this->MC_1achat->TabIndex = 21;
+			this->MC_1achat->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::MC_1achat_DateChanged);
+			// 
+			// L_1achat
+			// 
+			this->L_1achat->AutoSize = true;
+			this->L_1achat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->L_1achat->Location = System::Drawing::Point(278, 106);
+			this->L_1achat->Name = L"L_1achat";
+			this->L_1achat->Size = System::Drawing::Size(193, 16);
+			this->L_1achat->TabIndex = 20;
+			this->L_1achat->Text = L"Date du premier achat du Client";
+			this->L_1achat->Click += gcnew System::EventHandler(this, &GestionClientForm::L_1achat_Click);
 			// 
 			// GB_Afacturation
 			// 
@@ -187,9 +214,9 @@ namespace projetPOO {
 			this->GB_Afacturation->Controls->Add(this->CB_NvilleF);
 			this->GB_Afacturation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GB_Afacturation->Location = System::Drawing::Point(254, 126);
+			this->GB_Afacturation->Location = System::Drawing::Point(558, 12);
 			this->GB_Afacturation->Name = L"GB_Afacturation";
-			this->GB_Afacturation->Size = System::Drawing::Size(406, 86);
+			this->GB_Afacturation->Size = System::Drawing::Size(281, 86);
 			this->GB_Afacturation->TabIndex = 19;
 			this->GB_Afacturation->TabStop = false;
 			this->GB_Afacturation->Text = L"Adresse de facturation du Client";
@@ -202,7 +229,7 @@ namespace projetPOO {
 			this->TB_NumRueF->ForeColor = System::Drawing::SystemColors::InactiveCaption;
 			this->TB_NumRueF->Location = System::Drawing::Point(6, 23);
 			this->TB_NumRueF->Name = L"TB_NumRueF";
-			this->TB_NumRueF->Size = System::Drawing::Size(192, 22);
+			this->TB_NumRueF->Size = System::Drawing::Size(148, 22);
 			this->TB_NumRueF->TabIndex = 13;
 			this->TB_NumRueF->Text = L"N° de la rue";
 			this->TB_NumRueF->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NumRueF_TextChanged);
@@ -213,9 +240,9 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->CB_CpostalF->ForeColor = System::Drawing::SystemColors::InactiveCaption;
 			this->CB_CpostalF->FormattingEnabled = true;
-			this->CB_CpostalF->Location = System::Drawing::Point(204, 51);
+			this->CB_CpostalF->Location = System::Drawing::Point(160, 51);
 			this->CB_CpostalF->Name = L"CB_CpostalF";
-			this->CB_CpostalF->Size = System::Drawing::Size(192, 24);
+			this->CB_CpostalF->Size = System::Drawing::Size(111, 24);
 			this->CB_CpostalF->TabIndex = 17;
 			this->CB_CpostalF->Text = L"Code postal";
 			this->CB_CpostalF->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_CpostalF_SelectedIndexChanged);
@@ -225,9 +252,9 @@ namespace projetPOO {
 			this->TB_NrueF->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TB_NrueF->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->TB_NrueF->Location = System::Drawing::Point(204, 23);
+			this->TB_NrueF->Location = System::Drawing::Point(160, 23);
 			this->TB_NrueF->Name = L"TB_NrueF";
-			this->TB_NrueF->Size = System::Drawing::Size(192, 22);
+			this->TB_NrueF->Size = System::Drawing::Size(111, 22);
 			this->TB_NrueF->TabIndex = 15;
 			this->TB_NrueF->Text = L"Nom de la rue";
 			this->TB_NrueF->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NrueF_TextChanged);
@@ -240,7 +267,7 @@ namespace projetPOO {
 			this->CB_NvilleF->FormattingEnabled = true;
 			this->CB_NvilleF->Location = System::Drawing::Point(6, 51);
 			this->CB_NvilleF->Name = L"CB_NvilleF";
-			this->CB_NvilleF->Size = System::Drawing::Size(192, 24);
+			this->CB_NvilleF->Size = System::Drawing::Size(148, 24);
 			this->CB_NvilleF->TabIndex = 16;
 			this->CB_NvilleF->Text = L"Nom de la ville";
 			this->CB_NvilleF->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_NvilleF_SelectedIndexChanged);
@@ -253,9 +280,9 @@ namespace projetPOO {
 			this->GB_Alivraison->Controls->Add(this->CB_NVilleL);
 			this->GB_Alivraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GB_Alivraison->Location = System::Drawing::Point(254, 21);
+			this->GB_Alivraison->Location = System::Drawing::Point(261, 12);
 			this->GB_Alivraison->Name = L"GB_Alivraison";
-			this->GB_Alivraison->Size = System::Drawing::Size(406, 86);
+			this->GB_Alivraison->Size = System::Drawing::Size(281, 86);
 			this->GB_Alivraison->TabIndex = 18;
 			this->GB_Alivraison->TabStop = false;
 			this->GB_Alivraison->Text = L"Adresse de livraison du Client";
@@ -268,7 +295,7 @@ namespace projetPOO {
 			this->TB_NumRueL->ForeColor = System::Drawing::SystemColors::InactiveCaption;
 			this->TB_NumRueL->Location = System::Drawing::Point(6, 23);
 			this->TB_NumRueL->Name = L"TB_NumRueL";
-			this->TB_NumRueL->Size = System::Drawing::Size(192, 22);
+			this->TB_NumRueL->Size = System::Drawing::Size(148, 22);
 			this->TB_NumRueL->TabIndex = 13;
 			this->TB_NumRueL->Text = L"N° de la rue";
 			this->TB_NumRueL->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NumRueL_TextChanged);
@@ -279,9 +306,9 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->CB_CpostalL->ForeColor = System::Drawing::SystemColors::InactiveCaption;
 			this->CB_CpostalL->FormattingEnabled = true;
-			this->CB_CpostalL->Location = System::Drawing::Point(204, 51);
+			this->CB_CpostalL->Location = System::Drawing::Point(160, 51);
 			this->CB_CpostalL->Name = L"CB_CpostalL";
-			this->CB_CpostalL->Size = System::Drawing::Size(192, 24);
+			this->CB_CpostalL->Size = System::Drawing::Size(111, 24);
 			this->CB_CpostalL->TabIndex = 17;
 			this->CB_CpostalL->Text = L"Code postal";
 			this->CB_CpostalL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_CpostalL_SelectedIndexChanged);
@@ -291,9 +318,9 @@ namespace projetPOO {
 			this->TB_NrueL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TB_NrueL->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->TB_NrueL->Location = System::Drawing::Point(204, 23);
+			this->TB_NrueL->Location = System::Drawing::Point(160, 23);
 			this->TB_NrueL->Name = L"TB_NrueL";
-			this->TB_NrueL->Size = System::Drawing::Size(192, 22);
+			this->TB_NrueL->Size = System::Drawing::Size(111, 22);
 			this->TB_NrueL->TabIndex = 15;
 			this->TB_NrueL->Text = L"Nom de la rue";
 			this->TB_NrueL->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NrueL_TextChanged);
@@ -306,7 +333,7 @@ namespace projetPOO {
 			this->CB_NVilleL->FormattingEnabled = true;
 			this->CB_NVilleL->Location = System::Drawing::Point(6, 51);
 			this->CB_NVilleL->Name = L"CB_NVilleL";
-			this->CB_NVilleL->Size = System::Drawing::Size(192, 24);
+			this->CB_NVilleL->Size = System::Drawing::Size(148, 24);
 			this->CB_NVilleL->TabIndex = 16;
 			this->CB_NVilleL->Text = L"Nom de la ville";
 			this->CB_NVilleL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_NvilleL_SelectedIndexChanged);
@@ -416,7 +443,7 @@ namespace projetPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(904, 479);
+			this->ClientSize = System::Drawing::Size(1081, 479);
 			this->Controls->Add(this->B_delete);
 			this->Controls->Add(this->B_update);
 			this->Controls->Add(this->B_insert);
@@ -483,6 +510,10 @@ namespace projetPOO {
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void L_1achat_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void MC_1achat_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
 	}
 };
 }
