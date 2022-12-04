@@ -27,9 +27,6 @@
     <ClInclude Include="ConnexionForm.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="..\CL.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="..\CLmap.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -47,9 +44,6 @@
     <ClCompile Include="..\main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\Mappage.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="ConnexionForm.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -63,6 +57,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="..\CLmap.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CLservices.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

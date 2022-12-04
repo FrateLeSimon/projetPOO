@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CAD.h" />
-    <ClInclude Include="..\CL.h" />
     <ClInclude Include="..\CLmap.h" />
     <ClInclude Include="..\CLservices.h" />
     <ClInclude Include="..\Mappage.h" />
@@ -37,8 +36,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\CLmap.cpp" />
+    <ClCompile Include="..\CLservices.cpp" />
     <ClCompile Include="..\main.cpp" />
-    <ClCompile Include="..\Mappage.cpp" />
     <ClCompile Include="..\CAD.cpp" />
     <ClCompile Include="ConnexionForm.cpp" />
     <ClCompile Include="GestionClientForm.cpp" />

@@ -1,0 +1,185 @@
+#include "CLservices.h"
+
+
+clientServices::clientServices()
+{
+	this->oCad = gcnew CLcad();
+	this->oClient = gcnew clientMap();
+}
+System::Data::DataSet^ clientServices::selectionnerTousLesClients(System::String^ dataTableName)
+{
+	System::String^ sql;
+
+	sql = this->oClient->Select();
+	return this->oCad->getRows(sql, dataTableName);
+}
+void clientServices::ajouterUnClient(System::String^ v_nom, System::String^ v_prenom, System::String^ num_r_l, System::String^ num_r_f, System::String^ nom_r_l,
+	System::String^ nom_r_f, System::String^ ville_l, System::String^ ville_f, System::Int32^ code_post_l, System::Int32^ code_post_f, System::String^ date_n, System::String^ date_p_a)
+{
+	System::String^ sql;
+
+	this->oClient->setNom(v_nom);
+	this->oClient->setPrenom(v_prenom);
+	this->oClient->setNum_Rue_Livraison(num_r_l);
+	this->oClient->setNum_Rue_Facturation(num_r_f);
+	this->oClient->setNom_Rue_Livraison(nom_r_l);
+	this->oClient->setNom_Rue_Facturation(nom_r_f);
+	this->oClient->setVille_Livraison(ville_l);
+	this->oClient->setVille_Facturation(ville_f);
+	this->oClient->setCode_Postal_Livraison(code_post_l);
+	this->oClient->setCode_Postal_Facturation(code_post_f);
+	this->oClient->setDate_Naissance(date_n);
+	this->oClient->setDate_Premier_Achat(date_p_a);
+	
+	sql = this->oClient->Insert();
+
+	this->oCad->actionRows(sql);
+}
+void clientServices::modifierUnClient(int id,System::String^ v_nom, System::String^ v_prenom, System::String^ num_r_l, System::String^ num_r_f, System::String^ nom_r_l,
+	System::String^ nom_r_f, System::String^ ville_l, System::String^ ville_f, System::Int32^ code_post_l, System::Int32^ code_post_f, System::String^ date_n, System::String^ date_p_a)
+{
+	System::String^ sql;
+
+	this->oClient->setNom(v_nom);
+	this->oClient->setPrenom(v_prenom);
+	this->oClient->setNum_Rue_Livraison(num_r_l);
+	this->oClient->setNum_Rue_Facturation(num_r_f);
+	this->oClient->setNom_Rue_Livraison(nom_r_l);
+	this->oClient->setNom_Rue_Facturation(nom_r_f);
+	this->oClient->setVille_Livraison(ville_l);
+	this->oClient->setVille_Facturation(ville_f);
+	this->oClient->setCode_Postal_Livraison(code_post_l);
+	this->oClient->setCode_Postal_Facturation(code_post_f);
+	this->oClient->setDate_Naissance(date_n);
+	this->oClient->setDate_Premier_Achat(date_p_a);
+	
+	this->oClient->setId_Client(Convert::ToInt32(id));
+	sql = this->oClient->Update();
+
+	this->oCad->actionRows(sql);
+}
+void clientServices::supprimerUnClient(int id)
+{
+	System::String^ sql;
+
+	this->oClient->setId_Client(Convert::ToInt32(id));
+	sql = this->oClient->Delete();
+
+	this->oCad->actionRows(sql);
+}
+
+
+
+personnelServices::personnelServices()
+{
+	this->oCad = gcnew CLcad();
+	this->oPersonnel = gcnew personnelMap();
+}
+System::Data::DataSet^ personnelServices::selectionnerTousLesPersonnels(System::String^ dataTableName)
+{
+	System::String^ sql;
+
+	sql = this->oPersonnel->Select();
+	return this->oCad->getRows(sql, dataTableName);
+}
+void personnelServices::ajouterUnPersonnel(System::String^ v_nom, System::String^ v_prenom, System::Int32^ id_sup, System::String^ num_r, 
+	System::String^ nom_r, System::String^ v_ville, System::Int32^ code_p, System::String^ date_e, System::Boolean^ v_admin)
+{
+	System::String^ sql;
+
+	this->oPersonnel->setNom(v_nom);
+	this->oPersonnel->setPrenom(v_prenom);
+	this->oPersonnel->setId_Superieur(id_sup);
+	this->oPersonnel->setNum_Rue(num_r);
+	this->oPersonnel->setNom_Rue(nom_r);
+	this->oPersonnel->setVille(v_ville);
+	this->oPersonnel->setCode_Postal(code_p);
+	this->oPersonnel->setDate_Embauche(date_e);
+	this->oPersonnel->setAdmin(v_admin);
+	
+	sql = this->oPersonnel->Insert();
+
+	this->oCad->actionRows(sql);
+}
+void personnelServices::modifierUnPersonnel(int id, System::String^ v_nom, System::String^ v_prenom, System::Int32^ id_sup, System::String^ num_r,
+	System::String^ nom_r, System::String^ v_ville, System::Int32^ code_p, System::String^ date_e, System::Boolean^ v_admin)
+{
+	System::String^ sql;
+
+	this->oPersonnel->setNom(v_nom);
+	this->oPersonnel->setPrenom(v_prenom);
+	this->oPersonnel->setId_Superieur(id_sup);
+	this->oPersonnel->setNum_Rue(num_r);
+	this->oPersonnel->setNom_Rue(nom_r);
+	this->oPersonnel->setVille(v_ville);
+	this->oPersonnel->setCode_Postal(code_p);
+	this->oPersonnel->setDate_Embauche(date_e);
+	this->oPersonnel->setAdmin(v_admin);
+
+	this->oPersonnel->setId_Personnel(Convert::ToInt32(id));
+	sql = this->oPersonnel->Update();
+
+	this->oCad->actionRows(sql);
+}
+void personnelServices::supprimerUnPersonnel(int id)
+{
+	System::String^ sql;
+
+	this->oPersonnel->setId_Personnel(Convert::ToInt32(id));
+	sql = this->oPersonnel->Delete();
+
+	this->oCad->actionRows(sql);
+}
+
+
+
+commandeServices::commandeServices()
+{
+	this->oCad = gcnew CLcad();
+	this->oCommande = gcnew commandeMap();
+}
+System::Data::DataSet^ commandeServices::selectionnerToutesLesCommandes(System::String^ dataTableName)
+{
+	System::String^ sql;
+
+	sql = this->oCommande->Select();
+	return this->oCad->getRows(sql, dataTableName);
+}
+void commandeServices::ajouterUneCommande(System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::Int32^ v_montant_ht, System::Int32^ v_montant_ttc)
+{
+	System::String^ sql;
+
+	this->oCommande->setReference(v_ref);
+	this->oCommande->setDate_Livraison(v_date_liv);
+	this->oCommande->setDate_Emission(v_date_em);
+	this->oCommande->setMontant_HT(v_montant_ht);
+	this->oCommande->setMontant_TTC(v_montant_ttc);
+	
+	sql = this->oCommande->Insert();
+
+	this->oCad->actionRows(sql);
+}
+void commandeServices::modifierUneCommande(int id, System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::Int32^ v_montant_ht, System::Int32^ v_montant_ttc)
+{
+	System::String^ sql;
+
+	this->oCommande->setReference(v_ref);
+	this->oCommande->setDate_Livraison(v_date_liv);
+	this->oCommande->setDate_Emission(v_date_em);
+	this->oCommande->setMontant_HT(v_montant_ht);
+	this->oCommande->setMontant_TTC(v_montant_ttc);
+
+	this->oCommande->setId_Commande(Convert::ToInt32(id));
+	sql = this->oCommande->Update();
+
+	this->oCad->actionRows(sql);
+}
+void commandeServices::supprimerUneCommande(int id)
+{
+	System::String^ sql;
+
+	this->oCommande->setId_Commande(Convert::ToInt32(id));
+	sql = this->oCommande->Delete();
+
+	this->oCad->actionRows(sql);
+}
