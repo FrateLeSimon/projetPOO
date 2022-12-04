@@ -193,7 +193,7 @@ namespace projetPOO {
 			this->GB_Afacturation->TabIndex = 19;
 			this->GB_Afacturation->TabStop = false;
 			this->GB_Afacturation->Text = L"Adresse de facturation du Client";
-			this->GB_Afacturation->Enter += gcnew System::EventHandler(this, &GestionClientForm::groupBox2_Enter);
+			this->GB_Afacturation->Enter += gcnew System::EventHandler(this, &GestionClientForm::GB_Afacturation_Enter);
 			// 
 			// TB_NumRueF
 			// 
@@ -205,7 +205,7 @@ namespace projetPOO {
 			this->TB_NumRueF->Size = System::Drawing::Size(192, 22);
 			this->TB_NumRueF->TabIndex = 13;
 			this->TB_NumRueF->Text = L"N° de la rue";
-			this->TB_NumRueF->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox3_TextChanged);
+			this->TB_NumRueF->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NumRueF_TextChanged);
 			// 
 			// CB_CpostalF
 			// 
@@ -218,7 +218,7 @@ namespace projetPOO {
 			this->CB_CpostalF->Size = System::Drawing::Size(192, 24);
 			this->CB_CpostalF->TabIndex = 17;
 			this->CB_CpostalF->Text = L"Code postal";
-			this->CB_CpostalF->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox3_SelectedIndexChanged);
+			this->CB_CpostalF->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_CpostalF_SelectedIndexChanged);
 			// 
 			// TB_NrueF
 			// 
@@ -230,7 +230,7 @@ namespace projetPOO {
 			this->TB_NrueF->Size = System::Drawing::Size(192, 22);
 			this->TB_NrueF->TabIndex = 15;
 			this->TB_NrueF->Text = L"Nom de la rue";
-			this->TB_NrueF->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox4_TextChanged);
+			this->TB_NrueF->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NrueF_TextChanged);
 			// 
 			// CB_NvilleF
 			// 
@@ -243,7 +243,7 @@ namespace projetPOO {
 			this->CB_NvilleF->Size = System::Drawing::Size(192, 24);
 			this->CB_NvilleF->TabIndex = 16;
 			this->CB_NvilleF->Text = L"Nom de la ville";
-			this->CB_NvilleF->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox4_SelectedIndexChanged);
+			this->CB_NvilleF->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_NvilleF_SelectedIndexChanged);
 			// 
 			// GB_Alivraison
 			// 
@@ -259,7 +259,7 @@ namespace projetPOO {
 			this->GB_Alivraison->TabIndex = 18;
 			this->GB_Alivraison->TabStop = false;
 			this->GB_Alivraison->Text = L"Adresse de livraison du Client";
-			this->GB_Alivraison->Enter += gcnew System::EventHandler(this, &GestionClientForm::groupBox1_Enter);
+			this->GB_Alivraison->Enter += gcnew System::EventHandler(this, &GestionClientForm::GB_Alivraison_Enter);
 			// 
 			// TB_NumRueL
 			// 
@@ -271,7 +271,7 @@ namespace projetPOO {
 			this->TB_NumRueL->Size = System::Drawing::Size(192, 22);
 			this->TB_NumRueL->TabIndex = 13;
 			this->TB_NumRueL->Text = L"N° de la rue";
-			this->TB_NumRueL->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox1_TextChanged);
+			this->TB_NumRueL->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NumRueL_TextChanged);
 			// 
 			// CB_CpostalL
 			// 
@@ -284,7 +284,7 @@ namespace projetPOO {
 			this->CB_CpostalL->Size = System::Drawing::Size(192, 24);
 			this->CB_CpostalL->TabIndex = 17;
 			this->CB_CpostalL->Text = L"Code postal";
-			this->CB_CpostalL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox2_SelectedIndexChanged);
+			this->CB_CpostalL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_CpostalL_SelectedIndexChanged);
 			// 
 			// TB_NrueL
 			// 
@@ -296,7 +296,7 @@ namespace projetPOO {
 			this->TB_NrueL->Size = System::Drawing::Size(192, 22);
 			this->TB_NrueL->TabIndex = 15;
 			this->TB_NrueL->Text = L"Nom de la rue";
-			this->TB_NrueL->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox2_TextChanged);
+			this->TB_NrueL->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NrueL_TextChanged);
 			// 
 			// CB_NVilleL
 			// 
@@ -309,7 +309,7 @@ namespace projetPOO {
 			this->CB_NVilleL->Size = System::Drawing::Size(192, 24);
 			this->CB_NVilleL->TabIndex = 16;
 			this->CB_NVilleL->Text = L"Nom de la ville";
-			this->CB_NVilleL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox1_SelectedIndexChanged);
+			this->CB_NVilleL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_NvilleL_SelectedIndexChanged);
 			// 
 			// L_DdNaissance
 			// 
@@ -321,14 +321,14 @@ namespace projetPOO {
 			this->L_DdNaissance->Size = System::Drawing::Size(156, 16);
 			this->L_DdNaissance->TabIndex = 12;
 			this->L_DdNaissance->Text = L"Date de naissance Client";
-			this->L_DdNaissance->Click += gcnew System::EventHandler(this, &GestionClientForm::label1_Click);
+			this->L_DdNaissance->Click += gcnew System::EventHandler(this, &GestionClientForm::L_DdNaissance_Click);
 			// 
 			// MC_DdNaissance
 			// 
 			this->MC_DdNaissance->Location = System::Drawing::Point(3, 126);
 			this->MC_DdNaissance->Name = L"MC_DdNaissance";
 			this->MC_DdNaissance->TabIndex = 11;
-			this->MC_DdNaissance->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::monthCalendar1_DateChanged);
+			this->MC_DdNaissance->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::MC_DdNaissance_DateChanged);
 			// 
 			// NUD_idClient
 			// 
@@ -374,7 +374,7 @@ namespace projetPOO {
 			this->B_load->TabIndex = 7;
 			this->B_load->Text = L"Enregistrer";
 			this->B_load->UseVisualStyleBackColor = true;
-			this->B_load->Click += gcnew System::EventHandler(this, &GestionClientForm::button1_Click);
+			this->B_load->Click += gcnew System::EventHandler(this, &GestionClientForm::B_load_Click);
 			// 
 			// B_insert
 			// 
@@ -386,7 +386,7 @@ namespace projetPOO {
 			this->B_insert->TabIndex = 8;
 			this->B_insert->Text = L"Insérer";
 			this->B_insert->UseVisualStyleBackColor = true;
-			this->B_insert->Click += gcnew System::EventHandler(this, &GestionClientForm::button2_Click);
+			this->B_insert->Click += gcnew System::EventHandler(this, &GestionClientForm::B_insert_Click);
 			// 
 			// B_update
 			// 
@@ -398,7 +398,7 @@ namespace projetPOO {
 			this->B_update->TabIndex = 9;
 			this->B_update->Text = L"Mise à jour";
 			this->B_update->UseVisualStyleBackColor = true;
-			this->B_update->Click += gcnew System::EventHandler(this, &GestionClientForm::button3_Click);
+			this->B_update->Click += gcnew System::EventHandler(this, &GestionClientForm::B_update_Click);
 			// 
 			// B_delete
 			// 
@@ -410,7 +410,7 @@ namespace projetPOO {
 			this->B_delete->TabIndex = 10;
 			this->B_delete->Text = L"Supprimer";
 			this->B_delete->UseVisualStyleBackColor = true;
-			this->B_delete->Click += gcnew System::EventHandler(this, &GestionClientForm::button4_Click);
+			this->B_delete->Click += gcnew System::EventHandler(this, &GestionClientForm::B_delete_Click);
 			// 
 			// GestionClientForm
 			// 
@@ -452,37 +452,37 @@ namespace projetPOO {
 	}
 	private: System::Void TB_PrenomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void L_DdNaissance_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void monthCalendar1_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
+	private: System::Void MC_DdNaissance_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
 	}
-	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void GB_Alivraison_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void TB_NumRueL_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void TB_NrueL_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void CB_NvilleL_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void CB_CpostalL_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void groupBox2_Enter(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void GB_Afacturation_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void TB_NumRueF_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void TB_NrueF_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void comboBox4_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void CB_NvilleF_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void comboBox3_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void CB_CpostalF_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void B_load_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }
