@@ -34,6 +34,8 @@ namespace projetPOO {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,21 +50,36 @@ namespace projetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(13, 13);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(978, 150);
+			this->dataGridView1->TabIndex = 0;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionStockForm::dataGridView1_CellContentClick);
 			// 
 			// GestionStockForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->ClientSize = System::Drawing::Size(1003, 365);
+			this->Controls->Add(this->dataGridView1);
 			this->Name = L"GestionStockForm";
 			this->Text = L"GestionStockForm";
 			this->Load += gcnew System::EventHandler(this, &GestionStockForm::GestionStockForm_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void GestionStockForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 	};
 }
