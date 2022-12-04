@@ -1,5 +1,5 @@
 #pragma once
-#include "..\tools.h"
+//#include "..\tools.h"
 
 namespace projetPOO {
 

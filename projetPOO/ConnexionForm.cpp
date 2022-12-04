@@ -1,8 +1,9 @@
 #include "ConnexionForm.h"
 
 
-//using namespace System;
+using namespace System;
 using namespace System::Windows::Forms;
+
 [STAThreadAttribute]
 int __clrcall WinMain(array<String^>^ args)
 {

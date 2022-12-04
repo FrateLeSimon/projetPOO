@@ -1,5 +1,5 @@
 #include "CLservices.h"
-
+//#include "tools.h"
 
 clientServices::clientServices()
 {
@@ -53,7 +53,7 @@ void clientServices::modifierUnClient(int id,System::String^ v_nom, System::Stri
 	this->oClient->setDate_Naissance(date_n);
 	this->oClient->setDate_Premier_Achat(date_p_a);
 	
-	this->oClient->setId_Client(Convert::ToInt32(id));
+	this->oClient->setId_Client(System::Convert::ToInt32(id));
 	sql = this->oClient->Update();
 
 	this->oCad->actionRows(sql);
@@ -62,7 +62,7 @@ void clientServices::supprimerUnClient(int id)
 {
 	System::String^ sql;
 
-	this->oClient->setId_Client(Convert::ToInt32(id));
+	this->oClient->setId_Client(System::Convert::ToInt32(id));
 	sql = this->oClient->Delete();
 
 	this->oCad->actionRows(sql);
@@ -116,7 +116,7 @@ void personnelServices::modifierUnPersonnel(int id, System::String^ v_nom, Syste
 	this->oPersonnel->setDate_Embauche(date_e);
 	this->oPersonnel->setAdmin(v_admin);
 
-	this->oPersonnel->setId_Personnel(Convert::ToInt32(id));
+	this->oPersonnel->setId_Personnel(System::Convert::ToInt32(id));
 	sql = this->oPersonnel->Update();
 
 	this->oCad->actionRows(sql);
@@ -125,7 +125,7 @@ void personnelServices::supprimerUnPersonnel(int id)
 {
 	System::String^ sql;
 
-	this->oPersonnel->setId_Personnel(Convert::ToInt32(id));
+	this->oPersonnel->setId_Personnel(System::Convert::ToInt32(id));
 	sql = this->oPersonnel->Delete();
 
 	this->oCad->actionRows(sql);
@@ -169,7 +169,7 @@ void commandeServices::modifierUneCommande(int id, System::String^ v_ref, System
 	this->oCommande->setMontant_HT(v_montant_ht);
 	this->oCommande->setMontant_TTC(v_montant_ttc);
 
-	this->oCommande->setId_Commande(Convert::ToInt32(id));
+	this->oCommande->setId_Commande(System::Convert::ToInt32(id));
 	sql = this->oCommande->Update();
 
 	this->oCad->actionRows(sql);
@@ -178,7 +178,7 @@ void commandeServices::supprimerUneCommande(int id)
 {
 	System::String^ sql;
 
-	this->oCommande->setId_Commande(Convert::ToInt32(id));
+	this->oCommande->setId_Commande(System::Convert::ToInt32(id));
 	sql = this->oCommande->Delete();
 
 	this->oCad->actionRows(sql);
@@ -222,7 +222,7 @@ void articleServices::modifierUnArticle(int id, System::String^ v_nom_art, Syste
 	this->oArticle->setSeuil(v_seuil);
 	this->oArticle->setCouleur(v_couleur);
 
-	this->oArticle->setId_Article(Convert::ToInt32(id));
+	this->oArticle->setId_Article(System::Convert::ToInt32(id));
 	sql = this->oArticle->Update();
 
 	this->oCad->actionRows(sql);
@@ -231,7 +231,7 @@ void articleServices::supprimerUnArticle(int id)
 {
 	System::String^ sql;
 
-	this->oArticle->setId_Article(Convert::ToInt32(id));
+	this->oArticle->setId_Article(System::Convert::ToInt32(id));
 	sql = this->oArticle->Delete();
 
 	this->oCad->actionRows(sql);

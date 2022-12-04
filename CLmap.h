@@ -1,8 +1,5 @@
 #include "tools.h"
 
-
-
-
 ref class clientMap
 {
 private:
