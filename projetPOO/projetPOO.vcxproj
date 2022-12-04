@@ -22,7 +22,6 @@
     <ClInclude Include="..\CAD.h" />
     <ClInclude Include="..\CLmap.h" />
     <ClInclude Include="..\CLservices.h" />
-    <ClInclude Include="..\Mappage.h" />
     <ClInclude Include="..\tools.h" />
     <ClInclude Include="ConnexionForm.h">
       <FileType>CppForm</FileType>

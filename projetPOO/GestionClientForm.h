@@ -1,4 +1,6 @@
 #pragma once
+#include "..\CAD.cpp"
+#include "..\CLservices.h"
 
 namespace projetPOO {
 
@@ -97,7 +99,8 @@ namespace projetPOO {
 
 
 
-
+	private: clientServices^ oSvc;
+	private: System::Data::DataSet^ oDs;
 
 	protected:
 
@@ -522,6 +525,10 @@ namespace projetPOO {
 	private: System::Void CB_CpostalF_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void B_load_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->DGV_BDD->Refresh();
+		this->oDs = this->oSvc->selectionnerTousLesClients("Rsl");
+		this->DGV_BDD->DataSource = this->oDs;
+		this->DGV_BDD->DataMember = "Rsl";
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
