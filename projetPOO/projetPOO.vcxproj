@@ -36,13 +36,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Article.cpp" />
-    <ClCompile Include="..\Client.cpp" />
-    <ClCompile Include="..\Commande.cpp" />
-    <ClCompile Include="..\Facture.cpp" />
+    <ClCompile Include="..\CLmap.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\Mappage.cpp" />
-    <ClCompile Include="..\Personnel.cpp" />
     <ClCompile Include="..\CAD.cpp" />
     <ClCompile Include="ConnexionForm.cpp" />
     <ClCompile Include="GestionClientForm.cpp" />

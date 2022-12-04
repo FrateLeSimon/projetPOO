@@ -6,6 +6,8 @@
 ref class clientMap
 {
 private:
+	System::String^ sSql;
+	
 	int id_client;
 	System::String^ nom;
 	System::String^ prenom;
@@ -58,6 +60,8 @@ public:
 
 ref class personnelMap {
 private:
+	System::String^ sSql;
+	
 	int id_personnel;
 	System::String^ nom;
 	System::String^ prenom;
@@ -74,12 +78,13 @@ public:
 	void setId_Personnel(int);
 	void setNom(System::String^);
 	void setPrenom(System::String^);
-	void setId_Superieur(int);
+	void setId_Superieur(System::Int32^);
 	void setNum_Rue(System::String^);
 	void setNom_Rue(System::String^);
 	void setVille(System::String^);
+	void setCode_Postal(System::Int32^);
 	void setDate_Embauche(System::String^);
-	void setAdmin(bool);
+	void setAdmin(System::Boolean^);
 	int getId_Personnel();
 	System::String^ getNom();
 	System::String^ getPrenom();
@@ -87,7 +92,7 @@ public:
 	System::String^ getNum_Rue();
 	System::String^ getNom_Rue();
 	System::String^ getVille();
-	System::Int32^ getCodePostal();
+	System::Int32^ getCode_Postal();
 	System::String^ getDate_Embauche();
 	System::Boolean^ getAdmin();
 
@@ -101,6 +106,8 @@ public:
 ref class commandeMap
 {
 private:
+	System::String^ sSql;
+	
 	int id_commande;
 	System::String^ reference;
 	System::String^ date_livraison;
@@ -131,7 +138,6 @@ public:
 
 
 
-
 ref class articleMap
 {
 private:
@@ -149,7 +155,7 @@ public:
 	void setId_Article(int);
 	void setNom_Article(System::String^);
 	void setQuantite_Stock(System::Int32^);
-	void setPrixArticle(System::Int32^);
+	void setPrix_Article(System::Int32^);
 	void setSeuil(System::Int32^);
 	void setCouleur(System::String^);
 	int getId_Article();
