@@ -35,6 +35,7 @@ namespace projetPOO {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
 	protected:
 
 	private:
@@ -51,6 +52,7 @@ namespace projetPOO {
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -61,12 +63,24 @@ namespace projetPOO {
 			this->label1->Size = System::Drawing::Size(35, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"label1";
+			this->label1->Click += gcnew System::EventHandler(this, &GestionClientForm::label1_Click);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(276, 227);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(35, 13);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"label2";
+			this->label2->Click += gcnew System::EventHandler(this, &GestionClientForm::label2_Click);
 			// 
 			// GestionClientForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(834, 353);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Name = L"GestionClientForm";
 			this->Text = L"GestionClientForm";
@@ -77,6 +91,10 @@ namespace projetPOO {
 		}
 #pragma endregion
 	private: System::Void GestionClientForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }
