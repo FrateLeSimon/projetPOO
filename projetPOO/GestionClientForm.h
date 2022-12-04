@@ -35,6 +35,7 @@ namespace projetPOO {
 			}
 		}
 	private: System::Windows::Forms::TextBox^ TB_NomClient;
+	private: System::Windows::Forms::DataGridView^ DGV_BDD;
 	protected:
 
 	protected:
@@ -44,7 +45,7 @@ namespace projetPOO {
 
 
 
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
 	private: System::Windows::Forms::GroupBox^ GB_client;
 	private: System::Windows::Forms::Label^ L_idClient;
 
@@ -55,23 +56,39 @@ namespace projetPOO {
 
 	private: System::Windows::Forms::TextBox^ TB_PrenomClient;
 	private: System::Windows::Forms::NumericUpDown^ NUD_idClient;
-	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
-	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::MonthCalendar^ MC_DdNaissance;
 
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::GroupBox^ groupBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::ComboBox^ comboBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::ComboBox^ comboBox4;
-	private: System::Windows::Forms::GroupBox^ groupBox1;
-	private: System::Windows::Forms::ComboBox^ comboBox2;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Label^ L_DdNaissance;
+	private: System::Windows::Forms::TextBox^ TB_NumRueL;
+	private: System::Windows::Forms::GroupBox^ GB_Afacturation;
+
+
+
+
+	private: System::Windows::Forms::TextBox^ TB_NumRueF;
+	private: System::Windows::Forms::ComboBox^ CB_CpostalF;
+
+
+	private: System::Windows::Forms::TextBox^ TB_NrueF;
+	private: System::Windows::Forms::ComboBox^ CB_NvilleF;
+
+
+	private: System::Windows::Forms::GroupBox^ GB_Alivraison;
+	private: System::Windows::Forms::ComboBox^ CB_CpostalL;
+
+
+	private: System::Windows::Forms::TextBox^ TB_NrueL;
+	private: System::Windows::Forms::ComboBox^ CB_NVilleL;
+
+
+	private: System::Windows::Forms::Button^ B_load;
+	private: System::Windows::Forms::Button^ B_insert;
+	private: System::Windows::Forms::Button^ B_update;
+	private: System::Windows::Forms::Button^ B_delete;
+
+
+
+
 
 
 
@@ -93,31 +110,31 @@ namespace projetPOO {
 		void InitializeComponent(void)
 		{
 			this->TB_NomClient = (gcnew System::Windows::Forms::TextBox());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->DGV_BDD = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_client = (gcnew System::Windows::Forms::GroupBox());
-			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
+			this->GB_Afacturation = (gcnew System::Windows::Forms::GroupBox());
+			this->TB_NumRueF = (gcnew System::Windows::Forms::TextBox());
+			this->CB_CpostalF = (gcnew System::Windows::Forms::ComboBox());
+			this->TB_NrueF = (gcnew System::Windows::Forms::TextBox());
+			this->CB_NvilleF = (gcnew System::Windows::Forms::ComboBox());
+			this->GB_Alivraison = (gcnew System::Windows::Forms::GroupBox());
+			this->TB_NumRueL = (gcnew System::Windows::Forms::TextBox());
+			this->CB_CpostalL = (gcnew System::Windows::Forms::ComboBox());
+			this->TB_NrueL = (gcnew System::Windows::Forms::TextBox());
+			this->CB_NVilleL = (gcnew System::Windows::Forms::ComboBox());
+			this->L_DdNaissance = (gcnew System::Windows::Forms::Label());
+			this->MC_DdNaissance = (gcnew System::Windows::Forms::MonthCalendar());
 			this->NUD_idClient = (gcnew System::Windows::Forms::NumericUpDown());
 			this->TB_PrenomClient = (gcnew System::Windows::Forms::TextBox());
 			this->L_idClient = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->B_load = (gcnew System::Windows::Forms::Button());
+			this->B_insert = (gcnew System::Windows::Forms::Button());
+			this->B_update = (gcnew System::Windows::Forms::Button());
+			this->B_delete = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->BeginInit();
 			this->GB_client->SuspendLayout();
-			this->groupBox2->SuspendLayout();
-			this->groupBox1->SuspendLayout();
+			this->GB_Afacturation->SuspendLayout();
+			this->GB_Alivraison->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -133,21 +150,21 @@ namespace projetPOO {
 			this->TB_NomClient->Text = L"Nom du client ";
 			this->TB_NomClient->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NomClient_TextChanged);
 			// 
-			// dataGridView1
+			// DGV_BDD
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(12, 12);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(869, 150);
-			this->dataGridView1->TabIndex = 5;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionClientForm::dataGridView1_CellContentClick);
+			this->DGV_BDD->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->DGV_BDD->Location = System::Drawing::Point(12, 12);
+			this->DGV_BDD->Name = L"DGV_BDD";
+			this->DGV_BDD->Size = System::Drawing::Size(880, 150);
+			this->DGV_BDD->TabIndex = 5;
+			this->DGV_BDD->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionClientForm::dataGridView1_CellContentClick);
 			// 
 			// GB_client
 			// 
-			this->GB_client->Controls->Add(this->groupBox2);
-			this->GB_client->Controls->Add(this->groupBox1);
-			this->GB_client->Controls->Add(this->label1);
-			this->GB_client->Controls->Add(this->monthCalendar1);
+			this->GB_client->Controls->Add(this->GB_Afacturation);
+			this->GB_client->Controls->Add(this->GB_Alivraison);
+			this->GB_client->Controls->Add(this->L_DdNaissance);
+			this->GB_client->Controls->Add(this->MC_DdNaissance);
 			this->GB_client->Controls->Add(this->NUD_idClient);
 			this->GB_client->Controls->Add(this->TB_PrenomClient);
 			this->GB_client->Controls->Add(this->L_idClient);
@@ -162,156 +179,156 @@ namespace projetPOO {
 			this->GB_client->Text = L"Client";
 			this->GB_client->Enter += gcnew System::EventHandler(this, &GestionClientForm::GB_client_Enter);
 			// 
-			// groupBox2
+			// GB_Afacturation
 			// 
-			this->groupBox2->Controls->Add(this->textBox3);
-			this->groupBox2->Controls->Add(this->comboBox3);
-			this->groupBox2->Controls->Add(this->textBox4);
-			this->groupBox2->Controls->Add(this->comboBox4);
-			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
+			this->GB_Afacturation->Controls->Add(this->TB_NumRueF);
+			this->GB_Afacturation->Controls->Add(this->CB_CpostalF);
+			this->GB_Afacturation->Controls->Add(this->TB_NrueF);
+			this->GB_Afacturation->Controls->Add(this->CB_NvilleF);
+			this->GB_Afacturation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->GB_Afacturation->Location = System::Drawing::Point(254, 126);
+			this->GB_Afacturation->Name = L"GB_Afacturation";
+			this->GB_Afacturation->Size = System::Drawing::Size(406, 86);
+			this->GB_Afacturation->TabIndex = 19;
+			this->GB_Afacturation->TabStop = false;
+			this->GB_Afacturation->Text = L"Adresse de facturation du Client";
+			this->GB_Afacturation->Enter += gcnew System::EventHandler(this, &GestionClientForm::groupBox2_Enter);
+			// 
+			// TB_NumRueF
+			// 
+			this->TB_NumRueF->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox2->Location = System::Drawing::Point(254, 126);
-			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(406, 86);
-			this->groupBox2->TabIndex = 19;
-			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"Adresse de facturation du Client";
-			this->groupBox2->Enter += gcnew System::EventHandler(this, &GestionClientForm::groupBox2_Enter);
+			this->TB_NumRueF->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_NumRueF->Location = System::Drawing::Point(6, 23);
+			this->TB_NumRueF->Name = L"TB_NumRueF";
+			this->TB_NumRueF->Size = System::Drawing::Size(192, 22);
+			this->TB_NumRueF->TabIndex = 13;
+			this->TB_NumRueF->Text = L"N° de la rue";
+			this->TB_NumRueF->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox3_TextChanged);
 			// 
-			// textBox3
+			// CB_CpostalF
 			// 
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->CB_CpostalF->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->textBox3->Location = System::Drawing::Point(6, 23);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(192, 22);
-			this->textBox3->TabIndex = 13;
-			this->textBox3->Text = L"N° de la rue";
-			this->textBox3->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox3_TextChanged);
+			this->CB_CpostalF->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->CB_CpostalF->FormattingEnabled = true;
+			this->CB_CpostalF->Location = System::Drawing::Point(204, 51);
+			this->CB_CpostalF->Name = L"CB_CpostalF";
+			this->CB_CpostalF->Size = System::Drawing::Size(192, 24);
+			this->CB_CpostalF->TabIndex = 17;
+			this->CB_CpostalF->Text = L"Code postal";
+			this->CB_CpostalF->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox3_SelectedIndexChanged);
 			// 
-			// comboBox3
+			// TB_NrueF
 			// 
-			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TB_NrueF->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->comboBox3->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(204, 51);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(192, 24);
-			this->comboBox3->TabIndex = 17;
-			this->comboBox3->Text = L"Code postal";
-			this->comboBox3->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox3_SelectedIndexChanged);
+			this->TB_NrueF->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_NrueF->Location = System::Drawing::Point(204, 23);
+			this->TB_NrueF->Name = L"TB_NrueF";
+			this->TB_NrueF->Size = System::Drawing::Size(192, 22);
+			this->TB_NrueF->TabIndex = 15;
+			this->TB_NrueF->Text = L"Nom de la rue";
+			this->TB_NrueF->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox4_TextChanged);
 			// 
-			// textBox4
+			// CB_NvilleF
 			// 
-			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->CB_NvilleF->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->textBox4->Location = System::Drawing::Point(204, 23);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(192, 22);
-			this->textBox4->TabIndex = 15;
-			this->textBox4->Text = L"Nom de la rue";
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox4_TextChanged);
+			this->CB_NvilleF->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->CB_NvilleF->FormattingEnabled = true;
+			this->CB_NvilleF->Location = System::Drawing::Point(6, 51);
+			this->CB_NvilleF->Name = L"CB_NvilleF";
+			this->CB_NvilleF->Size = System::Drawing::Size(192, 24);
+			this->CB_NvilleF->TabIndex = 16;
+			this->CB_NvilleF->Text = L"Nom de la ville";
+			this->CB_NvilleF->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox4_SelectedIndexChanged);
 			// 
-			// comboBox4
+			// GB_Alivraison
 			// 
-			this->comboBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->GB_Alivraison->Controls->Add(this->TB_NumRueL);
+			this->GB_Alivraison->Controls->Add(this->CB_CpostalL);
+			this->GB_Alivraison->Controls->Add(this->TB_NrueL);
+			this->GB_Alivraison->Controls->Add(this->CB_NVilleL);
+			this->GB_Alivraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->GB_Alivraison->Location = System::Drawing::Point(254, 21);
+			this->GB_Alivraison->Name = L"GB_Alivraison";
+			this->GB_Alivraison->Size = System::Drawing::Size(406, 86);
+			this->GB_Alivraison->TabIndex = 18;
+			this->GB_Alivraison->TabStop = false;
+			this->GB_Alivraison->Text = L"Adresse de livraison du Client";
+			this->GB_Alivraison->Enter += gcnew System::EventHandler(this, &GestionClientForm::groupBox1_Enter);
+			// 
+			// TB_NumRueL
+			// 
+			this->TB_NumRueL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->comboBox4->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Location = System::Drawing::Point(6, 51);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(192, 24);
-			this->comboBox4->TabIndex = 16;
-			this->comboBox4->Text = L"Nom de la ville";
-			this->comboBox4->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox4_SelectedIndexChanged);
+			this->TB_NumRueL->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_NumRueL->Location = System::Drawing::Point(6, 23);
+			this->TB_NumRueL->Name = L"TB_NumRueL";
+			this->TB_NumRueL->Size = System::Drawing::Size(192, 22);
+			this->TB_NumRueL->TabIndex = 13;
+			this->TB_NumRueL->Text = L"N° de la rue";
+			this->TB_NumRueL->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox1_TextChanged);
 			// 
-			// groupBox1
+			// CB_CpostalL
 			// 
-			this->groupBox1->Controls->Add(this->textBox1);
-			this->groupBox1->Controls->Add(this->comboBox2);
-			this->groupBox1->Controls->Add(this->textBox2);
-			this->groupBox1->Controls->Add(this->comboBox1);
-			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
+			this->CB_CpostalL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox1->Location = System::Drawing::Point(254, 21);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(406, 86);
-			this->groupBox1->TabIndex = 18;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Adresse de livraison du Client";
-			this->groupBox1->Enter += gcnew System::EventHandler(this, &GestionClientForm::groupBox1_Enter);
+			this->CB_CpostalL->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->CB_CpostalL->FormattingEnabled = true;
+			this->CB_CpostalL->Location = System::Drawing::Point(204, 51);
+			this->CB_CpostalL->Name = L"CB_CpostalL";
+			this->CB_CpostalL->Size = System::Drawing::Size(192, 24);
+			this->CB_CpostalL->TabIndex = 17;
+			this->CB_CpostalL->Text = L"Code postal";
+			this->CB_CpostalL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox2_SelectedIndexChanged);
 			// 
-			// textBox1
+			// TB_NrueL
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TB_NrueL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->textBox1->Location = System::Drawing::Point(6, 23);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(192, 22);
-			this->textBox1->TabIndex = 13;
-			this->textBox1->Text = L"N° de la rue";
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox1_TextChanged);
+			this->TB_NrueL->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_NrueL->Location = System::Drawing::Point(204, 23);
+			this->TB_NrueL->Name = L"TB_NrueL";
+			this->TB_NrueL->Size = System::Drawing::Size(192, 22);
+			this->TB_NrueL->TabIndex = 15;
+			this->TB_NrueL->Text = L"Nom de la rue";
+			this->TB_NrueL->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox2_TextChanged);
 			// 
-			// comboBox2
+			// CB_NVilleL
 			// 
-			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->CB_NVilleL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->comboBox2->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(204, 51);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(192, 24);
-			this->comboBox2->TabIndex = 17;
-			this->comboBox2->Text = L"Code postal";
-			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox2_SelectedIndexChanged);
+			this->CB_NVilleL->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->CB_NVilleL->FormattingEnabled = true;
+			this->CB_NVilleL->Location = System::Drawing::Point(6, 51);
+			this->CB_NVilleL->Name = L"CB_NVilleL";
+			this->CB_NVilleL->Size = System::Drawing::Size(192, 24);
+			this->CB_NVilleL->TabIndex = 16;
+			this->CB_NVilleL->Text = L"Nom de la ville";
+			this->CB_NVilleL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox1_SelectedIndexChanged);
 			// 
-			// textBox2
+			// L_DdNaissance
 			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->L_DdNaissance->AutoSize = true;
+			this->L_DdNaissance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->textBox2->Location = System::Drawing::Point(204, 23);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(192, 22);
-			this->textBox2->TabIndex = 15;
-			this->textBox2->Text = L"Nom de la rue";
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::textBox2_TextChanged);
+			this->L_DdNaissance->Location = System::Drawing::Point(35, 106);
+			this->L_DdNaissance->Name = L"L_DdNaissance";
+			this->L_DdNaissance->Size = System::Drawing::Size(156, 16);
+			this->L_DdNaissance->TabIndex = 12;
+			this->L_DdNaissance->Text = L"Date de naissance Client";
+			this->L_DdNaissance->Click += gcnew System::EventHandler(this, &GestionClientForm::label1_Click);
 			// 
-			// comboBox1
+			// MC_DdNaissance
 			// 
-			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->comboBox1->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(6, 51);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(192, 24);
-			this->comboBox1->TabIndex = 16;
-			this->comboBox1->Text = L"Nom de la ville";
-			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::comboBox1_SelectedIndexChanged);
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(35, 106);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(156, 16);
-			this->label1->TabIndex = 12;
-			this->label1->Text = L"Date de naissance Client";
-			this->label1->Click += gcnew System::EventHandler(this, &GestionClientForm::label1_Click);
-			// 
-			// monthCalendar1
-			// 
-			this->monthCalendar1->Location = System::Drawing::Point(3, 126);
-			this->monthCalendar1->Name = L"monthCalendar1";
-			this->monthCalendar1->TabIndex = 11;
-			this->monthCalendar1->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::monthCalendar1_DateChanged);
+			this->MC_DdNaissance->Location = System::Drawing::Point(3, 126);
+			this->MC_DdNaissance->Name = L"MC_DdNaissance";
+			this->MC_DdNaissance->TabIndex = 11;
+			this->MC_DdNaissance->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::monthCalendar1_DateChanged);
 			// 
 			// NUD_idClient
 			// 
@@ -347,67 +364,75 @@ namespace projetPOO {
 			this->L_idClient->Text = L"Id Client";
 			this->L_idClient->Click += gcnew System::EventHandler(this, &GestionClientForm::L_idClient_Click);
 			// 
-			// button1
+			// B_load
 			// 
-			this->button1->Location = System::Drawing::Point(12, 168);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(202, 107);
-			this->button1->TabIndex = 7;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &GestionClientForm::button1_Click);
+			this->B_load->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->B_load->Location = System::Drawing::Point(12, 168);
+			this->B_load->Name = L"B_load";
+			this->B_load->Size = System::Drawing::Size(202, 107);
+			this->B_load->TabIndex = 7;
+			this->B_load->Text = L"Enregistrer";
+			this->B_load->UseVisualStyleBackColor = true;
+			this->B_load->Click += gcnew System::EventHandler(this, &GestionClientForm::button1_Click);
 			// 
-			// button2
+			// B_insert
 			// 
-			this->button2->Location = System::Drawing::Point(25, 281);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(174, 58);
-			this->button2->TabIndex = 8;
-			this->button2->Text = L"button2";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &GestionClientForm::button2_Click);
+			this->B_insert->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->B_insert->Location = System::Drawing::Point(25, 281);
+			this->B_insert->Name = L"B_insert";
+			this->B_insert->Size = System::Drawing::Size(174, 58);
+			this->B_insert->TabIndex = 8;
+			this->B_insert->Text = L"Insérer";
+			this->B_insert->UseVisualStyleBackColor = true;
+			this->B_insert->Click += gcnew System::EventHandler(this, &GestionClientForm::button2_Click);
 			// 
-			// button3
+			// B_update
 			// 
-			this->button3->Location = System::Drawing::Point(25, 345);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(174, 58);
-			this->button3->TabIndex = 9;
-			this->button3->Text = L"button3";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &GestionClientForm::button3_Click);
+			this->B_update->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->B_update->Location = System::Drawing::Point(25, 345);
+			this->B_update->Name = L"B_update";
+			this->B_update->Size = System::Drawing::Size(174, 58);
+			this->B_update->TabIndex = 9;
+			this->B_update->Text = L"Mise à jour";
+			this->B_update->UseVisualStyleBackColor = true;
+			this->B_update->Click += gcnew System::EventHandler(this, &GestionClientForm::button3_Click);
 			// 
-			// button4
+			// B_delete
 			// 
-			this->button4->Location = System::Drawing::Point(25, 410);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(174, 58);
-			this->button4->TabIndex = 10;
-			this->button4->Text = L"button4";
-			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &GestionClientForm::button4_Click);
+			this->B_delete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->B_delete->Location = System::Drawing::Point(25, 410);
+			this->B_delete->Name = L"B_delete";
+			this->B_delete->Size = System::Drawing::Size(174, 58);
+			this->B_delete->TabIndex = 10;
+			this->B_delete->Text = L"Supprimer";
+			this->B_delete->UseVisualStyleBackColor = true;
+			this->B_delete->Click += gcnew System::EventHandler(this, &GestionClientForm::button4_Click);
 			// 
 			// GestionClientForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(904, 479);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->B_delete);
+			this->Controls->Add(this->B_update);
+			this->Controls->Add(this->B_insert);
+			this->Controls->Add(this->B_load);
 			this->Controls->Add(this->GB_client);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->DGV_BDD);
 			this->Name = L"GestionClientForm";
 			this->Text = L"GestionClientForm";
 			this->Load += gcnew System::EventHandler(this, &GestionClientForm::GestionClientForm_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->EndInit();
 			this->GB_client->ResumeLayout(false);
 			this->GB_client->PerformLayout();
-			this->groupBox2->ResumeLayout(false);
-			this->groupBox2->PerformLayout();
-			this->groupBox1->ResumeLayout(false);
-			this->groupBox1->PerformLayout();
+			this->GB_Afacturation->ResumeLayout(false);
+			this->GB_Afacturation->PerformLayout();
+			this->GB_Alivraison->ResumeLayout(false);
+			this->GB_Alivraison->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->EndInit();
 			this->ResumeLayout(false);
 
