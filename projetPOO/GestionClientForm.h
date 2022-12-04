@@ -417,47 +417,47 @@ namespace projetPOO {
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
-private: System::Void GB_client_Enter(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void L_idClient_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void NUD_idClient_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void TB_NomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void TB_PrenomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void monthCalendar1_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
-}
-private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void groupBox2_Enter(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void comboBox4_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void comboBox3_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void GB_client_Enter(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void L_idClient_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void NUD_idClient_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void TB_NomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void TB_PrenomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void monthCalendar1_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
+	}
+	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void groupBox2_Enter(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void comboBox4_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void comboBox3_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 };
 }
