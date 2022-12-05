@@ -212,3 +212,4 @@ public:
 	System::String^ val_achat_stock(void);
 	System::String^ simulation(void);
 };
+
