@@ -84,6 +84,9 @@
     <EmbeddedResource Include="GestionPersonnelForm.resx">
       <DependentUpon>GestionPersonnelForm.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionStatForm1.resx">
+      <DependentUpon>GestionStatForm1.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionStockForm.resx">
       <DependentUpon>GestionStockForm.h</DependentUpon>
     </EmbeddedResource>
