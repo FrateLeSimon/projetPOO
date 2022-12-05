@@ -23,6 +23,9 @@
     <ClInclude Include="..\CLmap.h" />
     <ClInclude Include="..\CLservices.h" />
     <ClInclude Include="..\tools.h" />
+    <ClInclude Include="AdminForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ConnexionForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -30,6 +33,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GestionCommandeForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GestionPersonnelForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GestionStatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GestionStockForm.h">
@@ -44,9 +53,12 @@
     <ClCompile Include="..\CLservices.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\CAD.cpp" />
+    <ClCompile Include="AdminForm.cpp" />
     <ClCompile Include="ConnexionForm.cpp" />
     <ClCompile Include="GestionClientForm.cpp" />
     <ClCompile Include="GestionCommandeForm.cpp" />
+    <ClCompile Include="GestionPersonnelForm.cpp" />
+    <ClCompile Include="GestionStatForm.cpp" />
     <ClCompile Include="GestionStockForm.cpp" />
     <ClCompile Include="PersonnelForm.cpp" />
   </ItemGroup>
@@ -58,6 +70,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConnexionForm.resx">
       <DependentUpon>ConnexionForm.h</DependentUpon>
     </EmbeddedResource>
@@ -66,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionCommandeForm.resx">
       <DependentUpon>GestionCommandeForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionPersonnelForm.resx">
+      <DependentUpon>GestionPersonnelForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionStockForm.resx">
       <DependentUpon>GestionStockForm.h</DependentUpon>

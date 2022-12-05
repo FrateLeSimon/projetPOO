@@ -58,9 +58,9 @@ namespace projetPOO {
 
 	private: System::Windows::Forms::TextBox^ TB_PrenomClient;
 	private: System::Windows::Forms::NumericUpDown^ NUD_idClient;
-	private: System::Windows::Forms::MonthCalendar^ MC_DdNaissance;
 
-	private: System::Windows::Forms::Label^ L_DdNaissance;
+
+
 	private: System::Windows::Forms::TextBox^ TB_NumRueL;
 	private: System::Windows::Forms::GroupBox^ GB_Afacturation;
 
@@ -90,7 +90,10 @@ namespace projetPOO {
 	private: System::Windows::Forms::MonthCalendar^ MC_1achat;
 
 	private: System::Windows::Forms::Label^ L_1achat;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ Logo;
+	private: System::Windows::Forms::Label^ L_DdNaissance;
+	private: System::Windows::Forms::MonthCalendar^ MC_DdNaissance;
+
 
 
 
@@ -121,7 +124,7 @@ namespace projetPOO {
 			this->TB_NomClient = (gcnew System::Windows::Forms::TextBox());
 			this->DGV_BDD = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_client = (gcnew System::Windows::Forms::GroupBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			this->MC_1achat = (gcnew System::Windows::Forms::MonthCalendar());
 			this->L_1achat = (gcnew System::Windows::Forms::Label());
 			this->GB_Afacturation = (gcnew System::Windows::Forms::GroupBox());
@@ -134,8 +137,6 @@ namespace projetPOO {
 			this->CB_CpostalL = (gcnew System::Windows::Forms::ComboBox());
 			this->TB_NrueL = (gcnew System::Windows::Forms::TextBox());
 			this->CB_NVilleL = (gcnew System::Windows::Forms::ComboBox());
-			this->L_DdNaissance = (gcnew System::Windows::Forms::Label());
-			this->MC_DdNaissance = (gcnew System::Windows::Forms::MonthCalendar());
 			this->NUD_idClient = (gcnew System::Windows::Forms::NumericUpDown());
 			this->TB_PrenomClient = (gcnew System::Windows::Forms::TextBox());
 			this->L_idClient = (gcnew System::Windows::Forms::Label());
@@ -143,9 +144,11 @@ namespace projetPOO {
 			this->B_insert = (gcnew System::Windows::Forms::Button());
 			this->B_update = (gcnew System::Windows::Forms::Button());
 			this->B_delete = (gcnew System::Windows::Forms::Button());
+			this->MC_DdNaissance = (gcnew System::Windows::Forms::MonthCalendar());
+			this->L_DdNaissance = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->BeginInit();
 			this->GB_client->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			this->GB_Afacturation->SuspendLayout();
 			this->GB_Alivraison->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->BeginInit();
@@ -174,7 +177,7 @@ namespace projetPOO {
 			// 
 			// GB_client
 			// 
-			this->GB_client->Controls->Add(this->pictureBox1);
+			this->GB_client->Controls->Add(this->Logo);
 			this->GB_client->Controls->Add(this->MC_1achat);
 			this->GB_client->Controls->Add(this->L_1achat);
 			this->GB_client->Controls->Add(this->GB_Afacturation);
@@ -195,16 +198,16 @@ namespace projetPOO {
 			this->GB_client->Text = L"Client";
 			this->GB_client->Enter += gcnew System::EventHandler(this, &GestionClientForm::GB_client_Enter);
 			// 
-			// pictureBox1
+			// Logo
 			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(573, 126);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(197, 162);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 22;
-			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &GestionClientForm::pictureBox1_Click);
+			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
+			this->Logo->Location = System::Drawing::Point(573, 126);
+			this->Logo->Name = L"Logo";
+			this->Logo->Size = System::Drawing::Size(197, 162);
+			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->Logo->TabIndex = 22;
+			this->Logo->TabStop = false;
+			this->Logo->Click += gcnew System::EventHandler(this, &GestionClientForm::Logo_Click);
 			// 
 			// MC_1achat
 			// 
@@ -357,25 +360,6 @@ namespace projetPOO {
 			this->CB_NVilleL->Text = L"Nom de la ville";
 			this->CB_NVilleL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_NvilleL_SelectedIndexChanged);
 			// 
-			// L_DdNaissance
-			// 
-			this->L_DdNaissance->AutoSize = true;
-			this->L_DdNaissance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->L_DdNaissance->Location = System::Drawing::Point(35, 106);
-			this->L_DdNaissance->Name = L"L_DdNaissance";
-			this->L_DdNaissance->Size = System::Drawing::Size(156, 16);
-			this->L_DdNaissance->TabIndex = 12;
-			this->L_DdNaissance->Text = L"Date de naissance Client";
-			this->L_DdNaissance->Click += gcnew System::EventHandler(this, &GestionClientForm::L_DdNaissance_Click);
-			// 
-			// MC_DdNaissance
-			// 
-			this->MC_DdNaissance->Location = System::Drawing::Point(3, 126);
-			this->MC_DdNaissance->Name = L"MC_DdNaissance";
-			this->MC_DdNaissance->TabIndex = 11;
-			this->MC_DdNaissance->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::MC_DdNaissance_DateChanged);
-			// 
 			// NUD_idClient
 			// 
 			this->NUD_idClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -458,6 +442,25 @@ namespace projetPOO {
 			this->B_delete->UseVisualStyleBackColor = true;
 			this->B_delete->Click += gcnew System::EventHandler(this, &GestionClientForm::B_delete_Click);
 			// 
+			// MC_DdNaissance
+			// 
+			this->MC_DdNaissance->Location = System::Drawing::Point(3, 126);
+			this->MC_DdNaissance->Name = L"MC_DdNaissance";
+			this->MC_DdNaissance->TabIndex = 11;
+			this->MC_DdNaissance->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::MC_DdNaissance_DateChanged);
+			// 
+			// L_DdNaissance
+			// 
+			this->L_DdNaissance->AutoSize = true;
+			this->L_DdNaissance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->L_DdNaissance->Location = System::Drawing::Point(35, 106);
+			this->L_DdNaissance->Name = L"L_DdNaissance";
+			this->L_DdNaissance->Size = System::Drawing::Size(156, 16);
+			this->L_DdNaissance->TabIndex = 12;
+			this->L_DdNaissance->Text = L"Date de naissance Client";
+			this->L_DdNaissance->Click += gcnew System::EventHandler(this, &GestionClientForm::L_DdNaissance_Click);
+			// 
 			// GestionClientForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -476,7 +479,7 @@ namespace projetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->EndInit();
 			this->GB_client->ResumeLayout(false);
 			this->GB_client->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->GB_Afacturation->ResumeLayout(false);
 			this->GB_Afacturation->PerformLayout();
 			this->GB_Alivraison->ResumeLayout(false);
@@ -540,7 +543,7 @@ namespace projetPOO {
 	}
 	private: System::Void MC_1achat_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
 	}
-	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Logo_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }
