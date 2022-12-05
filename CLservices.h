@@ -1,7 +1,5 @@
-
-#include "CLmap.cpp"
-#include "CAD.cpp"
-
+#include "CAD.h"
+#include "CLmap.h"
 
 ref class clientServices
 {
