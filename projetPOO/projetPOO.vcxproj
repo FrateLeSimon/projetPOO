@@ -38,6 +38,9 @@
     <ClInclude Include="GestionPersonnelForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="GestionStatForm1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="GestionStockForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -55,6 +58,7 @@
     <ClCompile Include="GestionClientForm.cpp" />
     <ClCompile Include="GestionCommandeForm.cpp" />
     <ClCompile Include="GestionPersonnelForm.cpp" />
+    <ClCompile Include="GestionStatForm1.cpp" />
     <ClCompile Include="PersonnelForm.cpp" />
   </ItemGroup>
   <ItemGroup>
