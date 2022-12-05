@@ -3,7 +3,7 @@
 
 NS_Comp_Data::CLcad::CLcad(void)
 {
-	this->sCnx = "Data Source=34.155.198.90;User ID=default;Password=ProjetPOO;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+	this->sCnx = "Data Source=34.155.198.90;Initial Catalog=BDD-Projet-POO;Persist Security Info=True;User ID=default;Password=ProjetPOO";
 
 	this->sSql = "Rien";
 
