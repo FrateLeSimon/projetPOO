@@ -1,18 +1,19 @@
 #include "CAD.h"
 #include "CLmap.h"
 
-ref class clientServices
-{
-private:
-	NS_Comp_Data::CLcad^ oCad;
-	clientMap^ oClient;
-public:
-	clientServices(void);
-	System::Data::DataSet^ selectionnerTousLesClients(System::String^);
-	void ajouterUnClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::Int32^, System::Int32^, System::String^, System::String^);
-	void modifierUnClient(int, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::Int32^, System::Int32^, System::String^, System::String^);
-	void supprimerUnClient(int);
-};
+
+	ref class clientServices
+	{
+	private:
+		NS_Comp_Data::CLcad^ oCad;
+		clientMap^ oClient;
+	public:
+		clientServices(void);
+		System::Data::DataSet^ selectionnerTousLesClients(System::String^);
+		void ajouterUnClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::Int32^, System::Int32^, System::String^, System::String^);
+		void modifierUnClient(int, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::Int32^, System::Int32^, System::String^, System::String^);
+		void supprimerUnClient(int);
+	};
 
 
 ref class personnelServices

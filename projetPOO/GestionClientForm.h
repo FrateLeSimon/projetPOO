@@ -101,7 +101,7 @@ namespace projetPOO {
 
 
 
-
+	
 	private: clientServices^ oSvc;
 	private: System::Data::DataSet^ oDs;
 
@@ -529,6 +529,7 @@ namespace projetPOO {
 	}
 	private: System::Void B_load_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->DGV_BDD->Refresh();
+		this->oSvc = gcnew clientServices();
 		this->oDs = this->oSvc->selectionnerTousLesClients("Rsl");
 		this->DGV_BDD->DataSource = this->oDs;
 		this->DGV_BDD->DataMember = "Rsl";
