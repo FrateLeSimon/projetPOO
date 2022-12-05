@@ -28,3 +28,7 @@ INNER JOIN humain AS h ON p.id_humain = h.id_humain
 INNER JOIN calendrier AS c ON p.id_calendrier = c.id_calendrier
 INNER JOIN adresse AS a ON p.id_adresse = a.id_adresse
 INNER JOIN ville AS v ON a.id_ville = v.id_ville
+
+SELECT nom AS "Nom artcile", couleur AS "Couleur", quantite_stock AS "Stock" 
+FROM article
+ORDER BY quantite_stock DESC
