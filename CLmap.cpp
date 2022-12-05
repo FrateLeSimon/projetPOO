@@ -147,6 +147,52 @@ System::String^ articleMap::Delete() { return "delete"; }
 
 
 
+void statsMap::setMois(System::String^ a) { this->mois = a; }
+void statsMap::setNom(System::String^ a) { this->nom = a; }
+void statsMap::setPrenom(System::String^ a) { this->prenom = a; }
+void statsMap::setId(System::String^ a) { this->id = a; }
+void statsMap::setTVA(System::String^ a) { this->TVA = a; }
+void statsMap::setMarge(System::String^ a) { this->marge = a; }
+void statsMap::setRemise(System::String^ a) { this->remise = a; }
+void statsMap::setDemarque(System::String^ a) { this->demarque = a; }
+System::String^ statsMap::getMois() { return this->mois; }
+System::String^ statsMap::getNom() { return this->nom; }
+System::String^ statsMap::getPrenom() { return this->prenom; }
+System::String^ statsMap::getId() { return this->id; }
+System::String^ statsMap::getTVA() { return this->TVA; }
+System::String^ statsMap::getMarge() { return this->marge; }
+System::String^ statsMap::getRemise() { return this->remise; }
+System::String^ statsMap::getDemarque() { return this->demarque; }
+
+System::String^ statsMap::panier_moy(void){
+	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
+}
+System::String^ statsMap::chiffre_affaire(void){
+	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
+}
+System::String^ statsMap::seuil_appro(void){
+	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
+}
+System::String^ statsMap::montant_total_achat(void){
+	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
+}
+System::String^ statsMap::arcticle_plus_vendu(void){
+	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
+}
+System::String^ statsMap::article_moins_vendu(void){
+	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
+}
+System::String^ statsMap::val_com_stock(void){
+	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
+}
+System::String^ statsMap::val_achat_stock(void){
+	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
+}
+System::String^ statsMap::simulation(void){
+	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
+}
+
+
 
 
 	

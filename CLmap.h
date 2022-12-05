@@ -167,3 +167,48 @@ public:
 	System::String^ Update();
 	System::String^ Delete();
 };
+
+
+
+ref class statsMap
+{
+private:
+	System::String^ sSql;
+
+	System::String^ mois;
+	System::String^ nom;
+	System::String^ prenom;
+	System::String^ id;
+	System::String^ TVA;
+	System::String^ marge;
+	System::String^ remise;
+	System::String^ demarque;
+
+public:
+	void setMois(System::String^);
+	void setNom(System::String^);
+	void setPrenom(System::String^);
+	void setId(System::String^);
+	void setTVA(System::String^);
+	void setMarge(System::String^);
+	void setRemise(System::String^);
+	void setDemarque(System::String^);
+	System::String^ getMois();
+	System::String^ getNom();
+	System::String^ getPrenom();
+	System::String^ getId();
+	System::String^ getTVA();
+	System::String^ getMarge();
+	System::String^ getRemise();
+	System::String^ getDemarque();
+
+	System::String^ panier_moy(void);
+	System::String^ chiffre_affaire(void);
+	System::String^ seuil_appro(void);
+	System::String^ montant_total_achat(void);
+	System::String^ arcticle_plus_vendu(void);
+	System::String^ article_moins_vendu(void);
+	System::String^ val_com_stock(void);
+	System::String^ val_achat_stock(void);
+	System::String^ simulation(void);
+};

@@ -424,75 +424,18 @@ namespace projetPOO {
 			// 
 			// GestionStatForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(961, 383);
-			this->Controls->Add(this->Logo);
-			this->Controls->Add(this->GB_Stat);
-			this->Controls->Add(this->DGV_BDD);
+			this->ClientSize = System::Drawing::Size(1001, 415);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"GestionStatForm";
 			this->Text = L"GestionStatForm";
 			this->Load += gcnew System::EventHandler(this, &GestionStatForm::GestionStatForm_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->EndInit();
-			this->GB_Stat->ResumeLayout(false);
-			this->GB_Stat->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_ChoixMois))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void GestionStatForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void Logo_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void DGV_BDD_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
-	private: System::Void Logo_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void GB_Stat_Enter(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void B_CpanierMoy_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void B_Caffaire_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void L_ChoixMois_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void NUD_ChoixMois_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void B_seuil_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void B_Montantachat_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void L_choixClient_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void NUD_idClient_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void B_achatS_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void L_TVA_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void CB_TVA_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void CB_margeCo_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void L_remise_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void CB_remise_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void L_démarque_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void CB_démarque_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void B_T10plus_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void B_T10moins_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void B_ComS_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-};
+	};
 }
