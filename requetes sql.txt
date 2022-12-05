@@ -7,9 +7,9 @@ INNER JOIN ville AS v1 ON a1.id_ville = v1.id_ville
 INNER JOIN adresse AS a2 ON c.id_adresse_facturation = a2.id_adresse
 INNER JOIN ville AS v2 ON a2.id_ville = v2.id_ville
 INNER JOIN calendrier AS cal1 ON c.id_date_naissance = cal1.id_calendrier
-INNER JOIN (SELECT TOP 1 co.id_client, cal2.c_date FROM commande AS co 
+left JOIN (SELECT TOP 100 co.id_client, cal2.c_date FROM commande AS co 
             INNER JOIN calendrier AS cal2 ON co.id_date_emission = cal2.id_calendrier
-            ORDER BY cal2.c_date) AS d ON c.id_client = d.id_client
+            ORDER BY cal2.c_date ) AS d ON c.id_client = d.id_client
 
 
 SELECT c.id_commande AS "Référence/Commande", c.id_facture AS Facture, h.nom as "Nom", prenom as Prenom, d1.c_date AS "Date de livraison", d2.c_date AS "Date d'émission", art.nom AS "Article", ct.quantite AS "Quantité", f.montant_total_ht AS "Montant HT"
