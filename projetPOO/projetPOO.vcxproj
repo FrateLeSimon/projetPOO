@@ -38,9 +38,6 @@
     <ClInclude Include="GestionPersonnelForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="GestionStatForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="GestionStockForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -58,7 +55,6 @@
     <ClCompile Include="GestionClientForm.cpp" />
     <ClCompile Include="GestionCommandeForm.cpp" />
     <ClCompile Include="GestionPersonnelForm.cpp" />
-    <ClCompile Include="GestionStatForm.cpp" />
     <ClCompile Include="GestionStockForm.cpp" />
     <ClCompile Include="PersonnelForm.cpp" />
   </ItemGroup>
@@ -84,9 +80,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionPersonnelForm.resx">
       <DependentUpon>GestionPersonnelForm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GestionStatForm.resx">
-      <DependentUpon>GestionStatForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionStockForm.resx">
       <DependentUpon>GestionStockForm.h</DependentUpon>
