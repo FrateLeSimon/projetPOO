@@ -11,3 +11,12 @@ INNER JOIN (SELECT TOP 1 co.id_client, cal2.c_date FROM commande AS co
             INNER JOIN calendrier AS cal2 ON co.id_date_emission = cal2.id_calendrier
             ORDER BY cal2.c_date) AS d ON c.id_client = d.id_client
 
+
+SELECT c.id_commande AS "Référence/Commande", c.id_facture AS Facture, h.nom as "Nom", prenom as Prenom, d1.c_date AS "Date de livraison", d2.c_date AS "Date d'émission", art.nom AS "Article", ct.quantite AS "Quantité", f.montant_total_ht AS "Montant HT"
+FROM commande AS c 
+INNER JOIN facture AS f ON c.id_facture = f.id_facture
+INNER JOIN humain AS h ON c.id_client = h.id_humain
+INNER JOIN calendrier AS d1 ON c.id_date_livraison = d1.id_calendrier
+INNER JOIN calendrier AS d2 ON c.id_date_emission = d2.id_calendrier
+INNER JOIN contient AS ct ON c.id_commande = ct.id_commande
+INNER JOIN article AS art ON ct.id_article = art.id_article
