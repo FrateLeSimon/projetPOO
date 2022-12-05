@@ -20,3 +20,11 @@ INNER JOIN calendrier AS d1 ON c.id_date_livraison = d1.id_calendrier
 INNER JOIN calendrier AS d2 ON c.id_date_emission = d2.id_calendrier
 INNER JOIN contient AS ct ON c.id_commande = ct.id_commande
 INNER JOIN article AS art ON ct.id_article = art.id_article
+
+
+SELECT nom AS "Nom", prenom AS "Prénom", c.c_date AS "Date d'embauche", a.num_rue AS "Num. Rue", a.nom_rue AS "Nom Rue", v.nom_ville AS "Ville"
+FROM personnel AS p
+INNER JOIN humain AS h ON p.id_humain = h.id_humain
+INNER JOIN calendrier AS c ON p.id_calendrier = c.id_calendrier
+INNER JOIN adresse AS a ON p.id_adresse = a.id_adresse
+INNER JOIN ville AS v ON a.id_ville = v.id_ville
