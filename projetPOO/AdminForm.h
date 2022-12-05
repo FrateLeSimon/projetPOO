@@ -1,3 +1,7 @@
+
+#include "GestionPersonnelForm.h"
+#include "GestionStatForm1.h"
+
 #pragma once
 
 namespace projetPOO {
@@ -124,8 +128,12 @@ namespace projetPOO {
 	private: System::Void GB_Admin_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void B_Gestionpersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+		GestionPersonnelForm^ maGestionPersonnelForm = gcnew GestionPersonnelForm();
+		maGestionPersonnelForm->Show();
 	}
 	private: System::Void B_GestionStat_Click(System::Object^ sender, System::EventArgs^ e) {
+		GestionStatForm^ maGestionStatForm = gcnew GestionStatForm();
+		maGestionStatForm->Show();
 	}
 };
 }

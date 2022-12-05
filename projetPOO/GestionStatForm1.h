@@ -67,7 +67,9 @@ namespace projetPOO {
 	private: System::Windows::Forms::Label^ L_remise;
 	private: System::Windows::Forms::ComboBox^ CB_marge;
 	private: System::Windows::Forms::Label^ L_marge;
-	private: System::Windows::Forms::PictureBox^ Logo;
+
+
+
 
 
 
@@ -87,7 +89,6 @@ namespace projetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionStatForm::typeid));
 			this->DGV_BDD = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_stat = (gcnew System::Windows::Forms::GroupBox());
 			this->CB_démarque = (gcnew System::Windows::Forms::ComboBox());
@@ -110,12 +111,10 @@ namespace projetPOO {
 			this->B_Panier = (gcnew System::Windows::Forms::Button());
 			this->NUD_ChoixMois = (gcnew System::Windows::Forms::NumericUpDown());
 			this->L_ChoixMois = (gcnew System::Windows::Forms::Label());
-			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->BeginInit();
 			this->GB_stat->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdClientMontant))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_ChoixMois))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// DGV_BDD
@@ -123,7 +122,7 @@ namespace projetPOO {
 			this->DGV_BDD->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->DGV_BDD->Location = System::Drawing::Point(12, 12);
 			this->DGV_BDD->Name = L"DGV_BDD";
-			this->DGV_BDD->Size = System::Drawing::Size(389, 180);
+			this->DGV_BDD->Size = System::Drawing::Size(389, 362);
 			this->DGV_BDD->TabIndex = 6;
 			this->DGV_BDD->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionStatForm::DGV_BDD_CellContentClick);
 			// 
@@ -405,24 +404,12 @@ namespace projetPOO {
 			this->L_ChoixMois->Text = L"N° du mois";
 			this->L_ChoixMois->Click += gcnew System::EventHandler(this, &GestionStatForm::L_ChoixMois_Click);
 			// 
-			// Logo
-			// 
-			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
-			this->Logo->Location = System::Drawing::Point(87, 198);
-			this->Logo->Name = L"Logo";
-			this->Logo->Size = System::Drawing::Size(219, 176);
-			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->Logo->TabIndex = 29;
-			this->Logo->TabStop = false;
-			this->Logo->Click += gcnew System::EventHandler(this, &GestionStatForm::Logo_Click_1);
-			// 
 			// GestionStatForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(922, 386);
-			this->Controls->Add(this->Logo);
 			this->Controls->Add(this->GB_stat);
 			this->Controls->Add(this->DGV_BDD);
 			this->Name = L"GestionStatForm";
@@ -433,7 +420,6 @@ namespace projetPOO {
 			this->GB_stat->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdClientMontant))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_ChoixMois))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -486,9 +472,12 @@ namespace projetPOO {
 	}
 	private: System::Void CB_démarque_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+
+	private: System::Void Logo_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	}
 	private: System::Void Logo_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void Logo_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Logo_Click_2(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }

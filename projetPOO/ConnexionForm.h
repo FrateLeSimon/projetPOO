@@ -1,4 +1,6 @@
 #include "PersonnelForm.h"
+#include "AdminForm.h"
+
 
 namespace projetPOO {
 
@@ -182,25 +184,20 @@ namespace projetPOO {
 			return;
 		}
 
-		else if (Identifiant == "A" && Motdepasse == "08") {
+		else if (Identifiant == "Personnel" && Motdepasse == "00") {
 			PersonnelForm^ maPersonnelForm = gcnew PersonnelForm();
 			maPersonnelForm->Show();
+		}
+
+		else if (Identifiant == "Admin" && Motdepasse == "00") {
+			AdminForm^ maAdminForm = gcnew AdminForm();
+			maAdminForm->Show();
 		}
 
 		else {
 			MessageBox::Show("Identifiant ou mot de passe incorrect",
 				"Echec de l'authentification", MessageBoxButtons::OK);
 		}
-
-		//try {
-		//	String^ connString = "foutre le lien de la BDD ici";
-
-		//}
-
-		//catch (Exception^ e) {
-		//	MessageBox::Show("Echec de la connexion à la base de donnée",
-		//		"Erreur de connexion à la base de donnée", MessageBoxButtons::OK);
-		//}
 
 	}
 	};
