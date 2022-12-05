@@ -14,7 +14,7 @@ System::Data::DataSet^ clientServices::selectionnerTousLesClients(System::String
 	return this->oCad->getRows(sql, dataTableName);
 }
 void clientServices::ajouterUnClient(System::String^ v_nom, System::String^ v_prenom, System::String^ num_r_l, System::String^ num_r_f, System::String^ nom_r_l,
-	System::String^ nom_r_f, System::String^ ville_l, System::String^ ville_f, System::Int32^ code_post_l, System::Int32^ code_post_f, System::String^ date_n, System::String^ date_p_a)
+	System::String^ nom_r_f, System::String^ ville_l, System::String^ ville_f, System::String^ code_post_l, System::String^ code_post_f, System::String^ date_n)
 {
 	System::String^ sql;
 
@@ -29,14 +29,14 @@ void clientServices::ajouterUnClient(System::String^ v_nom, System::String^ v_pr
 	this->oClient->setCode_Postal_Livraison(code_post_l);
 	this->oClient->setCode_Postal_Facturation(code_post_f);
 	this->oClient->setDate_Naissance(date_n);
-	this->oClient->setDate_Premier_Achat(date_p_a);
+
 	
 	sql = this->oClient->Insert();
 
 	this->oCad->actionRows(sql);
 }
-void clientServices::modifierUnClient(int id,System::String^ v_nom, System::String^ v_prenom, System::String^ num_r_l, System::String^ num_r_f, System::String^ nom_r_l,
-	System::String^ nom_r_f, System::String^ ville_l, System::String^ ville_f, System::Int32^ code_post_l, System::Int32^ code_post_f, System::String^ date_n, System::String^ date_p_a)
+void clientServices::modifierUnClient(System::String^ id,System::String^ v_nom, System::String^ v_prenom, System::String^ num_r_l, System::String^ num_r_f, System::String^ nom_r_l,
+	System::String^ nom_r_f, System::String^ ville_l, System::String^ ville_f, System::String^ code_post_l, System::String^ code_post_f, System::String^ date_n)
 {
 	System::String^ sql;
 
@@ -51,18 +51,18 @@ void clientServices::modifierUnClient(int id,System::String^ v_nom, System::Stri
 	this->oClient->setCode_Postal_Livraison(code_post_l);
 	this->oClient->setCode_Postal_Facturation(code_post_f);
 	this->oClient->setDate_Naissance(date_n);
-	this->oClient->setDate_Premier_Achat(date_p_a);
+
 	
-	this->oClient->setId_Client(System::Convert::ToInt32(id));
+	this->oClient->setId_Client(id);
 	sql = this->oClient->Update();
 
 	this->oCad->actionRows(sql);
 }
-void clientServices::supprimerUnClient(int id)
+void clientServices::supprimerUnClient(System::String^ id)
 {
 	System::String^ sql;
 
-	this->oClient->setId_Client(System::Convert::ToInt32(id));
+	this->oClient->setId_Client(id);
 	sql = this->oClient->Delete();
 
 	this->oCad->actionRows(sql);
@@ -82,8 +82,8 @@ System::Data::DataSet^ personnelServices::selectionnerTousLesPersonnels(System::
 	sql = this->oPersonnel->Select();
 	return this->oCad->getRows(sql, dataTableName);
 }
-void personnelServices::ajouterUnPersonnel(System::String^ v_nom, System::String^ v_prenom, System::Int32^ id_sup, System::String^ num_r, 
-	System::String^ nom_r, System::String^ v_ville, System::Int32^ code_p, System::String^ date_e, System::Boolean^ v_admin)
+void personnelServices::ajouterUnPersonnel(System::String^ v_nom, System::String^ v_prenom, System::String^ id_sup, System::String^ num_r, 
+	System::String^ nom_r, System::String^ v_ville, System::String^ code_p, System::String^ date_e, System::String^ v_admin)
 {
 	System::String^ sql;
 
@@ -101,8 +101,8 @@ void personnelServices::ajouterUnPersonnel(System::String^ v_nom, System::String
 
 	this->oCad->actionRows(sql);
 }
-void personnelServices::modifierUnPersonnel(int id, System::String^ v_nom, System::String^ v_prenom, System::Int32^ id_sup, System::String^ num_r,
-	System::String^ nom_r, System::String^ v_ville, System::Int32^ code_p, System::String^ date_e, System::Boolean^ v_admin)
+void personnelServices::modifierUnPersonnel(System::String^ id, System::String^ v_nom, System::String^ v_prenom, System::String^ id_sup, System::String^ num_r,
+	System::String^ nom_r, System::String^ v_ville, System::String^ code_p, System::String^ date_e, System::String^ v_admin)
 {
 	System::String^ sql;
 
@@ -116,16 +116,16 @@ void personnelServices::modifierUnPersonnel(int id, System::String^ v_nom, Syste
 	this->oPersonnel->setDate_Embauche(date_e);
 	this->oPersonnel->setAdmin(v_admin);
 
-	this->oPersonnel->setId_Personnel(System::Convert::ToInt32(id));
+	this->oPersonnel->setId_Personnel(id);
 	sql = this->oPersonnel->Update();
 
 	this->oCad->actionRows(sql);
 }
-void personnelServices::supprimerUnPersonnel(int id)
+void personnelServices::supprimerUnPersonnel(System::String^ id)
 {
 	System::String^ sql;
 
-	this->oPersonnel->setId_Personnel(System::Convert::ToInt32(id));
+	this->oPersonnel->setId_Personnel(id);
 	sql = this->oPersonnel->Delete();
 
 	this->oCad->actionRows(sql);
@@ -145,7 +145,7 @@ System::Data::DataSet^ commandeServices::selectionnerToutesLesCommandes(System::
 	sql = this->oCommande->Select();
 	return this->oCad->getRows(sql, dataTableName);
 }
-void commandeServices::ajouterUneCommande(System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::Int32^ v_montant_ht, System::Int32^ v_montant_ttc)
+void commandeServices::ajouterUneCommande(System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::String^ v_montant_ht, System::String^ v_montant_ttc)
 {
 	System::String^ sql;
 
@@ -159,7 +159,7 @@ void commandeServices::ajouterUneCommande(System::String^ v_ref, System::String^
 
 	this->oCad->actionRows(sql);
 }
-void commandeServices::modifierUneCommande(int id, System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::Int32^ v_montant_ht, System::Int32^ v_montant_ttc)
+void commandeServices::modifierUneCommande(System::String^ id, System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::String^ v_montant_ht, System::String^ v_montant_ttc)
 {
 	System::String^ sql;
 
@@ -169,16 +169,16 @@ void commandeServices::modifierUneCommande(int id, System::String^ v_ref, System
 	this->oCommande->setMontant_HT(v_montant_ht);
 	this->oCommande->setMontant_TTC(v_montant_ttc);
 
-	this->oCommande->setId_Commande(System::Convert::ToInt32(id));
+	this->oCommande->setId_Commande(id);
 	sql = this->oCommande->Update();
 
 	this->oCad->actionRows(sql);
 }
-void commandeServices::supprimerUneCommande(int id)
+void commandeServices::supprimerUneCommande(System::String^ id)
 {
 	System::String^ sql;
 
-	this->oCommande->setId_Commande(System::Convert::ToInt32(id));
+	this->oCommande->setId_Commande(id);
 	sql = this->oCommande->Delete();
 
 	this->oCad->actionRows(sql);
@@ -198,7 +198,7 @@ System::Data::DataSet^ articleServices::selectionnerTousLesArticles(System::Stri
 	sql = this->oArticle->Select();
 	return this->oCad->getRows(sql, dataTableName);
 }
-void articleServices::ajouterUnArticle(System::String^ v_nom_art, System::Int32^ v_quantite_stock, System::Int32^ v_prix_art, System::Int32^ v_seuil, System::String^ v_couleur)
+void articleServices::ajouterUnArticle(System::String^ v_nom_art, System::String^ v_quantite_stock, System::String^ v_prix_art, System::String^ v_seuil, System::String^ v_couleur)
 {
 	System::String^ sql;
 
@@ -212,7 +212,7 @@ void articleServices::ajouterUnArticle(System::String^ v_nom_art, System::Int32^
 
 	this->oCad->actionRows(sql);
 }
-void articleServices::modifierUnArticle(int id, System::String^ v_nom_art, System::Int32^ v_quantite_stock, System::Int32^ v_prix_art, System::Int32^ v_seuil, System::String^ v_couleur)
+void articleServices::modifierUnArticle(System::String^ id, System::String^ v_nom_art, System::String^ v_quantite_stock, System::String^ v_prix_art, System::String^ v_seuil, System::String^ v_couleur)
 {
 	System::String^ sql;
 
@@ -222,16 +222,16 @@ void articleServices::modifierUnArticle(int id, System::String^ v_nom_art, Syste
 	this->oArticle->setSeuil(v_seuil);
 	this->oArticle->setCouleur(v_couleur);
 
-	this->oArticle->setId_Article(System::Convert::ToInt32(id));
+	this->oArticle->setId_Article(id);
 	sql = this->oArticle->Update();
 
 	this->oCad->actionRows(sql);
 }
-void articleServices::supprimerUnArticle(int id)
+void articleServices::supprimerUnArticle(System::String^ id)
 {
 	System::String^ sql;
 
-	this->oArticle->setId_Article(System::Convert::ToInt32(id));
+	this->oArticle->setId_Article(id);
 	sql = this->oArticle->Delete();
 
 	this->oCad->actionRows(sql);

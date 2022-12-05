@@ -10,9 +10,9 @@
 	public:
 		clientServices(void);
 		System::Data::DataSet^ selectionnerTousLesClients(System::String^);
-		void ajouterUnClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::Int32^, System::Int32^, System::String^, System::String^);
-		void modifierUnClient(int, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::Int32^, System::Int32^, System::String^, System::String^);
-		void supprimerUnClient(int);
+		void ajouterUnClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void modifierUnClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void supprimerUnClient(System::String^);
 	};
 
 
@@ -24,9 +24,9 @@ private:
 public:
 	personnelServices(void);
 	System::Data::DataSet^ selectionnerTousLesPersonnels(System::String^);
-	void ajouterUnPersonnel(System::String^, System::String^, System::Int32^, System::String^, System::String^, System::String^, System::Int32^, System::String^, System::Boolean^);
-	void modifierUnPersonnel(int, System::String^, System::String^, System::Int32^, System::String^, System::String^, System::String^, System::Int32^, System::String^, System::Boolean^);
-	void supprimerUnPersonnel(int);
+	void ajouterUnPersonnel(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	void modifierUnPersonnel(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	void supprimerUnPersonnel(System::String^);
 };
 
 
@@ -38,9 +38,9 @@ private:
 public:
 	commandeServices(void);
 	System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);
-	void ajouterUneCommande(System::String^, System::String^, System::String^, System::Int32^, System::Int32^);
-	void modifierUneCommande(int, System::String^, System::String^, System::String^, System::Int32^, System::Int32^);
-	void supprimerUneCommande(int);
+	void ajouterUneCommande(System::String^, System::String^, System::String^, System::String^, System::String^);
+	void modifierUneCommande(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	void supprimerUneCommande(System::String^);
 };
 
 
@@ -52,7 +52,7 @@ private:
 public:
 	articleServices(void);
 	System::Data::DataSet^ selectionnerTousLesArticles(System::String^);
-	void ajouterUnArticle(System::String^, System::Int32^, System::Int32^, System::Int32^, System::String^);
-	void modifierUnArticle(int, System::String^, System::Int32^, System::Int32^, System::Int32^, System::String^);
-	void supprimerUnArticle(int);
+	void ajouterUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^);
+	void modifierUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	void supprimerUnArticle(System::String^);
 };

@@ -87,9 +87,9 @@ namespace projetPOO {
 	private: System::Windows::Forms::Button^ B_insert;
 	private: System::Windows::Forms::Button^ B_update;
 	private: System::Windows::Forms::Button^ B_delete;
-	private: System::Windows::Forms::MonthCalendar^ MC_1achat;
 
-	private: System::Windows::Forms::Label^ L_1achat;
+
+
 	private: System::Windows::Forms::PictureBox^ Logo;
 	private: System::Windows::Forms::Label^ L_DdNaissance;
 	private: System::Windows::Forms::MonthCalendar^ MC_DdNaissance;
@@ -125,8 +125,6 @@ namespace projetPOO {
 			this->DGV_BDD = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_client = (gcnew System::Windows::Forms::GroupBox());
 			this->Logo = (gcnew System::Windows::Forms::PictureBox());
-			this->MC_1achat = (gcnew System::Windows::Forms::MonthCalendar());
-			this->L_1achat = (gcnew System::Windows::Forms::Label());
 			this->GB_Afacturation = (gcnew System::Windows::Forms::GroupBox());
 			this->TB_NumRueF = (gcnew System::Windows::Forms::TextBox());
 			this->CB_CpostalF = (gcnew System::Windows::Forms::ComboBox());
@@ -137,6 +135,8 @@ namespace projetPOO {
 			this->CB_CpostalL = (gcnew System::Windows::Forms::ComboBox());
 			this->TB_NrueL = (gcnew System::Windows::Forms::TextBox());
 			this->CB_NVilleL = (gcnew System::Windows::Forms::ComboBox());
+			this->L_DdNaissance = (gcnew System::Windows::Forms::Label());
+			this->MC_DdNaissance = (gcnew System::Windows::Forms::MonthCalendar());
 			this->NUD_idClient = (gcnew System::Windows::Forms::NumericUpDown());
 			this->TB_PrenomClient = (gcnew System::Windows::Forms::TextBox());
 			this->L_idClient = (gcnew System::Windows::Forms::Label());
@@ -144,8 +144,6 @@ namespace projetPOO {
 			this->B_insert = (gcnew System::Windows::Forms::Button());
 			this->B_update = (gcnew System::Windows::Forms::Button());
 			this->B_delete = (gcnew System::Windows::Forms::Button());
-			this->MC_DdNaissance = (gcnew System::Windows::Forms::MonthCalendar());
-			this->L_DdNaissance = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->BeginInit();
 			this->GB_client->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
@@ -178,8 +176,6 @@ namespace projetPOO {
 			// GB_client
 			// 
 			this->GB_client->Controls->Add(this->Logo);
-			this->GB_client->Controls->Add(this->MC_1achat);
-			this->GB_client->Controls->Add(this->L_1achat);
 			this->GB_client->Controls->Add(this->GB_Afacturation);
 			this->GB_client->Controls->Add(this->GB_Alivraison);
 			this->GB_client->Controls->Add(this->L_DdNaissance);
@@ -208,25 +204,6 @@ namespace projetPOO {
 			this->Logo->TabIndex = 22;
 			this->Logo->TabStop = false;
 			this->Logo->Click += gcnew System::EventHandler(this, &GestionClientForm::Logo_Click);
-			// 
-			// MC_1achat
-			// 
-			this->MC_1achat->Location = System::Drawing::Point(261, 126);
-			this->MC_1achat->Name = L"MC_1achat";
-			this->MC_1achat->TabIndex = 21;
-			this->MC_1achat->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::MC_1achat_DateChanged);
-			// 
-			// L_1achat
-			// 
-			this->L_1achat->AutoSize = true;
-			this->L_1achat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->L_1achat->Location = System::Drawing::Point(278, 106);
-			this->L_1achat->Name = L"L_1achat";
-			this->L_1achat->Size = System::Drawing::Size(193, 16);
-			this->L_1achat->TabIndex = 20;
-			this->L_1achat->Text = L"Date du premier achat du Client";
-			this->L_1achat->Click += gcnew System::EventHandler(this, &GestionClientForm::L_1achat_Click);
 			// 
 			// GB_Afacturation
 			// 
@@ -360,6 +337,25 @@ namespace projetPOO {
 			this->CB_NVilleL->Text = L"Nom de la ville";
 			this->CB_NVilleL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_NvilleL_SelectedIndexChanged);
 			// 
+			// L_DdNaissance
+			// 
+			this->L_DdNaissance->AutoSize = true;
+			this->L_DdNaissance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->L_DdNaissance->Location = System::Drawing::Point(35, 106);
+			this->L_DdNaissance->Name = L"L_DdNaissance";
+			this->L_DdNaissance->Size = System::Drawing::Size(156, 16);
+			this->L_DdNaissance->TabIndex = 12;
+			this->L_DdNaissance->Text = L"Date de naissance Client";
+			this->L_DdNaissance->Click += gcnew System::EventHandler(this, &GestionClientForm::L_DdNaissance_Click);
+			// 
+			// MC_DdNaissance
+			// 
+			this->MC_DdNaissance->Location = System::Drawing::Point(3, 126);
+			this->MC_DdNaissance->Name = L"MC_DdNaissance";
+			this->MC_DdNaissance->TabIndex = 11;
+			this->MC_DdNaissance->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::MC_DdNaissance_DateChanged);
+			// 
 			// NUD_idClient
 			// 
 			this->NUD_idClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -442,25 +438,6 @@ namespace projetPOO {
 			this->B_delete->UseVisualStyleBackColor = true;
 			this->B_delete->Click += gcnew System::EventHandler(this, &GestionClientForm::B_delete_Click);
 			// 
-			// MC_DdNaissance
-			// 
-			this->MC_DdNaissance->Location = System::Drawing::Point(3, 126);
-			this->MC_DdNaissance->Name = L"MC_DdNaissance";
-			this->MC_DdNaissance->TabIndex = 11;
-			this->MC_DdNaissance->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::MC_DdNaissance_DateChanged);
-			// 
-			// L_DdNaissance
-			// 
-			this->L_DdNaissance->AutoSize = true;
-			this->L_DdNaissance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->L_DdNaissance->Location = System::Drawing::Point(35, 106);
-			this->L_DdNaissance->Name = L"L_DdNaissance";
-			this->L_DdNaissance->Size = System::Drawing::Size(156, 16);
-			this->L_DdNaissance->TabIndex = 12;
-			this->L_DdNaissance->Text = L"Date de naissance Client";
-			this->L_DdNaissance->Click += gcnew System::EventHandler(this, &GestionClientForm::L_DdNaissance_Click);
-			// 
 			// GestionClientForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -535,7 +512,9 @@ namespace projetPOO {
 		this->DGV_BDD->DataMember = "Rsl";
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+		this->oSvc = gcnew clientServices();
+		this->oSvc->ajouterUnClient(this->TB_NomClient->Text, this->TB_PrenomClient->Text, this->TB_NumRueL->Text, this->TB_NumRueF->Text, this->TB_NrueL->Text, this->TB_NrueF->Text, this->CB_NVilleL->Text, this->CB_NvilleF->Text, this->CB_CpostalL->Text, this->CB_CpostalF->Text, System::Convert::ToString(this->MC_DdNaissance->SelectionStart));
+	}	
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
