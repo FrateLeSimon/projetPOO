@@ -43,7 +43,9 @@ System::String^ clientMap::Select(){
 
 
 
-System::String^ clientMap::Insert(){return "select";}
+System::String^ clientMap::Insert(){
+	return "INSERT INTO humain VALUES(this->nom, this->prenom) INSERT INTO calendrier VALUES(this->date_naissance) INSERT INTO adresse VALUES (this->num_rue_facturation, this->nom_rue_facturation, this->ville_facturation), (this->num_rue_livraison, this->nom_rue_livraison, this->ville_livraison) INSERT INTO client VALUES ((SELECT id_calendrier FROM calendrier WHERE c_date = this->date_naissance), (SELECT id_adresse FROM adresse WHERE(num_rue = this->num_rue_livraison and nom_rue = this->nom_rue_livraison and id_ville = this->ville_livraison)), (SELECT id_adresse FROM adresse WHERE(num_rue = this->num_rue_facturation and nom_rue = this->nom_rue_facturation and id_ville = this->ville_facturation)), (SELECT id_humain FROM humain WHERE nom = this->nom and prenom = this->prenom)); ";
+}
 System::String^ clientMap::Update(){return "update";}
 System::String^ clientMap::Delete(){return "delete";}
 
