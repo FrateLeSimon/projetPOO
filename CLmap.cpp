@@ -125,6 +125,7 @@ articleMap::articleMap()
 articleMap::articleMap(System::String^ id_art, System::String^ v_nom_art, System::String^ v_quantite_stock, System::String^ v_prix_art, System::String^ v_seuil, System::String^ v_couleur)
 	: id_article(id_art), nom_article(v_nom_art), quantite_stock(v_quantite_stock), prix_article(v_prix_art), seuil(v_seuil), couleur(v_couleur)
 {}
+
 void articleMap::setId_Article(System::String^ a) { this->id_article = a; }
 void articleMap::setNom_Article(System::String^ a) { this->nom_article = a; }
 void articleMap::setQuantite_Stock(System::String^ a) { this->quantite_stock = a; }

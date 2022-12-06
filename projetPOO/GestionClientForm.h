@@ -442,7 +442,7 @@ namespace projetPOO {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(1065, 479);
+			this->ClientSize = System::Drawing::Size(1060, 474);
 			this->Controls->Add(this->B_delete);
 			this->Controls->Add(this->B_update);
 			this->Controls->Add(this->B_insert);
