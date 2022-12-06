@@ -158,7 +158,7 @@ namespace projetPOO {
 			this->CB_Admin->AutoSize = true;
 			this->CB_Admin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->CB_Admin->Location = System::Drawing::Point(59, 135);
+			this->CB_Admin->Location = System::Drawing::Point(27, 135);
 			this->CB_Admin->Name = L"CB_Admin";
 			this->CB_Admin->Size = System::Drawing::Size(111, 20);
 			this->CB_Admin->TabIndex = 25;
@@ -238,7 +238,7 @@ namespace projetPOO {
 			// 
 			this->TB_NumRue->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TB_NumRue->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_NumRue->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->TB_NumRue->Location = System::Drawing::Point(6, 23);
 			this->TB_NumRue->Name = L"TB_NumRue";
 			this->TB_NumRue->Size = System::Drawing::Size(148, 22);
@@ -250,7 +250,7 @@ namespace projetPOO {
 			// 
 			this->CB_Cpostal->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->CB_Cpostal->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->CB_Cpostal->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->CB_Cpostal->FormattingEnabled = true;
 			this->CB_Cpostal->Location = System::Drawing::Point(160, 51);
 			this->CB_Cpostal->Name = L"CB_Cpostal";
@@ -263,7 +263,7 @@ namespace projetPOO {
 			// 
 			this->TB_Nrue->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TB_Nrue->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_Nrue->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->TB_Nrue->Location = System::Drawing::Point(160, 23);
 			this->TB_Nrue->Name = L"TB_Nrue";
 			this->TB_Nrue->Size = System::Drawing::Size(111, 22);
@@ -275,7 +275,7 @@ namespace projetPOO {
 			// 
 			this->CB_NVille->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->CB_NVille->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->CB_NVille->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->CB_NVille->FormattingEnabled = true;
 			this->CB_NVille->Location = System::Drawing::Point(6, 51);
 			this->CB_NVille->Name = L"CB_NVille";
@@ -298,7 +298,7 @@ namespace projetPOO {
 			// 
 			this->TB_PrenomPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->TB_PrenomPersonnel->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_PrenomPersonnel->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->TB_PrenomPersonnel->Location = System::Drawing::Point(9, 76);
 			this->TB_PrenomPersonnel->Name = L"TB_PrenomPersonnel";
 			this->TB_PrenomPersonnel->Size = System::Drawing::Size(208, 22);
@@ -322,7 +322,7 @@ namespace projetPOO {
 			// 
 			this->TB_NomPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TB_NomPersonnel->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_NomPersonnel->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->TB_NomPersonnel->Location = System::Drawing::Point(9, 48);
 			this->TB_NomPersonnel->Name = L"TB_NomPersonnel";
 			this->TB_NomPersonnel->Size = System::Drawing::Size(208, 22);

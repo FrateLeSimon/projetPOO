@@ -160,7 +160,7 @@ namespace projetPOO {
 			// 
 			this->TB_MontantTTC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TB_MontantTTC->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_MontantTTC->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->TB_MontantTTC->Location = System::Drawing::Point(245, 53);
 			this->TB_MontantTTC->Name = L"TB_MontantTTC";
 			this->TB_MontantTTC->Size = System::Drawing::Size(199, 22);
@@ -172,7 +172,7 @@ namespace projetPOO {
 			// 
 			this->TB_MontantHT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TB_MontantHT->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_MontantHT->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->TB_MontantHT->Location = System::Drawing::Point(245, 25);
 			this->TB_MontantHT->Name = L"TB_MontantHT";
 			this->TB_MontantHT->Size = System::Drawing::Size(199, 22);
@@ -222,7 +222,7 @@ namespace projetPOO {
 			// 
 			this->TB_Référence->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TB_Référence->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_Référence->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->TB_Référence->Location = System::Drawing::Point(9, 53);
 			this->TB_Référence->Name = L"TB_Référence";
 			this->TB_Référence->Size = System::Drawing::Size(199, 22);
@@ -270,7 +270,7 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->B_insert->Location = System::Drawing::Point(313, 174);
 			this->B_insert->Name = L"B_insert";
-			this->B_insert->Size = System::Drawing::Size(134, 38);
+			this->B_insert->Size = System::Drawing::Size(134, 48);
 			this->B_insert->TabIndex = 10;
 			this->B_insert->Text = L"Insérer";
 			this->B_insert->UseVisualStyleBackColor = true;
@@ -280,9 +280,9 @@ namespace projetPOO {
 			// 
 			this->B_update->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_update->Location = System::Drawing::Point(313, 231);
+			this->B_update->Location = System::Drawing::Point(313, 226);
 			this->B_update->Name = L"B_update";
-			this->B_update->Size = System::Drawing::Size(134, 38);
+			this->B_update->Size = System::Drawing::Size(134, 48);
 			this->B_update->TabIndex = 11;
 			this->B_update->Text = L"Modifier";
 			this->B_update->UseVisualStyleBackColor = true;
@@ -292,9 +292,9 @@ namespace projetPOO {
 			// 
 			this->B_delete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_delete->Location = System::Drawing::Point(313, 288);
+			this->B_delete->Location = System::Drawing::Point(313, 277);
 			this->B_delete->Name = L"B_delete";
-			this->B_delete->Size = System::Drawing::Size(134, 37);
+			this->B_delete->Size = System::Drawing::Size(134, 48);
 			this->B_delete->TabIndex = 12;
 			this->B_delete->Text = L"Supprimer";
 			this->B_delete->UseVisualStyleBackColor = true;

@@ -137,7 +137,7 @@ namespace projetPOO {
 			// CB_CouleurA
 			// 
 			this->CB_CouleurA->FormattingEnabled = true;
-			this->CB_CouleurA->Location = System::Drawing::Point(105, 173);
+			this->CB_CouleurA->Location = System::Drawing::Point(105, 166);
 			this->CB_CouleurA->Name = L"CB_CouleurA";
 			this->CB_CouleurA->Size = System::Drawing::Size(93, 28);
 			this->CB_CouleurA->TabIndex = 17;
@@ -181,7 +181,7 @@ namespace projetPOO {
 			// 
 			this->TB_PrixArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TB_PrixArticle->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_PrixArticle->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->TB_PrixArticle->Location = System::Drawing::Point(6, 110);
 			this->TB_PrixArticle->Name = L"TB_PrixArticle";
 			this->TB_PrixArticle->Size = System::Drawing::Size(192, 22);
@@ -215,7 +215,7 @@ namespace projetPOO {
 			// 
 			this->TB_NomArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TB_NomArticle->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->TB_NomArticle->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->TB_NomArticle->Location = System::Drawing::Point(6, 54);
 			this->TB_NomArticle->Name = L"TB_NomArticle";
 			this->TB_NomArticle->Size = System::Drawing::Size(192, 22);

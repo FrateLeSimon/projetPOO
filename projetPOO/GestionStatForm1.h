@@ -60,14 +60,14 @@ namespace projetPOO {
 	private: System::Windows::Forms::Button^ B_MontantTotalAchat;
 
 	private: System::Windows::Forms::Button^ B_seuil;
-	private: System::Windows::Forms::Label^ L_TVA;
+
 	private: System::Windows::Forms::ComboBox^ CB_TVA;
-	private: System::Windows::Forms::ComboBox^ CB_démarque;
-	private: System::Windows::Forms::Label^ L_démarque;
-	private: System::Windows::Forms::ComboBox^ CB_remise;
-	private: System::Windows::Forms::Label^ L_remise;
-	private: System::Windows::Forms::ComboBox^ CB_marge;
-	private: System::Windows::Forms::Label^ L_marge;
+
+
+
+
+
+
 
 
 
@@ -92,13 +92,6 @@ namespace projetPOO {
 		{
 			this->DGV_BDD = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_stat = (gcnew System::Windows::Forms::GroupBox());
-			this->CB_démarque = (gcnew System::Windows::Forms::ComboBox());
-			this->L_démarque = (gcnew System::Windows::Forms::Label());
-			this->CB_remise = (gcnew System::Windows::Forms::ComboBox());
-			this->L_remise = (gcnew System::Windows::Forms::Label());
-			this->CB_marge = (gcnew System::Windows::Forms::ComboBox());
-			this->L_marge = (gcnew System::Windows::Forms::Label());
-			this->L_TVA = (gcnew System::Windows::Forms::Label());
 			this->CB_TVA = (gcnew System::Windows::Forms::ComboBox());
 			this->B_VachatStock = (gcnew System::Windows::Forms::Button());
 			this->B_VCommerciale = (gcnew System::Windows::Forms::Button());
@@ -123,19 +116,12 @@ namespace projetPOO {
 			this->DGV_BDD->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->DGV_BDD->Location = System::Drawing::Point(12, 12);
 			this->DGV_BDD->Name = L"DGV_BDD";
-			this->DGV_BDD->Size = System::Drawing::Size(389, 362);
+			this->DGV_BDD->Size = System::Drawing::Size(389, 322);
 			this->DGV_BDD->TabIndex = 6;
 			this->DGV_BDD->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionStatForm::DGV_BDD_CellContentClick);
 			// 
 			// GB_stat
 			// 
-			this->GB_stat->Controls->Add(this->CB_démarque);
-			this->GB_stat->Controls->Add(this->L_démarque);
-			this->GB_stat->Controls->Add(this->CB_remise);
-			this->GB_stat->Controls->Add(this->L_remise);
-			this->GB_stat->Controls->Add(this->CB_marge);
-			this->GB_stat->Controls->Add(this->L_marge);
-			this->GB_stat->Controls->Add(this->L_TVA);
 			this->GB_stat->Controls->Add(this->CB_TVA);
 			this->GB_stat->Controls->Add(this->B_VachatStock);
 			this->GB_stat->Controls->Add(this->B_VCommerciale);
@@ -153,109 +139,22 @@ namespace projetPOO {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->GB_stat->Location = System::Drawing::Point(407, 12);
 			this->GB_stat->Name = L"GB_stat";
-			this->GB_stat->Size = System::Drawing::Size(503, 362);
+			this->GB_stat->Size = System::Drawing::Size(503, 322);
 			this->GB_stat->TabIndex = 23;
 			this->GB_stat->TabStop = false;
 			this->GB_stat->Text = L"Statistique";
 			this->GB_stat->Enter += gcnew System::EventHandler(this, &GestionStatForm::GB_stat_Enter);
 			// 
-			// CB_démarque
-			// 
-			this->CB_démarque->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->CB_démarque->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->CB_démarque->FormattingEnabled = true;
-			this->CB_démarque->Location = System::Drawing::Point(200, 321);
-			this->CB_démarque->Name = L"CB_démarque";
-			this->CB_démarque->Size = System::Drawing::Size(148, 24);
-			this->CB_démarque->TabIndex = 28;
-			this->CB_démarque->Text = L"Démarque";
-			this->CB_démarque->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionStatForm::CB_démarque_SelectedIndexChanged);
-			// 
-			// L_démarque
-			// 
-			this->L_démarque->AutoSize = true;
-			this->L_démarque->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->L_démarque->Location = System::Drawing::Point(197, 300);
-			this->L_démarque->Name = L"L_démarque";
-			this->L_démarque->Size = System::Drawing::Size(71, 16);
-			this->L_démarque->TabIndex = 27;
-			this->L_démarque->Text = L"Démarque";
-			this->L_démarque->Click += gcnew System::EventHandler(this, &GestionStatForm::L_démarque_Click);
-			// 
-			// CB_remise
-			// 
-			this->CB_remise->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->CB_remise->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->CB_remise->FormattingEnabled = true;
-			this->CB_remise->Location = System::Drawing::Point(6, 321);
-			this->CB_remise->Name = L"CB_remise";
-			this->CB_remise->Size = System::Drawing::Size(148, 24);
-			this->CB_remise->TabIndex = 26;
-			this->CB_remise->Text = L"Remise";
-			this->CB_remise->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionStatForm::CB_remise_SelectedIndexChanged);
-			// 
-			// L_remise
-			// 
-			this->L_remise->AutoSize = true;
-			this->L_remise->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->L_remise->Location = System::Drawing::Point(6, 300);
-			this->L_remise->Name = L"L_remise";
-			this->L_remise->Size = System::Drawing::Size(54, 16);
-			this->L_remise->TabIndex = 25;
-			this->L_remise->Text = L"Remise";
-			this->L_remise->Click += gcnew System::EventHandler(this, &GestionStatForm::L_remise_Click);
-			// 
-			// CB_marge
-			// 
-			this->CB_marge->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->CB_marge->ForeColor = System::Drawing::SystemColors::InactiveCaption;
-			this->CB_marge->FormattingEnabled = true;
-			this->CB_marge->Location = System::Drawing::Point(200, 261);
-			this->CB_marge->Name = L"CB_marge";
-			this->CB_marge->Size = System::Drawing::Size(148, 24);
-			this->CB_marge->TabIndex = 24;
-			this->CB_marge->Text = L"marge";
-			this->CB_marge->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionStatForm::CB_marge_SelectedIndexChanged);
-			// 
-			// L_marge
-			// 
-			this->L_marge->AutoSize = true;
-			this->L_marge->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->L_marge->Location = System::Drawing::Point(198, 242);
-			this->L_marge->Name = L"L_marge";
-			this->L_marge->Size = System::Drawing::Size(46, 16);
-			this->L_marge->TabIndex = 23;
-			this->L_marge->Text = L"Marge";
-			this->L_marge->Click += gcnew System::EventHandler(this, &GestionStatForm::L_marge_Click);
-			// 
-			// L_TVA
-			// 
-			this->L_TVA->AutoSize = true;
-			this->L_TVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->L_TVA->Location = System::Drawing::Point(6, 242);
-			this->L_TVA->Name = L"L_TVA";
-			this->L_TVA->Size = System::Drawing::Size(34, 16);
-			this->L_TVA->TabIndex = 22;
-			this->L_TVA->Text = L"TVA";
-			this->L_TVA->Click += gcnew System::EventHandler(this, &GestionStatForm::L_TVA_Click);
-			// 
 			// CB_TVA
 			// 
 			this->CB_TVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->CB_TVA->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->CB_TVA->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->CB_TVA->FormattingEnabled = true;
 			this->CB_TVA->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"5.5", L"10", L"20" });
-			this->CB_TVA->Location = System::Drawing::Point(6, 261);
+			this->CB_TVA->Location = System::Drawing::Point(136, 286);
 			this->CB_TVA->Name = L"CB_TVA";
-			this->CB_TVA->Size = System::Drawing::Size(148, 24);
+			this->CB_TVA->Size = System::Drawing::Size(237, 24);
 			this->CB_TVA->TabIndex = 21;
 			this->CB_TVA->Text = L"TVA";
 			this->CB_TVA->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionStatForm::CB_TVA_SelectedIndexChanged);
@@ -264,9 +163,9 @@ namespace projetPOO {
 			// 
 			this->B_VachatStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_VachatStock->Location = System::Drawing::Point(9, 182);
+			this->B_VachatStock->Location = System::Drawing::Point(7, 182);
 			this->B_VachatStock->Name = L"B_VachatStock";
-			this->B_VachatStock->Size = System::Drawing::Size(226, 46);
+			this->B_VachatStock->Size = System::Drawing::Size(237, 46);
 			this->B_VachatStock->TabIndex = 20;
 			this->B_VachatStock->Text = L"Valeur d\'achat du stock";
 			this->B_VachatStock->UseVisualStyleBackColor = true;
@@ -276,9 +175,9 @@ namespace projetPOO {
 			// 
 			this->B_VCommerciale->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_VCommerciale->Location = System::Drawing::Point(369, 242);
+			this->B_VCommerciale->Location = System::Drawing::Point(136, 234);
 			this->B_VCommerciale->Name = L"B_VCommerciale";
-			this->B_VCommerciale->Size = System::Drawing::Size(121, 103);
+			this->B_VCommerciale->Size = System::Drawing::Size(237, 46);
 			this->B_VCommerciale->TabIndex = 19;
 			this->B_VCommerciale->Text = L"Valeur commerciale du stock";
 			this->B_VCommerciale->UseVisualStyleBackColor = true;
@@ -288,9 +187,9 @@ namespace projetPOO {
 			// 
 			this->B_T10Moins->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_T10Moins->Location = System::Drawing::Point(349, 26);
+			this->B_T10Moins->Location = System::Drawing::Point(326, 26);
 			this->B_T10Moins->Name = L"B_T10Moins";
-			this->B_T10Moins->Size = System::Drawing::Size(141, 70);
+			this->B_T10Moins->Size = System::Drawing::Size(164, 70);
 			this->B_T10Moins->TabIndex = 18;
 			this->B_T10Moins->Text = L"Top 10 - vendu";
 			this->B_T10Moins->UseVisualStyleBackColor = true;
@@ -300,9 +199,9 @@ namespace projetPOO {
 			// 
 			this->B_T10Plus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_T10Plus->Location = System::Drawing::Point(349, 104);
+			this->B_T10Plus->Location = System::Drawing::Point(326, 104);
 			this->B_T10Plus->Name = L"B_T10Plus";
-			this->B_T10Plus->Size = System::Drawing::Size(141, 72);
+			this->B_T10Plus->Size = System::Drawing::Size(164, 72);
 			this->B_T10Plus->TabIndex = 17;
 			this->B_T10Plus->Text = L"Top 10 + vendu";
 			this->B_T10Plus->UseVisualStyleBackColor = true;
@@ -349,9 +248,9 @@ namespace projetPOO {
 			// 
 			this->B_seuil->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_seuil->Location = System::Drawing::Point(264, 182);
+			this->B_seuil->Location = System::Drawing::Point(253, 182);
 			this->B_seuil->Name = L"B_seuil";
-			this->B_seuil->Size = System::Drawing::Size(226, 46);
+			this->B_seuil->Size = System::Drawing::Size(237, 46);
 			this->B_seuil->TabIndex = 13;
 			this->B_seuil->Text = L"Seuil de réapprovisionement";
 			this->B_seuil->UseVisualStyleBackColor = true;
@@ -411,7 +310,7 @@ namespace projetPOO {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(922, 386);
+			this->ClientSize = System::Drawing::Size(922, 344);
 			this->Controls->Add(this->GB_stat);
 			this->Controls->Add(this->DGV_BDD);
 			this->Name = L"GestionStatForm";
