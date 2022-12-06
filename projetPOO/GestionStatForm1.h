@@ -251,6 +251,7 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->CB_TVA->ForeColor = System::Drawing::SystemColors::InactiveCaption;
 			this->CB_TVA->FormattingEnabled = true;
+			this->CB_TVA->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"5.5", L"10", L"20" });
 			this->CB_TVA->Location = System::Drawing::Point(6, 261);
 			this->CB_TVA->Name = L"CB_TVA";
 			this->CB_TVA->Size = System::Drawing::Size(148, 24);
@@ -262,9 +263,9 @@ namespace projetPOO {
 			// 
 			this->B_VachatStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_VachatStock->Location = System::Drawing::Point(374, 247);
+			this->B_VachatStock->Location = System::Drawing::Point(9, 182);
 			this->B_VachatStock->Name = L"B_VachatStock";
-			this->B_VachatStock->Size = System::Drawing::Size(116, 98);
+			this->B_VachatStock->Size = System::Drawing::Size(226, 46);
 			this->B_VachatStock->TabIndex = 20;
 			this->B_VachatStock->Text = L"Valeur d\'achat du stock";
 			this->B_VachatStock->UseVisualStyleBackColor = true;
@@ -274,9 +275,9 @@ namespace projetPOO {
 			// 
 			this->B_VCommerciale->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_VCommerciale->Location = System::Drawing::Point(7, 182);
+			this->B_VCommerciale->Location = System::Drawing::Point(369, 242);
 			this->B_VCommerciale->Name = L"B_VCommerciale";
-			this->B_VCommerciale->Size = System::Drawing::Size(237, 46);
+			this->B_VCommerciale->Size = System::Drawing::Size(121, 103);
 			this->B_VCommerciale->TabIndex = 19;
 			this->B_VCommerciale->Text = L"Valeur commerciale du stock";
 			this->B_VCommerciale->UseVisualStyleBackColor = true;
