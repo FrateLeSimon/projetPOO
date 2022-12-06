@@ -174,9 +174,10 @@ namespace projetPOO {
 			this->TB_NomClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TB_NomClient->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->TB_NomClient->Location = System::Drawing::Point(9, 48);
+			this->TB_NomClient->Location = System::Drawing::Point(12, 59);
+			this->TB_NomClient->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TB_NomClient->Name = L"TB_NomClient";
-			this->TB_NomClient->Size = System::Drawing::Size(192, 22);
+			this->TB_NomClient->Size = System::Drawing::Size(255, 26);
 			this->TB_NomClient->TabIndex = 2;
 			this->TB_NomClient->Text = L"Nom du client ";
 			this->TB_NomClient->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NomClient_TextChanged);
@@ -184,9 +185,10 @@ namespace projetPOO {
 			// DGV_BDD
 			// 
 			this->DGV_BDD->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->DGV_BDD->Location = System::Drawing::Point(12, 12);
+			this->DGV_BDD->Location = System::Drawing::Point(16, 15);
+			this->DGV_BDD->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->DGV_BDD->Name = L"DGV_BDD";
-			this->DGV_BDD->Size = System::Drawing::Size(1036, 150);
+			this->DGV_BDD->Size = System::Drawing::Size(1043, 150);
 			this->DGV_BDD->TabIndex = 5;
 			this->DGV_BDD->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionClientForm::dataGridView1_CellContentClick);
 			// 
@@ -208,9 +210,10 @@ namespace projetPOO {
 			this->GB_client->Controls->Add(this->TB_NomClient);
 			this->GB_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GB_client->Location = System::Drawing::Point(221, 168);
+			this->GB_client->Location = System::Drawing::Point(295, 207);
+			this->GB_client->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->GB_client->Name = L"GB_client";
-			this->GB_client->Size = System::Drawing::Size(827, 244);
+			this->GB_client->Size = System::Drawing::Size(837, 292);
 			this->GB_client->TabIndex = 6;
 			this->GB_client->TabStop = false;
 			this->GB_client->Text = L"Client";
@@ -239,9 +242,10 @@ namespace projetPOO {
 			// Logo
 			// 
 			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
-			this->Logo->Location = System::Drawing::Point(556, 24);
+			this->Logo->Location = System::Drawing::Point(741, 30);
+			this->Logo->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Logo->Name = L"Logo";
-			this->Logo->Size = System::Drawing::Size(248, 207);
+			this->Logo->Size = System::Drawing::Size(278, 264);
 			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->Logo->TabIndex = 22;
 			this->Logo->TabStop = false;
@@ -255,9 +259,10 @@ namespace projetPOO {
 			this->GB_Afacturation->Controls->Add(this->CB_NvilleF);
 			this->GB_Afacturation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GB_Afacturation->Location = System::Drawing::Point(247, 125);
+			this->GB_Afacturation->Location = System::Drawing::Point(257, 149);
 			this->GB_Afacturation->Name = L"GB_Afacturation";
-			this->GB_Afacturation->Size = System::Drawing::Size(281, 86);
+			this->GB_Afacturation->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->GB_Afacturation->Size = System::Drawing::Size(375, 106);
 			this->GB_Afacturation->TabIndex = 19;
 			this->GB_Afacturation->TabStop = false;
 			this->GB_Afacturation->Text = L"Adresse de facturation du Client";
@@ -268,9 +273,10 @@ namespace projetPOO {
 			this->TB_NumRueF->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TB_NumRueF->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->TB_NumRueF->Location = System::Drawing::Point(6, 23);
+			this->TB_NumRueF->Location = System::Drawing::Point(8, 28);
+			this->TB_NumRueF->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TB_NumRueF->Name = L"TB_NumRueF";
-			this->TB_NumRueF->Size = System::Drawing::Size(148, 22);
+			this->TB_NumRueF->Size = System::Drawing::Size(196, 26);
 			this->TB_NumRueF->TabIndex = 13;
 			this->TB_NumRueF->Text = L"N° de la rue";
 			this->TB_NumRueF->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NumRueF_TextChanged);
@@ -281,9 +287,10 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->CB_CpostalF->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->CB_CpostalF->FormattingEnabled = true;
-			this->CB_CpostalF->Location = System::Drawing::Point(160, 51);
+			this->CB_CpostalF->Location = System::Drawing::Point(213, 63);
+			this->CB_CpostalF->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->CB_CpostalF->Name = L"CB_CpostalF";
-			this->CB_CpostalF->Size = System::Drawing::Size(111, 24);
+			this->CB_CpostalF->Size = System::Drawing::Size(147, 28);
 			this->CB_CpostalF->TabIndex = 17;
 			this->CB_CpostalF->Text = L"Code postal";
 			this->CB_CpostalF->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_CpostalF_SelectedIndexChanged);
@@ -293,9 +300,10 @@ namespace projetPOO {
 			this->TB_NrueF->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TB_NrueF->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->TB_NrueF->Location = System::Drawing::Point(160, 23);
+			this->TB_NrueF->Location = System::Drawing::Point(213, 28);
+			this->TB_NrueF->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TB_NrueF->Name = L"TB_NrueF";
-			this->TB_NrueF->Size = System::Drawing::Size(111, 22);
+			this->TB_NrueF->Size = System::Drawing::Size(147, 26);
 			this->TB_NrueF->TabIndex = 15;
 			this->TB_NrueF->Text = L"Nom de la rue";
 			this->TB_NrueF->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NrueF_TextChanged);
@@ -306,9 +314,10 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->CB_NvilleF->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->CB_NvilleF->FormattingEnabled = true;
-			this->CB_NvilleF->Location = System::Drawing::Point(6, 51);
+			this->CB_NvilleF->Location = System::Drawing::Point(8, 63);
+			this->CB_NvilleF->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->CB_NvilleF->Name = L"CB_NvilleF";
-			this->CB_NvilleF->Size = System::Drawing::Size(148, 24);
+			this->CB_NvilleF->Size = System::Drawing::Size(196, 28);
 			this->CB_NvilleF->TabIndex = 16;
 			this->CB_NvilleF->Text = L"Nom de la ville";
 			this->CB_NvilleF->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_NvilleF_SelectedIndexChanged);
@@ -321,9 +330,10 @@ namespace projetPOO {
 			this->GB_Alivraison->Controls->Add(this->CB_NVilleL);
 			this->GB_Alivraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GB_Alivraison->Location = System::Drawing::Point(253, 21);
+			this->GB_Alivraison->Location = System::Drawing::Point(257, 21);
 			this->GB_Alivraison->Name = L"GB_Alivraison";
-			this->GB_Alivraison->Size = System::Drawing::Size(281, 86);
+			this->GB_Alivraison->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->GB_Alivraison->Size = System::Drawing::Size(375, 106);
 			this->GB_Alivraison->TabIndex = 18;
 			this->GB_Alivraison->TabStop = false;
 			this->GB_Alivraison->Text = L"Adresse de livraison du Client";
@@ -334,9 +344,10 @@ namespace projetPOO {
 			this->TB_NumRueL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TB_NumRueL->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->TB_NumRueL->Location = System::Drawing::Point(6, 23);
+			this->TB_NumRueL->Location = System::Drawing::Point(8, 28);
+			this->TB_NumRueL->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TB_NumRueL->Name = L"TB_NumRueL";
-			this->TB_NumRueL->Size = System::Drawing::Size(148, 22);
+			this->TB_NumRueL->Size = System::Drawing::Size(196, 26);
 			this->TB_NumRueL->TabIndex = 13;
 			this->TB_NumRueL->Text = L"N° de la rue";
 			this->TB_NumRueL->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NumRueL_TextChanged);
@@ -347,9 +358,10 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->CB_CpostalL->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->CB_CpostalL->FormattingEnabled = true;
-			this->CB_CpostalL->Location = System::Drawing::Point(160, 51);
+			this->CB_CpostalL->Location = System::Drawing::Point(213, 63);
+			this->CB_CpostalL->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->CB_CpostalL->Name = L"CB_CpostalL";
-			this->CB_CpostalL->Size = System::Drawing::Size(111, 24);
+			this->CB_CpostalL->Size = System::Drawing::Size(147, 28);
 			this->CB_CpostalL->TabIndex = 17;
 			this->CB_CpostalL->Text = L"Code postal";
 			this->CB_CpostalL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_CpostalL_SelectedIndexChanged);
@@ -359,9 +371,10 @@ namespace projetPOO {
 			this->TB_NrueL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TB_NrueL->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->TB_NrueL->Location = System::Drawing::Point(160, 23);
+			this->TB_NrueL->Location = System::Drawing::Point(213, 28);
+			this->TB_NrueL->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TB_NrueL->Name = L"TB_NrueL";
-			this->TB_NrueL->Size = System::Drawing::Size(111, 22);
+			this->TB_NrueL->Size = System::Drawing::Size(147, 26);
 			this->TB_NrueL->TabIndex = 15;
 			this->TB_NrueL->Text = L"Nom de la rue";
 			this->TB_NrueL->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_NrueL_TextChanged);
@@ -372,9 +385,10 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->CB_NVilleL->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->CB_NVilleL->FormattingEnabled = true;
-			this->CB_NVilleL->Location = System::Drawing::Point(6, 51);
+			this->CB_NVilleL->Location = System::Drawing::Point(8, 63);
+			this->CB_NVilleL->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->CB_NVilleL->Name = L"CB_NVilleL";
-			this->CB_NVilleL->Size = System::Drawing::Size(148, 24);
+			this->CB_NVilleL->Size = System::Drawing::Size(196, 28);
 			this->CB_NVilleL->TabIndex = 16;
 			this->CB_NVilleL->Text = L"Nom de la ville";
 			this->CB_NVilleL->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionClientForm::CB_NvilleL_SelectedIndexChanged);
@@ -384,20 +398,28 @@ namespace projetPOO {
 			this->L_DdNaissance->AutoSize = true;
 			this->L_DdNaissance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->L_DdNaissance->Location = System::Drawing::Point(6, 112);
+			this->L_DdNaissance->Location = System::Drawing::Point(35, 106);
 			this->L_DdNaissance->Name = L"L_DdNaissance";
-			this->L_DdNaissance->Size = System::Drawing::Size(156, 16);
+			this->L_DdNaissance->Size = System::Drawing::Size(197, 20);
 			this->L_DdNaissance->TabIndex = 12;
 			this->L_DdNaissance->Text = L"Date de naissance Client";
 			this->L_DdNaissance->Click += gcnew System::EventHandler(this, &GestionClientForm::L_DdNaissance_Click);
+			// 
+			// MC_DdNaissance
+			// 
+			this->MC_DdNaissance->Location = System::Drawing::Point(3, 126);
+			this->MC_DdNaissance->Name = L"MC_DdNaissance";
+			this->MC_DdNaissance->TabIndex = 11;
+			this->MC_DdNaissance->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::MC_DdNaissance_DateChanged);
 			// 
 			// NUD_idClient
 			// 
 			this->NUD_idClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NUD_idClient->Location = System::Drawing::Point(96, 21);
+			this->NUD_idClient->Location = System::Drawing::Point(128, 26);
+			this->NUD_idClient->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->NUD_idClient->Name = L"NUD_idClient";
-			this->NUD_idClient->Size = System::Drawing::Size(105, 22);
+			this->NUD_idClient->Size = System::Drawing::Size(140, 26);
 			this->NUD_idClient->TabIndex = 10;
 			this->NUD_idClient->ValueChanged += gcnew System::EventHandler(this, &GestionClientForm::NUD_idClient_ValueChanged);
 			// 
@@ -406,9 +428,10 @@ namespace projetPOO {
 			this->TB_PrenomClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TB_PrenomClient->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->TB_PrenomClient->Location = System::Drawing::Point(9, 76);
+			this->TB_PrenomClient->Location = System::Drawing::Point(12, 94);
+			this->TB_PrenomClient->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TB_PrenomClient->Name = L"TB_PrenomClient";
-			this->TB_PrenomClient->Size = System::Drawing::Size(192, 22);
+			this->TB_PrenomClient->Size = System::Drawing::Size(255, 26);
 			this->TB_PrenomClient->TabIndex = 8;
 			this->TB_PrenomClient->Text = L"Prénom du client ";
 			this->TB_PrenomClient->TextChanged += gcnew System::EventHandler(this, &GestionClientForm::TB_PrenomClient_TextChanged);
@@ -418,9 +441,10 @@ namespace projetPOO {
 			this->L_idClient->AutoSize = true;
 			this->L_idClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->L_idClient->Location = System::Drawing::Point(24, 24);
+			this->L_idClient->Location = System::Drawing::Point(32, 30);
+			this->L_idClient->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->L_idClient->Name = L"L_idClient";
-			this->L_idClient->Size = System::Drawing::Size(54, 16);
+			this->L_idClient->Size = System::Drawing::Size(70, 20);
 			this->L_idClient->TabIndex = 5;
 			this->L_idClient->Text = L"Id Client";
 			this->L_idClient->Click += gcnew System::EventHandler(this, &GestionClientForm::L_idClient_Click);
@@ -429,9 +453,10 @@ namespace projetPOO {
 			// 
 			this->B_load->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_load->Location = System::Drawing::Point(12, 168);
+			this->B_load->Location = System::Drawing::Point(16, 207);
+			this->B_load->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->B_load->Name = L"B_load";
-			this->B_load->Size = System::Drawing::Size(202, 107);
+			this->B_load->Size = System::Drawing::Size(269, 132);
 			this->B_load->TabIndex = 7;
 			this->B_load->Text = L"Charger";
 			this->B_load->UseVisualStyleBackColor = true;
@@ -441,9 +466,10 @@ namespace projetPOO {
 			// 
 			this->B_insert->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_insert->Location = System::Drawing::Point(25, 280);
+			this->B_insert->Location = System::Drawing::Point(33, 345);
+			this->B_insert->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->B_insert->Name = L"B_insert";
-			this->B_insert->Size = System::Drawing::Size(174, 58);
+			this->B_insert->Size = System::Drawing::Size(232, 71);
 			this->B_insert->TabIndex = 8;
 			this->B_insert->Text = L"Insérer";
 			this->B_insert->UseVisualStyleBackColor = true;
@@ -453,9 +479,10 @@ namespace projetPOO {
 			// 
 			this->B_update->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_update->Location = System::Drawing::Point(25, 341);
+			this->B_update->Location = System::Drawing::Point(33, 420);
+			this->B_update->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->B_update->Name = L"B_update";
-			this->B_update->Size = System::Drawing::Size(174, 58);
+			this->B_update->Size = System::Drawing::Size(232, 71);
 			this->B_update->TabIndex = 9;
 			this->B_update->Text = L"Modifier";
 			this->B_update->UseVisualStyleBackColor = true;
@@ -465,9 +492,10 @@ namespace projetPOO {
 			// 
 			this->B_delete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_delete->Location = System::Drawing::Point(25, 402);
+			this->B_delete->Location = System::Drawing::Point(33, 495);
+			this->B_delete->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->B_delete->Name = L"B_delete";
-			this->B_delete->Size = System::Drawing::Size(174, 58);
+			this->B_delete->Size = System::Drawing::Size(232, 71);
 			this->B_delete->TabIndex = 10;
 			this->B_delete->Text = L"Supprimer";
 			this->B_delete->UseVisualStyleBackColor = true;
@@ -521,16 +549,17 @@ namespace projetPOO {
 			// 
 			// GestionClientForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(1060, 474);
+			this->ClientSize = System::Drawing::Size(1413, 583);
 			this->Controls->Add(this->B_delete);
 			this->Controls->Add(this->B_update);
 			this->Controls->Add(this->B_insert);
 			this->Controls->Add(this->B_load);
 			this->Controls->Add(this->GB_client);
 			this->Controls->Add(this->DGV_BDD);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"GestionClientForm";
 			this->Text = L"GestionClientForm";
 			this->Load += gcnew System::EventHandler(this, &GestionClientForm::GestionClientForm_Load);
@@ -601,7 +630,7 @@ namespace projetPOO {
 	}	
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew clientServices();
-		this->oSvc->modifierUnClient(this->TB_NomClient->Text, this->TB_PrenomClient->Text, this->TB_NumRueL->Text, this->TB_NumRueF->Text, this->TB_NrueL->Text, this->TB_NrueF->Text, this->CB_NVilleL->Text, this->CB_NvilleF->Text, this->CB_CpostalL->Text, this->CB_CpostalF->Text, System::Convert::ToString(this->MC_DdNaissance->SelectionStart), this->NUD_idClient->Text);
+		this->oSvc->modifierUnClient(this->TB_NomClient->Text, this->TB_PrenomClient->Text, this->TB_NumRueL->Text, this->TB_NumRueF->Text, this->TB_NrueL->Text, this->TB_NrueF->Text, this->CB_NVilleL->Text, this->CB_NvilleF->Text, this->CB_CpostalL->Text, this->CB_CpostalF->Text, System::Convert::ToString(this->MC_DdNaissance->SelectionStart), this->NUD_idClient->Value);
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew clientServices();

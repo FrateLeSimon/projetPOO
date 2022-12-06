@@ -87,7 +87,7 @@ System::String^ personnelMap::Insert()
 
 System::String^ personnelMap::Select()
 { 
-	return "SELECT nom AS Nom, prenom AS Prénom, c.c_date AS Date_d_embauche, a.num_rue AS Num_Rue, a.nom_rue AS Nom_Rue, v.nom_ville AS Ville FROM personnel AS p INNER JOIN humain AS h ON p.id_humain = h.id_humain INNER JOIN calendrier AS c ON p.id_calendrier = c.id_calendrier INNER JOIN adresse AS a ON p.id_adresse = a.id_adresse INNER JOIN ville AS v ON a.id_ville = v.id_ville ORDER BY nom ASC"; 
+	return "SELECT id_personnel AS ID, nom AS Nom, prenom AS Prénom, c.c_date AS Date_d_embauche, a.num_rue AS Num_Rue, a.nom_rue AS Nom_Rue, v.nom_ville AS Ville FROM personnel AS p INNER JOIN humain AS h ON p.id_humain = h.id_humain INNER JOIN calendrier AS c ON p.id_calendrier = c.id_calendrier INNER JOIN adresse AS a ON p.id_adresse = a.id_adresse INNER JOIN ville AS v ON a.id_ville = v.id_ville ORDER BY id_personnel ASC"; 
 }
 
 System::String^ personnelMap::Update() { return "update"; }
@@ -143,7 +143,10 @@ System::String^ articleMap::getPrix_Article() { return this->prix_article; }
 System::String^ articleMap::getSeuil() { return this->seuil; }
 System::String^ articleMap::getCouleur() { return this->couleur; }
 
-System::String^ articleMap::Insert() { return "insert"; }
+System::String^ articleMap::Insert() 
+{ 
+	System::Console::WriteLine("INSERT INTO article VALUES ("+this->id_article+", "+this->quantite_stock+", "+this->prix_article+", "+this->seuil+", "+this->couleur+", 3, "+this->nom_article+")");
+}
 System::String^ articleMap::Select() { return "SELECT nom AS Nom_article, couleur AS Couleur, prix_article_ht AS Prix, seuil AS Seuil, t.taxe AS Taxe, quantite_stock AS Stock FROM article INNER JOIN taxe AS t ON article.id_taxe = t.id_taxe ORDER BY nom ASC"; }
 System::String^ articleMap::Update() { return "update"; }
 System::String^ articleMap::Delete() { return "delete"; }
