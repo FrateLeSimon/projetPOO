@@ -253,10 +253,11 @@ System::Data::DataSet^  statsServices::selectionnerPanierMoyen(System::String^ d
 	return this->oCad->getRows(sql, dataTableName);
 	
 }
-System::Data::DataSet^ statsServices::selectionnerChiffreAffaire(System::String^ dataTableName, System::String^ mois){
+System::Data::DataSet^ statsServices::selectionnerChiffreAffaire(System::String^ dataTableName, System::String^ mois, System::String^ annee){
 	System::String^ sql;
 
 	this->oStats->setMois(mois);
+	this->oStats->setAnnee(annee);
 	sql = this->oStats->SelectChiffreAffaire();
 	return this->oCad->getRows(sql, dataTableName);
 

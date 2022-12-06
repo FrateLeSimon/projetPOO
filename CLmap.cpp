@@ -147,9 +147,11 @@ System::String^ articleMap::Delete() { return "delete"; }
 
 
 void statsMap::setMois(System::String^ a) { this->mois = a; }
+void statsMap::setAnnee(System::String^ a) { this->annee = a; }
 void statsMap::setId(System::String^ a) { this->id = a; }
 void statsMap::setTVA(System::String^ a) { this->TVA = a; }
 System::String^ statsMap::getMois() { return this->mois; }
+System::String^ statsMap::getAnnee() { return this->annee; }
 System::String^ statsMap::getId() { return this->id; }
 System::String^ statsMap::getTVA() { return this->TVA; }
 
@@ -157,48 +159,48 @@ System::String^ statsMap::getTVA() { return this->TVA; }
 
 System::String^ statsMap::SelectPanierMoyen()
 {
-	return "SELECT AVG(montant_ttc) FROM commande";
+	return "SELECT AVG(somme) as montant_moyen_commande FROM (SELECT(SUM(quantite * (1 + (taxe / 100)) * prix_article_ht)) * (1 + (AVG(remise) / 100)) AS somme FROM commande INNER JOIN contient ON commande.id_commande = contient.id_commande INNER JOIN article ON contient.id_article = article.id_article INNER JOIN taxe ON article.id_taxe = taxe.id_taxe INNER JOIN facture ON facture.id_facture = commande.id_facture INNER JOIN remise ON facture.id_remise = remise.id_remise GROUP BY commande.id_commande) AS s; ";
 	
 }
 
 System::String^ statsMap::SelectChiffreAffaire()
 {
-	return "SELECT SUM(montant_ttc) FROM commande";
+	return "SELECT SUM(somme) AS Chiffre_affaire, mois, annee FROM (SELECT(SUM(quantite * (1 + (taxe / 100)) * prix_article_ht)) * (1 + (AVG(remise) / 100)) AS somme, AVG(MONTH(calendrier.c_date)) AS mois, AVG(YEAR(calendrier.c_date)) AS annee FROM commande INNER JOIN contient ON commande.id_commande = contient.id_commande INNER JOIN article ON contient.id_article = article.id_article INNER JOIN taxe ON article.id_taxe = taxe.id_taxe INNER JOIN facture ON facture.id_facture = commande.id_facture INNER JOIN remise ON facture.id_remise = remise.id_remise INNER JOIN calendrier ON commande.id_date_emission = calendrier.id_calendrier GROUP BY commande.id_commande) AS s WHERE mois ="+ this->mois +"AND annee ="+ this->annee +"GROUP BY mois, annee; ";
 }
 
 System::String^ statsMap::SelectSeuilAppro()
 {
-	return "SELECT SUM(quantite_stock) FROM article WHERE quantite_stock < seuil";
+	return "SELECT article.nom FROM article WHERE quantite_stock < seuil; ";
 }
 
 System::String^ statsMap::SelectMontantTotalAchat()
 {
-	return "SELECT SUM(prix_article) FROM article";
+	return "SELECT AVG(commande.id_client) AS id_client, (SUM(quantite * (1+(taxe/100)) * prix_article_ht))*(1+(AVG(remise)/100)) AS Montant_total_achat, humain.nom AS Nom, humain.prenom AS Prenom FROM commande INNER JOIN contient ON commande.id_commande = contient.id_commande INNER JOIN article ON contient.id_article = article.id_article INNER JOIN taxe ON article.id_taxe = taxe.id_taxe INNER JOIN facture ON facture.id_facture = commande.id_facture INNER JOIN remise ON facture.id_remise = remise.id_remise INNER JOIN calendrier ON commande.id_date_emission = calendrier.id_calendrier INNER JOIN client ON commande.id_client = client.id_client INNER JOIN humain ON humain.id_humain = client.id_humain WHERE commande.id_client ="+ this->id+ "GROUP BY commande.id_client, humain.nom, humain.prenom; ";
 }
 
 System::String^ statsMap::SelectArticlePlusVendu()
 {
-	return "SELECT nom_article, SUM(quantite) FROM article, commande, ligne_commande WHERE article.id_article = ligne_commande.id_article AND commande.id_commande = ligne_commande.id_commande GROUP BY nom_article ORDER BY SUM(quantite) DESC";
+	return "SELECT TOP 10 article.nom, SUM(quantite) as nombre_de_vente FROM ARTICLE INNER JOIN contient ON contient.id_article = article.id_article GROUP BY article.nom ORDER BY SUM(quantite) DESC; ";
 }
 
 System::String^ statsMap::SelectArticleMoinsVendu()
 {
-	return "SELECT nom_article, SUM(quantite) FROM article, commande, ligne_commande WHERE article.id_article = ligne_commande.id_article AND commande.id_commande = ligne_commande.id_commande GROUP BY nom_article ORDER BY SUM(quantite) ASC";
+	return "SELECT TOP 10 article.nom, SUM(quantite) as nombre_de_vente FROM ARTICLE INNER JOIN contient ON contient.id_article = article.id_article GROUP BY article.nom ORDER BY SUM(quantite) ASC; ";
 }
 
 System::String^ statsMap::SelectValComStock()
 {
-	return "SELECT SUM(prix_article) FROM article WHERE quantite_stock > seuil";
+	return "SELECT SUM(quantite_stock*prix_article_ht*(1+(taxe/100))) AS valeur_commerciale_stock FROM article INNER JOIN taxe ON article.id_taxe = taxe.id_taxe";
 }
 
 System::String^ statsMap::SelectValAchatStock()
 {
-	return "SELECT SUM(prix_article) FROM article WHERE quantite_stock < seuil";
+	return "SELECT SUM(quantite_stock*prix_article_ht) AS valeur_achat_stock FROM article INNER JOIN taxe ON article.id_taxe = taxe.id_taxe";
 }
 
 System::String^ statsMap::SelectSimulation()
 {
-	return "SELECT SUM(prix_article) FROM article WHERE quantite_stock < seuil";
+	return "SELECT SUM(quantite_stock*prix_article_ht*(1+(taxe/100))) AS valeur_commerciale_stock, AVG(taxe.taxe) as taxe FROM article INNER JOIN taxe ON article.id_taxe = taxe.id_taxe WHERE taxe.taxe ="+ this->TVA+";";
 }
 
 

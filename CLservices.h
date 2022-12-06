@@ -67,7 +67,7 @@ private:
 public:
 	statsServices(void);
 	System::Data::DataSet^ selectionnerPanierMoyen(System::String^);
-	System::Data::DataSet^ selectionnerChiffreAffaire(System::String^, System::String^);
+	System::Data::DataSet^ selectionnerChiffreAffaire(System::String^, System::String^, System::String^);
 	System::Data::DataSet^ selectionnerSeuilAppro(System::String^);
 	System::Data::DataSet^ selectionnerMontantTotalAchat(System::String^, System::String^);
 	System::Data::DataSet^ selectionnerArticlePlusVendu(System::String^);

@@ -178,15 +178,18 @@ private:
 	System::String^ sSql;
 
 	System::String^ mois;
+	System::String^ annee;
 	System::String^ id;
 	System::String^ TVA;
 
 public:
 	void setMois(System::String^);
+	void setAnnee(System::String^);
 	void setId(System::String^);
 	void setTVA(System::String^);
 
 	System::String^ getMois();
+	System::String^ getAnnee();
 	System::String^ getId();
 	System::String^ getTVA();
 
