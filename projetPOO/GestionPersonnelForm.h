@@ -55,11 +55,12 @@ namespace projetPOO {
 
 	private: System::Windows::Forms::TextBox^ TB_Nrue;
 	private: System::Windows::Forms::ComboBox^ CB_NVille;
+	private: System::Windows::Forms::NumericUpDown^ NUD_idPersonnel;
 
 
 
 
-	private: System::Windows::Forms::NumericUpDown^ NUD_idClient;
+
 	private: System::Windows::Forms::TextBox^ TB_PrenomPersonnel;
 
 	private: System::Windows::Forms::Label^ L_idPersonnel;
@@ -116,7 +117,7 @@ namespace projetPOO {
 			this->CB_Cpostal = (gcnew System::Windows::Forms::ComboBox());
 			this->TB_Nrue = (gcnew System::Windows::Forms::TextBox());
 			this->CB_NVille = (gcnew System::Windows::Forms::ComboBox());
-			this->NUD_idClient = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUD_idPersonnel = (gcnew System::Windows::Forms::NumericUpDown());
 			this->TB_PrenomPersonnel = (gcnew System::Windows::Forms::TextBox());
 			this->L_idPersonnel = (gcnew System::Windows::Forms::Label());
 			this->TB_NomPersonnel = (gcnew System::Windows::Forms::TextBox());
@@ -133,7 +134,7 @@ namespace projetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_mois))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdSupérieur))->BeginInit();
 			this->GB_Apersonnel->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idPersonnel))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -154,7 +155,7 @@ namespace projetPOO {
 			this->GB_Personnel->Controls->Add(this->NUD_IdSupérieur);
 			this->GB_Personnel->Controls->Add(this->L_IdSupérieur);
 			this->GB_Personnel->Controls->Add(this->GB_Apersonnel);
-			this->GB_Personnel->Controls->Add(this->NUD_idClient);
+			this->GB_Personnel->Controls->Add(this->NUD_idPersonnel);
 			this->GB_Personnel->Controls->Add(this->TB_PrenomPersonnel);
 			this->GB_Personnel->Controls->Add(this->L_idPersonnel);
 			this->GB_Personnel->Controls->Add(this->TB_NomPersonnel);
@@ -359,15 +360,15 @@ namespace projetPOO {
 			this->CB_NVille->Text = L"Nom de la ville";
 			this->CB_NVille->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionPersonnelForm::CB_NVille_SelectedIndexChanged);
 			// 
-			// NUD_idClient
+			// NUD_idPersonnel
 			// 
-			this->NUD_idClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->NUD_idPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NUD_idClient->Location = System::Drawing::Point(112, 22);
-			this->NUD_idClient->Name = L"NUD_idClient";
-			this->NUD_idClient->Size = System::Drawing::Size(105, 22);
-			this->NUD_idClient->TabIndex = 10;
-			this->NUD_idClient->ValueChanged += gcnew System::EventHandler(this, &GestionPersonnelForm::NUD_idClient_ValueChanged);
+			this->NUD_idPersonnel->Location = System::Drawing::Point(112, 22);
+			this->NUD_idPersonnel->Name = L"NUD_idPersonnel";
+			this->NUD_idPersonnel->Size = System::Drawing::Size(105, 22);
+			this->NUD_idPersonnel->TabIndex = 10;
+			this->NUD_idPersonnel->ValueChanged += gcnew System::EventHandler(this, &GestionPersonnelForm::NUD_idClient_ValueChanged);
 			// 
 			// TB_PrenomPersonnel
 			// 
@@ -490,7 +491,7 @@ namespace projetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdSupérieur))->EndInit();
 			this->GB_Apersonnel->ResumeLayout(false);
 			this->GB_Apersonnel->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idPersonnel))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->ResumeLayout(false);
 
@@ -541,15 +542,15 @@ namespace projetPOO {
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew personnelServices();
-		this->oSvc->ajouterUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, this->NUD_IdSupérieur->Text, this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, System::Convert::ToString(this->MC_Dembauche->SelectionStart), this->CB_Admin->Text);
+		this->oSvc->ajouterUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, this->NUD_IdSupérieur->Text, this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value, this->CB_Admin->Text);
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew personnelServices();
-		this->oSvc->modifierUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, this->NUD_IdSupérieur->Text, this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, System::Convert::ToString(this->MC_Dembauche->SelectionStart), this->CB_Admin->Text, this->NUD_idClient->Text);
+		this->oSvc->modifierUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, this->NUD_IdSupérieur->Text, this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value, this->CB_Admin->Text, System::Convert::ToString(this->NUD_idPersonnel->Value));
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew personnelServices();
-		this->oSvc->supprimerUnPersonnel(this->NUD_idClient->Text);
+		this->oSvc->supprimerUnPersonnel(System::Convert::ToString(this->NUD_idPersonnel->Value));
 	}
 	private: System::Void GB_embauche_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}

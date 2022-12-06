@@ -561,15 +561,15 @@ namespace projetPOO {
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew commandeServices();
-		this->oSvc->ajouterUneCommande(this->NUD_IdClient->Text, this->TB_Référence->Text, System::Convert::ToString(this->MC_DateLivraison->SelectionStart), System::Convert::ToString(this->MC_DateEmission->SelectionStart), this->TB_MontantHT->Text, this->TB_MontantTTC->Text);
+		this->oSvc->ajouterUneCommande(this->NUD_IdClient->Text, this->TB_Référence->Text, this->NUD_anneeL->Value + "-" + this->NUD_moisL->Value + "-" + this->NUD_jourL->Value, this->NUD_anneeE->Value + "-" + this->NUD_moisE->Value + "-" + this->NUD_jourE->Value, this->TB_MontantHT->Text, this->TB_MontantTTC->Text);
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew commandeServices();
-		this->oSvc->modifierUneCommande(this->NUD_IdClient->Text, this->TB_Référence->Text, System::Convert::ToString(this->MC_DateLivraison->SelectionStart), System::Convert::ToString(this->MC_DateEmission->SelectionStart), this->TB_MontantHT->Text, this->TB_MontantTTC->Text, this->NUD_idCommande->Text);
+		this->oSvc->modifierUneCommande(this->NUD_IdClient->Text, this->TB_Référence->Text, this->NUD_anneeL->Value + "-" + this->NUD_moisL->Value + "-" + this->NUD_jourL->Value, this->NUD_anneeE->Value + "-" + this->NUD_moisE->Value + "-" + this->NUD_jourE->Value, this->TB_MontantHT->Text, this->TB_MontantTTC->Text, System::Convert::ToString(this->NUD_idCommande->Value));
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew commandeServices();
-		this->oSvc->supprimerUneCommande(this->NUD_idCommande->Text);
+		this->oSvc->supprimerUneCommande(System::Convert::ToString(this->NUD_idCommande->Value));
 	}
 	private: System::Void L_IdClient_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
