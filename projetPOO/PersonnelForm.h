@@ -44,6 +44,7 @@ namespace projetPOO {
 
 
 	private: System::Windows::Forms::GroupBox^ GB_Personnel;
+	private: System::Windows::Forms::PictureBox^ Logo;
 
 
 
@@ -63,11 +64,14 @@ namespace projetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PersonnelForm::typeid));
 			this->B_Gestionclient = (gcnew System::Windows::Forms::Button());
 			this->B_Gestioncommande = (gcnew System::Windows::Forms::Button());
 			this->B_gestionstock = (gcnew System::Windows::Forms::Button());
 			this->GB_Personnel = (gcnew System::Windows::Forms::GroupBox());
+			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			this->GB_Personnel->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// B_Gestionclient
@@ -118,7 +122,7 @@ namespace projetPOO {
 			this->GB_Personnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->GB_Personnel->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->GB_Personnel->Location = System::Drawing::Point(85, 36);
+			this->GB_Personnel->Location = System::Drawing::Point(90, 122);
 			this->GB_Personnel->Name = L"GB_Personnel";
 			this->GB_Personnel->Size = System::Drawing::Size(254, 247);
 			this->GB_Personnel->TabIndex = 3;
@@ -126,17 +130,29 @@ namespace projetPOO {
 			this->GB_Personnel->Text = L"Choix du systeme de gestion";
 			this->GB_Personnel->Enter += gcnew System::EventHandler(this, &PersonnelForm::GB_personnel_Enter);
 			// 
+			// Logo
+			// 
+			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
+			this->Logo->Location = System::Drawing::Point(144, 2);
+			this->Logo->Name = L"Logo";
+			this->Logo->Size = System::Drawing::Size(141, 114);
+			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->Logo->TabIndex = 26;
+			this->Logo->TabStop = false;
+			// 
 			// PersonnelForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(430, 315);
+			this->ClientSize = System::Drawing::Size(444, 381);
+			this->Controls->Add(this->Logo);
 			this->Controls->Add(this->GB_Personnel);
 			this->Name = L"PersonnelForm";
 			this->Text = L"PersonnelForm";
 			this->Load += gcnew System::EventHandler(this, &PersonnelForm::PersonnelForm_Load);
 			this->GB_Personnel->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->ResumeLayout(false);
 
 		}

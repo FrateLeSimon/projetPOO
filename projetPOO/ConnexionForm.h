@@ -88,10 +88,10 @@ namespace projetPOO {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->GB_connexion->Location = System::Drawing::Point(88, 143);
 			this->GB_connexion->Name = L"GB_connexion";
-			this->GB_connexion->Size = System::Drawing::Size(224, 227);
+			this->GB_connexion->Size = System::Drawing::Size(216, 227);
 			this->GB_connexion->TabIndex = 0;
 			this->GB_connexion->TabStop = false;
-			this->GB_connexion->Text = L"Veuillez-vous connecter :";
+			this->GB_connexion->Text = L"Veuillez-vous connecter";
 			this->GB_connexion->Enter += gcnew System::EventHandler(this, &ConnexionForm::GB_connexion_Enter);
 			// 
 			// B_connexion
@@ -155,7 +155,7 @@ namespace projetPOO {
 			// Logo
 			// 
 			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
-			this->Logo->Location = System::Drawing::Point(123, 12);
+			this->Logo->Location = System::Drawing::Point(117, 12);
 			this->Logo->Name = L"Logo";
 			this->Logo->Size = System::Drawing::Size(160, 125);
 			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;

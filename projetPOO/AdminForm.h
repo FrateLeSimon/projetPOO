@@ -41,6 +41,7 @@ namespace projetPOO {
 	private: System::Windows::Forms::GroupBox^ GB_Admin;
 	private: System::Windows::Forms::Button^ B_Gestionpersonnel;
 	private: System::Windows::Forms::Button^ B_GestionStat;
+	private: System::Windows::Forms::PictureBox^ Logo;
 	protected:
 
 	protected:
@@ -61,10 +62,13 @@ namespace projetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AdminForm::typeid));
 			this->GB_Admin = (gcnew System::Windows::Forms::GroupBox());
 			this->B_Gestionpersonnel = (gcnew System::Windows::Forms::Button());
 			this->B_GestionStat = (gcnew System::Windows::Forms::Button());
+			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			this->GB_Admin->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// GB_Admin
@@ -74,7 +78,7 @@ namespace projetPOO {
 			this->GB_Admin->Controls->Add(this->B_GestionStat);
 			this->GB_Admin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GB_Admin->Location = System::Drawing::Point(66, 30);
+			this->GB_Admin->Location = System::Drawing::Point(62, 131);
 			this->GB_Admin->Name = L"GB_Admin";
 			this->GB_Admin->Size = System::Drawing::Size(254, 187);
 			this->GB_Admin->TabIndex = 4;
@@ -108,17 +112,29 @@ namespace projetPOO {
 			this->B_GestionStat->UseVisualStyleBackColor = false;
 			this->B_GestionStat->Click += gcnew System::EventHandler(this, &AdminForm::B_GestionStat_Click);
 			// 
+			// Logo
+			// 
+			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
+			this->Logo->Location = System::Drawing::Point(116, 12);
+			this->Logo->Name = L"Logo";
+			this->Logo->Size = System::Drawing::Size(151, 113);
+			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->Logo->TabIndex = 26;
+			this->Logo->TabStop = false;
+			// 
 			// AdminForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(394, 247);
+			this->ClientSize = System::Drawing::Size(380, 330);
+			this->Controls->Add(this->Logo);
 			this->Controls->Add(this->GB_Admin);
 			this->Name = L"AdminForm";
 			this->Text = L"AdminForm";
 			this->Load += gcnew System::EventHandler(this, &AdminForm::AdminForm_Load);
 			this->GB_Admin->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->ResumeLayout(false);
 
 		}
