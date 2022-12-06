@@ -405,13 +405,6 @@ namespace projetPOO {
 			this->L_DdNaissance->Text = L"Date de naissance Client";
 			this->L_DdNaissance->Click += gcnew System::EventHandler(this, &GestionClientForm::L_DdNaissance_Click);
 			// 
-			// MC_DdNaissance
-			// 
-			this->MC_DdNaissance->Location = System::Drawing::Point(3, 126);
-			this->MC_DdNaissance->Name = L"MC_DdNaissance";
-			this->MC_DdNaissance->TabIndex = 11;
-			this->MC_DdNaissance->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionClientForm::MC_DdNaissance_DateChanged);
-			// 
 			// NUD_idClient
 			// 
 			this->NUD_idClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -626,15 +619,15 @@ namespace projetPOO {
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew clientServices();
-		this->oSvc->ajouterUnClient(this->TB_NomClient->Text, this->TB_PrenomClient->Text, this->TB_NumRueL->Text, this->TB_NumRueF->Text, this->TB_NrueL->Text, this->TB_NrueF->Text, this->CB_NVilleL->Text, this->CB_NvilleF->Text, this->CB_CpostalL->Text, this->CB_CpostalF->Text, System::Convert::ToString(this->MC_DdNaissance->SelectionStart));
+		this->oSvc->ajouterUnClient(this->TB_NomClient->Text, this->TB_PrenomClient->Text, this->TB_NumRueL->Text, this->TB_NumRueF->Text, this->TB_NrueL->Text, this->TB_NrueF->Text, this->CB_NVilleL->Text, this->CB_NvilleF->Text, this->CB_CpostalL->Text, this->CB_CpostalF->Text, this->L_annee->Text+"-"+this->L_mois->Text+"-"+this->L_jour->Text);
 	}	
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew clientServices();
-		this->oSvc->modifierUnClient(this->TB_NomClient->Text, this->TB_PrenomClient->Text, this->TB_NumRueL->Text, this->TB_NumRueF->Text, this->TB_NrueL->Text, this->TB_NrueF->Text, this->CB_NVilleL->Text, this->CB_NvilleF->Text, this->CB_CpostalL->Text, this->CB_CpostalF->Text, System::Convert::ToString(this->MC_DdNaissance->SelectionStart), this->NUD_idClient->Value);
+		this->oSvc->modifierUnClient(this->TB_NomClient->Text, this->TB_PrenomClient->Text, this->TB_NumRueL->Text, this->TB_NumRueF->Text, this->TB_NrueL->Text, this->TB_NrueF->Text, this->CB_NVilleL->Text, this->CB_NvilleF->Text, this->CB_CpostalL->Text, this->CB_CpostalF->Text, this->L_annee->Text + "-" + this->L_mois->Text + "-" + this->L_jour->Text, System::Convert::ToString(this->NUD_idClient->Value));
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew clientServices();
-		this->oSvc->supprimerUnClient(this->NUD_idClient->Text);
+		this->oSvc->supprimerUnClient(System::Convert::ToString(this->NUD_idClient->Value));
 	}
 	private: System::Void L_1achat_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
