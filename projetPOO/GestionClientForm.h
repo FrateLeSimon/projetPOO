@@ -134,12 +134,13 @@ namespace projetPOO {
 			this->TB_NomClient = (gcnew System::Windows::Forms::TextBox());
 			this->DGV_BDD = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_client = (gcnew System::Windows::Forms::GroupBox());
-			this->L_annee = (gcnew System::Windows::Forms::Label());
-			this->L_mois = (gcnew System::Windows::Forms::Label());
+			this->GB_naissance = (gcnew System::Windows::Forms::GroupBox());
 			this->L_jour = (gcnew System::Windows::Forms::Label());
-			this->NUD_annee = (gcnew System::Windows::Forms::NumericUpDown());
-			this->NUD_mois = (gcnew System::Windows::Forms::NumericUpDown());
+			this->L_annee = (gcnew System::Windows::Forms::Label());
 			this->NUD_jour = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUD_annee = (gcnew System::Windows::Forms::NumericUpDown());
+			this->L_mois = (gcnew System::Windows::Forms::Label());
+			this->NUD_mois = (gcnew System::Windows::Forms::NumericUpDown());
 			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			this->GB_Afacturation = (gcnew System::Windows::Forms::GroupBox());
 			this->TB_NumRueF = (gcnew System::Windows::Forms::TextBox());
@@ -158,17 +159,16 @@ namespace projetPOO {
 			this->B_insert = (gcnew System::Windows::Forms::Button());
 			this->B_update = (gcnew System::Windows::Forms::Button());
 			this->B_delete = (gcnew System::Windows::Forms::Button());
-			this->GB_naissance = (gcnew System::Windows::Forms::GroupBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->BeginInit();
 			this->GB_client->SuspendLayout();
+			this->GB_naissance->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_jour))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_annee))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_mois))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_jour))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			this->GB_Afacturation->SuspendLayout();
 			this->GB_Alivraison->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->BeginInit();
-			this->GB_naissance->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// TB_NomClient
@@ -206,38 +206,30 @@ namespace projetPOO {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->GB_client->Location = System::Drawing::Point(221, 168);
 			this->GB_client->Name = L"GB_client";
-			this->GB_client->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->GB_client->Padding = System::Windows::Forms::Padding(2);
 			this->GB_client->Size = System::Drawing::Size(795, 245);
 			this->GB_client->TabIndex = 6;
 			this->GB_client->TabStop = false;
 			this->GB_client->Text = L"Client";
 			this->GB_client->Enter += gcnew System::EventHandler(this, &GestionClientForm::GB_client_Enter);
 			// 
-			// L_annee
+			// GB_naissance
 			// 
-			this->L_annee->AutoSize = true;
-			this->L_annee->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->GB_naissance->Controls->Add(this->L_jour);
+			this->GB_naissance->Controls->Add(this->L_annee);
+			this->GB_naissance->Controls->Add(this->NUD_jour);
+			this->GB_naissance->Controls->Add(this->NUD_annee);
+			this->GB_naissance->Controls->Add(this->L_mois);
+			this->GB_naissance->Controls->Add(this->NUD_mois);
+			this->GB_naissance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->L_annee->Location = System::Drawing::Point(9, 82);
-			this->L_annee->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->L_annee->Name = L"L_annee";
-			this->L_annee->Size = System::Drawing::Size(46, 16);
-			this->L_annee->TabIndex = 29;
-			this->L_annee->Text = L"Année";
-			this->L_annee->Click += gcnew System::EventHandler(this, &GestionClientForm::L_annee_Click);
-			// 
-			// L_mois
-			// 
-			this->L_mois->AutoSize = true;
-			this->L_mois->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->L_mois->Location = System::Drawing::Point(9, 57);
-			this->L_mois->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->L_mois->Name = L"L_mois";
-			this->L_mois->Size = System::Drawing::Size(36, 16);
-			this->L_mois->TabIndex = 28;
-			this->L_mois->Text = L"Mois";
-			this->L_mois->Click += gcnew System::EventHandler(this, &GestionClientForm::L_mois_Click);
+			this->GB_naissance->Location = System::Drawing::Point(9, 112);
+			this->GB_naissance->Name = L"GB_naissance";
+			this->GB_naissance->Size = System::Drawing::Size(200, 119);
+			this->GB_naissance->TabIndex = 30;
+			this->GB_naissance->TabStop = false;
+			this->GB_naissance->Text = L"Date de naissance";
+			this->GB_naissance->Enter += gcnew System::EventHandler(this, &GestionClientForm::GB_naissance_Enter);
 			// 
 			// L_jour
 			// 
@@ -252,38 +244,64 @@ namespace projetPOO {
 			this->L_jour->Text = L"Jour";
 			this->L_jour->Click += gcnew System::EventHandler(this, &GestionClientForm::L_jour_Click);
 			// 
-			// NUD_annee
+			// L_annee
 			// 
-			this->NUD_annee->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->L_annee->AutoSize = true;
+			this->L_annee->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NUD_annee->Location = System::Drawing::Point(64, 82);
-			this->NUD_annee->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->NUD_annee->Name = L"NUD_annee";
-			this->NUD_annee->Size = System::Drawing::Size(116, 22);
-			this->NUD_annee->TabIndex = 26;
-			this->NUD_annee->ValueChanged += gcnew System::EventHandler(this, &GestionClientForm::NUD_annee_ValueChanged);
-			// 
-			// NUD_mois
-			// 
-			this->NUD_mois->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->NUD_mois->Location = System::Drawing::Point(64, 55);
-			this->NUD_mois->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->NUD_mois->Name = L"NUD_mois";
-			this->NUD_mois->Size = System::Drawing::Size(116, 22);
-			this->NUD_mois->TabIndex = 24;
-			this->NUD_mois->ValueChanged += gcnew System::EventHandler(this, &GestionClientForm::NUD_mois_ValueChanged);
+			this->L_annee->Location = System::Drawing::Point(9, 82);
+			this->L_annee->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->L_annee->Name = L"L_annee";
+			this->L_annee->Size = System::Drawing::Size(46, 16);
+			this->L_annee->TabIndex = 29;
+			this->L_annee->Text = L"Année";
+			this->L_annee->Click += gcnew System::EventHandler(this, &GestionClientForm::L_annee_Click);
 			// 
 			// NUD_jour
 			// 
 			this->NUD_jour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NUD_jour->Location = System::Drawing::Point(64, 25);
-			this->NUD_jour->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->NUD_jour->Margin = System::Windows::Forms::Padding(2);
 			this->NUD_jour->Name = L"NUD_jour";
 			this->NUD_jour->Size = System::Drawing::Size(116, 22);
 			this->NUD_jour->TabIndex = 23;
 			this->NUD_jour->ValueChanged += gcnew System::EventHandler(this, &GestionClientForm::NUD_jour_ValueChanged);
+			// 
+			// NUD_annee
+			// 
+			this->NUD_annee->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NUD_annee->Location = System::Drawing::Point(64, 82);
+			this->NUD_annee->Margin = System::Windows::Forms::Padding(2);
+			this->NUD_annee->Name = L"NUD_annee";
+			this->NUD_annee->Size = System::Drawing::Size(116, 22);
+			this->NUD_annee->TabIndex = 26;
+			this->NUD_annee->ValueChanged += gcnew System::EventHandler(this, &GestionClientForm::NUD_annee_ValueChanged);
+			// 
+			// L_mois
+			// 
+			this->L_mois->AutoSize = true;
+			this->L_mois->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->L_mois->Location = System::Drawing::Point(9, 56);
+			this->L_mois->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->L_mois->Name = L"L_mois";
+			this->L_mois->Size = System::Drawing::Size(36, 16);
+			this->L_mois->TabIndex = 28;
+			this->L_mois->Text = L"Mois";
+			this->L_mois->Click += gcnew System::EventHandler(this, &GestionClientForm::L_mois_Click);
+			// 
+			// NUD_mois
+			// 
+			this->NUD_mois->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NUD_mois->Location = System::Drawing::Point(64, 54);
+			this->NUD_mois->Margin = System::Windows::Forms::Padding(2);
+			this->NUD_mois->Name = L"NUD_mois";
+			this->NUD_mois->Size = System::Drawing::Size(116, 22);
+			this->NUD_mois->TabIndex = 24;
+			this->NUD_mois->ValueChanged += gcnew System::EventHandler(this, &GestionClientForm::NUD_mois_ValueChanged);
 			// 
 			// Logo
 			// 
@@ -305,7 +323,7 @@ namespace projetPOO {
 			this->GB_Afacturation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->GB_Afacturation->Location = System::Drawing::Point(224, 124);
-			this->GB_Afacturation->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->GB_Afacturation->Margin = System::Windows::Forms::Padding(2);
 			this->GB_Afacturation->Name = L"GB_Afacturation";
 			this->GB_Afacturation->Size = System::Drawing::Size(281, 86);
 			this->GB_Afacturation->TabIndex = 19;
@@ -372,7 +390,7 @@ namespace projetPOO {
 			this->GB_Alivraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->GB_Alivraison->Location = System::Drawing::Point(224, 21);
-			this->GB_Alivraison->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->GB_Alivraison->Margin = System::Windows::Forms::Padding(2);
 			this->GB_Alivraison->Name = L"GB_Alivraison";
 			this->GB_Alivraison->Size = System::Drawing::Size(281, 86);
 			this->GB_Alivraison->TabIndex = 18;
@@ -512,21 +530,6 @@ namespace projetPOO {
 			this->B_delete->UseVisualStyleBackColor = true;
 			this->B_delete->Click += gcnew System::EventHandler(this, &GestionClientForm::B_delete_Click);
 			// 
-			// GB_naissance
-			// 
-			this->GB_naissance->Controls->Add(this->L_jour);
-			this->GB_naissance->Controls->Add(this->L_annee);
-			this->GB_naissance->Controls->Add(this->NUD_jour);
-			this->GB_naissance->Controls->Add(this->NUD_annee);
-			this->GB_naissance->Controls->Add(this->L_mois);
-			this->GB_naissance->Controls->Add(this->NUD_mois);
-			this->GB_naissance->Location = System::Drawing::Point(9, 112);
-			this->GB_naissance->Name = L"GB_naissance";
-			this->GB_naissance->Size = System::Drawing::Size(200, 119);
-			this->GB_naissance->TabIndex = 30;
-			this->GB_naissance->TabStop = false;
-			this->GB_naissance->Text = L"Date de naissance";
-			// 
 			// GestionClientForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -545,17 +548,17 @@ namespace projetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->EndInit();
 			this->GB_client->ResumeLayout(false);
 			this->GB_client->PerformLayout();
+			this->GB_naissance->ResumeLayout(false);
+			this->GB_naissance->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_jour))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_annee))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_mois))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_jour))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->GB_Afacturation->ResumeLayout(false);
 			this->GB_Afacturation->PerformLayout();
 			this->GB_Alivraison->ResumeLayout(false);
 			this->GB_Alivraison->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->EndInit();
-			this->GB_naissance->ResumeLayout(false);
-			this->GB_naissance->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -623,17 +626,19 @@ namespace projetPOO {
 	}
 	private: System::Void Logo_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void NUD_jour_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void NUD_mois_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void NUD_annee_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void L_jour_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void L_mois_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void L_annee_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void NUD_jour_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void NUD_mois_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void NUD_annee_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void L_jour_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void L_mois_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void L_annee_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void GB_naissance_Enter(System::Object^ sender, System::EventArgs^ e) {
+	}
 };
 }
