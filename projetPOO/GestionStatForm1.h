@@ -211,7 +211,7 @@ namespace projetPOO {
 			// 
 			this->NUD_IdClientMontant->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->NUD_IdClientMontant->Location = System::Drawing::Point(230, 139);
+			this->NUD_IdClientMontant->Location = System::Drawing::Point(230, 143);
 			this->NUD_IdClientMontant->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 12, 0, 0, 0 });
 			this->NUD_IdClientMontant->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUD_IdClientMontant->Name = L"NUD_IdClientMontant";

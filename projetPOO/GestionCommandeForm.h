@@ -107,7 +107,7 @@ namespace projetPOO {
 			this->DGV_Commande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->DGV_Commande->Location = System::Drawing::Point(13, 13);
 			this->DGV_Commande->Name = L"DGV_Commande";
-			this->DGV_Commande->Size = System::Drawing::Size(434, 155);
+			this->DGV_Commande->Size = System::Drawing::Size(1205, 285);
 			this->DGV_Commande->TabIndex = 0;
 			this->DGV_Commande->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionCommandeForm::dataGridView1_CellContentClick);
 			// 
@@ -126,9 +126,9 @@ namespace projetPOO {
 			this->GB_Commande->Controls->Add(this->L_idCommande);
 			this->GB_Commande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GB_Commande->Location = System::Drawing::Point(453, 12);
+			this->GB_Commande->Location = System::Drawing::Point(268, 304);
 			this->GB_Commande->Name = L"GB_Commande";
-			this->GB_Commande->Size = System::Drawing::Size(495, 313);
+			this->GB_Commande->Size = System::Drawing::Size(702, 223);
 			this->GB_Commande->TabIndex = 1;
 			this->GB_Commande->TabStop = false;
 			this->GB_Commande->Text = L"Commande";
@@ -138,7 +138,7 @@ namespace projetPOO {
 			// 
 			this->NUD_IdClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NUD_IdClient->Location = System::Drawing::Point(66, 81);
+			this->NUD_IdClient->Location = System::Drawing::Point(66, 80);
 			this->NUD_IdClient->Name = L"NUD_IdClient";
 			this->NUD_IdClient->Size = System::Drawing::Size(111, 22);
 			this->NUD_IdClient->TabIndex = 20;
@@ -149,7 +149,7 @@ namespace projetPOO {
 			this->L_IdClient->AutoSize = true;
 			this->L_IdClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->L_IdClient->Location = System::Drawing::Point(6, 83);
+			this->L_IdClient->Location = System::Drawing::Point(6, 82);
 			this->L_IdClient->Name = L"L_IdClient";
 			this->L_IdClient->Size = System::Drawing::Size(54, 16);
 			this->L_IdClient->TabIndex = 19;
@@ -161,7 +161,7 @@ namespace projetPOO {
 			this->TB_MontantTTC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TB_MontantTTC->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->TB_MontantTTC->Location = System::Drawing::Point(245, 53);
+			this->TB_MontantTTC->Location = System::Drawing::Point(9, 136);
 			this->TB_MontantTTC->Name = L"TB_MontantTTC";
 			this->TB_MontantTTC->Size = System::Drawing::Size(199, 22);
 			this->TB_MontantTTC->TabIndex = 18;
@@ -173,7 +173,7 @@ namespace projetPOO {
 			this->TB_MontantHT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TB_MontantHT->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->TB_MontantHT->Location = System::Drawing::Point(245, 25);
+			this->TB_MontantHT->Location = System::Drawing::Point(9, 108);
 			this->TB_MontantHT->Name = L"TB_MontantHT";
 			this->TB_MontantHT->Size = System::Drawing::Size(199, 22);
 			this->TB_MontantHT->TabIndex = 17;
@@ -182,14 +182,14 @@ namespace projetPOO {
 			// 
 			// MC_DateEmission
 			// 
-			this->MC_DateEmission->Location = System::Drawing::Point(262, 141);
+			this->MC_DateEmission->Location = System::Drawing::Point(465, 49);
 			this->MC_DateEmission->Name = L"MC_DateEmission";
 			this->MC_DateEmission->TabIndex = 16;
 			this->MC_DateEmission->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionCommandeForm::MC_DateEmission_DateChanged);
 			// 
 			// MC_DateLivraison
 			// 
-			this->MC_DateLivraison->Location = System::Drawing::Point(9, 141);
+			this->MC_DateLivraison->Location = System::Drawing::Point(220, 49);
 			this->MC_DateLivraison->Name = L"MC_DateLivraison";
 			this->MC_DateLivraison->TabIndex = 15;
 			this->MC_DateLivraison->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionCommandeForm::MC_DateLivraison_DateChanged);
@@ -199,7 +199,7 @@ namespace projetPOO {
 			this->L_DateEmission->AutoSize = true;
 			this->L_DateEmission->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->L_DateEmission->Location = System::Drawing::Point(318, 116);
+			this->L_DateEmission->Location = System::Drawing::Point(528, 31);
 			this->L_DateEmission->Name = L"L_DateEmission";
 			this->L_DateEmission->Size = System::Drawing::Size(104, 16);
 			this->L_DateEmission->TabIndex = 14;
@@ -211,7 +211,7 @@ namespace projetPOO {
 			this->L_DateLivraison->AutoSize = true;
 			this->L_DateLivraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->L_DateLivraison->Location = System::Drawing::Point(69, 116);
+			this->L_DateLivraison->Location = System::Drawing::Point(279, 31);
 			this->L_DateLivraison->Name = L"L_DateLivraison";
 			this->L_DateLivraison->Size = System::Drawing::Size(108, 16);
 			this->L_DateLivraison->TabIndex = 13;
@@ -234,7 +234,7 @@ namespace projetPOO {
 			// 
 			this->NUD_idCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NUD_idCommande->Location = System::Drawing::Point(103, 25);
+			this->NUD_idCommande->Location = System::Drawing::Point(103, 29);
 			this->NUD_idCommande->Name = L"NUD_idCommande";
 			this->NUD_idCommande->Size = System::Drawing::Size(105, 22);
 			this->NUD_idCommande->TabIndex = 11;
@@ -245,7 +245,7 @@ namespace projetPOO {
 			this->L_idCommande->AutoSize = true;
 			this->L_idCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->L_idCommande->Location = System::Drawing::Point(6, 27);
+			this->L_idCommande->Location = System::Drawing::Point(6, 31);
 			this->L_idCommande->Name = L"L_idCommande";
 			this->L_idCommande->Size = System::Drawing::Size(91, 16);
 			this->L_idCommande->TabIndex = 6;
@@ -256,9 +256,9 @@ namespace projetPOO {
 			// 
 			this->B_load->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_load->Location = System::Drawing::Point(212, 175);
+			this->B_load->Location = System::Drawing::Point(12, 304);
 			this->B_load->Name = L"B_load";
-			this->B_load->Size = System::Drawing::Size(95, 150);
+			this->B_load->Size = System::Drawing::Size(95, 223);
 			this->B_load->TabIndex = 9;
 			this->B_load->Text = L"Charger";
 			this->B_load->UseVisualStyleBackColor = true;
@@ -268,9 +268,9 @@ namespace projetPOO {
 			// 
 			this->B_insert->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_insert->Location = System::Drawing::Point(313, 174);
+			this->B_insert->Location = System::Drawing::Point(114, 304);
 			this->B_insert->Name = L"B_insert";
-			this->B_insert->Size = System::Drawing::Size(134, 48);
+			this->B_insert->Size = System::Drawing::Size(134, 72);
 			this->B_insert->TabIndex = 10;
 			this->B_insert->Text = L"Insérer";
 			this->B_insert->UseVisualStyleBackColor = true;
@@ -280,9 +280,9 @@ namespace projetPOO {
 			// 
 			this->B_update->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_update->Location = System::Drawing::Point(313, 226);
+			this->B_update->Location = System::Drawing::Point(114, 379);
 			this->B_update->Name = L"B_update";
-			this->B_update->Size = System::Drawing::Size(134, 48);
+			this->B_update->Size = System::Drawing::Size(134, 72);
 			this->B_update->TabIndex = 11;
 			this->B_update->Text = L"Modifier";
 			this->B_update->UseVisualStyleBackColor = true;
@@ -292,9 +292,9 @@ namespace projetPOO {
 			// 
 			this->B_delete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_delete->Location = System::Drawing::Point(313, 277);
+			this->B_delete->Location = System::Drawing::Point(114, 455);
 			this->B_delete->Name = L"B_delete";
-			this->B_delete->Size = System::Drawing::Size(134, 48);
+			this->B_delete->Size = System::Drawing::Size(134, 72);
 			this->B_delete->TabIndex = 12;
 			this->B_delete->Text = L"Supprimer";
 			this->B_delete->UseVisualStyleBackColor = true;
@@ -303,9 +303,9 @@ namespace projetPOO {
 			// Logo
 			// 
 			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
-			this->Logo->Location = System::Drawing::Point(12, 174);
+			this->Logo->Location = System::Drawing::Point(985, 304);
 			this->Logo->Name = L"Logo";
-			this->Logo->Size = System::Drawing::Size(194, 151);
+			this->Logo->Size = System::Drawing::Size(233, 223);
 			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->Logo->TabIndex = 24;
 			this->Logo->TabStop = false;
@@ -316,7 +316,7 @@ namespace projetPOO {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(960, 338);
+			this->ClientSize = System::Drawing::Size(1230, 539);
 			this->Controls->Add(this->Logo);
 			this->Controls->Add(this->B_delete);
 			this->Controls->Add(this->B_update);
