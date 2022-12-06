@@ -52,8 +52,8 @@ private:
 public:
 	articleServices(void);
 	System::Data::DataSet^ selectionnerTousLesArticles(System::String^);
-	void ajouterUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^);
-	void modifierUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	void ajouterUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	void modifierUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 	void supprimerUnArticle(System::String^);
 };
 

@@ -56,6 +56,7 @@ namespace projetPOO {
 
 	private: articleServices^ oSvc;
 	private: System::Data::DataSet^ oDs;
+	private: System::Windows::Forms::ComboBox^ CB_TVA;
 
 
 
@@ -80,6 +81,7 @@ namespace projetPOO {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionStockForm::typeid));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_article = (gcnew System::Windows::Forms::GroupBox());
+			this->CB_TVA = (gcnew System::Windows::Forms::ComboBox());
 			this->CB_CouleurA = (gcnew System::Windows::Forms::ComboBox());
 			this->L_CouleurA = (gcnew System::Windows::Forms::Label());
 			this->NUD_SeuilA = (gcnew System::Windows::Forms::NumericUpDown());
@@ -114,6 +116,7 @@ namespace projetPOO {
 			// 
 			// GB_article
 			// 
+			this->GB_article->Controls->Add(this->CB_TVA);
 			this->GB_article->Controls->Add(this->CB_CouleurA);
 			this->GB_article->Controls->Add(this->L_CouleurA);
 			this->GB_article->Controls->Add(this->NUD_SeuilA);
@@ -133,6 +136,20 @@ namespace projetPOO {
 			this->GB_article->TabStop = false;
 			this->GB_article->Text = L"Article";
 			this->GB_article->Enter += gcnew System::EventHandler(this, &GestionStockForm::GB_article_Enter);
+			// 
+			// CB_TVA
+			// 
+			this->CB_TVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->CB_TVA->ForeColor = System::Drawing::SystemColors::InactiveCaption;
+			this->CB_TVA->FormattingEnabled = true;
+			this->CB_TVA->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"5.5", L"10", L"20" });
+			this->CB_TVA->Location = System::Drawing::Point(120, 110);
+			this->CB_TVA->Name = L"CB_TVA";
+			this->CB_TVA->Size = System::Drawing::Size(78, 24);
+			this->CB_TVA->TabIndex = 22;
+			this->CB_TVA->Text = L"TVA";
+			this->CB_TVA->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionStockForm::CB_TVA_SelectedIndexChanged);
 			// 
 			// CB_CouleurA
 			// 
@@ -160,6 +177,7 @@ namespace projetPOO {
 			this->NUD_SeuilA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NUD_SeuilA->Location = System::Drawing::Point(89, 138);
+			this->NUD_SeuilA->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 99999, 0, 0, 0 });
 			this->NUD_SeuilA->Name = L"NUD_SeuilA";
 			this->NUD_SeuilA->Size = System::Drawing::Size(109, 22);
 			this->NUD_SeuilA->TabIndex = 15;
@@ -184,7 +202,7 @@ namespace projetPOO {
 			this->TB_PrixArticle->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->TB_PrixArticle->Location = System::Drawing::Point(6, 110);
 			this->TB_PrixArticle->Name = L"TB_PrixArticle";
-			this->TB_PrixArticle->Size = System::Drawing::Size(192, 22);
+			this->TB_PrixArticle->Size = System::Drawing::Size(96, 22);
 			this->TB_PrixArticle->TabIndex = 13;
 			this->TB_PrixArticle->Text = L"Prix de l\'article";
 			this->TB_PrixArticle->TextChanged += gcnew System::EventHandler(this, &GestionStockForm::TB_PrixArticle_TextChanged);
@@ -206,6 +224,7 @@ namespace projetPOO {
 			this->NUD_Qarticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NUD_Qarticle->Location = System::Drawing::Point(108, 82);
+			this->NUD_Qarticle->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 99999, 0, 0, 0 });
 			this->NUD_Qarticle->Name = L"NUD_Qarticle";
 			this->NUD_Qarticle->Size = System::Drawing::Size(90, 22);
 			this->NUD_Qarticle->TabIndex = 11;
@@ -357,11 +376,11 @@ namespace projetPOO {
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew articleServices();
-		this->oSvc->ajouterUnArticle(this->TB_NomArticle->Text, this->NUD_Qarticle->Text, this->TB_PrixArticle->Text, this->NUD_SeuilA->Text, this->CB_CouleurA->Text);
+		this->oSvc->ajouterUnArticle(System::Convert::ToString(this->NUD_idArticle->Value), this->TB_NomArticle->Text, this->NUD_Qarticle->Text, this->TB_PrixArticle->Text, this->NUD_SeuilA->Text, this->CB_CouleurA->Text, this->CB_TVA->Text);
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew articleServices();
-		this->oSvc->modifierUnArticle(this->TB_NomArticle->Text, this->NUD_Qarticle->Text, this->TB_PrixArticle->Text, this->NUD_SeuilA->Text, this->CB_CouleurA->Text, this->NUD_idArticle->Text); 
+		this->oSvc->modifierUnArticle(System::Convert::ToString(this->NUD_idArticle->Value), this->TB_NomArticle->Text, this->NUD_Qarticle->Text, this->TB_PrixArticle->Text, this->NUD_SeuilA->Text, this->CB_CouleurA->Text, this->CB_TVA->Text);
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew articleServices();
@@ -378,5 +397,7 @@ namespace projetPOO {
 	}
 	private: System::Void NUD_Qarticle_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void CB_TVA_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

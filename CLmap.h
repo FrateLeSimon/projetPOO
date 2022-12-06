@@ -149,21 +149,25 @@ private:
 	System::String^ prix_article;
 	System::String^ seuil;
 	System::String^ couleur;
+	System::String^ taxe;
+	
 public:
 	articleMap();
-	articleMap(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	articleMap(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 	void setId_Article(System::String^);
 	void setNom_Article(System::String^);
 	void setQuantite_Stock(System::String^);
 	void setPrix_Article(System::String^);
 	void setSeuil(System::String^);
 	void setCouleur(System::String^);
+	void setTaxe(System::String^);
 	System::String^ getId_Article();
 	System::String^ getNom_Article();
 	System::String^ getQuantite_Stock();
 	System::String^ getPrix_Article();
 	System::String^ getSeuil();
 	System::String^ getCouleur();
+	System::String^ getTaxe();
 
 	System::String^ Insert();
 	System::String^ Select();

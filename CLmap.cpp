@@ -134,8 +134,8 @@ System::String^ commandeMap::Delete() { return "delete"; }
 articleMap::articleMap()
 	: id_article(""), nom_article(""), quantite_stock(""), prix_article(""), seuil(""), couleur("")
 {}
-articleMap::articleMap(System::String^ id_art, System::String^ v_nom_art, System::String^ v_quantite_stock, System::String^ v_prix_art, System::String^ v_seuil, System::String^ v_couleur)
-	: id_article(id_art), nom_article(v_nom_art), quantite_stock(v_quantite_stock), prix_article(v_prix_art), seuil(v_seuil), couleur(v_couleur)
+articleMap::articleMap(System::String^ id_art, System::String^ v_nom_art, System::String^ v_quantite_stock, System::String^ v_prix_art, System::String^ v_seuil, System::String^ v_couleur, System::String^ taxe)
+	: id_article(id_art), nom_article(v_nom_art), quantite_stock(v_quantite_stock), prix_article(v_prix_art), seuil(v_seuil), couleur(v_couleur), taxe(taxe)
 {}
 
 void articleMap::setId_Article(System::String^ a) { this->id_article = a; }
@@ -144,18 +144,22 @@ void articleMap::setQuantite_Stock(System::String^ a) { this->quantite_stock = a
 void articleMap::setPrix_Article(System::String^ a) { this->prix_article = a; }
 void articleMap::setSeuil(System::String^ a) { this->seuil = a; }
 void articleMap::setCouleur(System::String^ a) { this->couleur = a; }
+void articleMap::setTaxe(System::String^ a) { this->taxe = a; }
 System::String^ articleMap::getId_Article() { return this->id_article; }
 System::String^ articleMap::getNom_Article() { return this->nom_article; }
 System::String^ articleMap::getQuantite_Stock() { return this->quantite_stock; }
 System::String^ articleMap::getPrix_Article() { return this->prix_article; }
 System::String^ articleMap::getSeuil() { return this->seuil; }
 System::String^ articleMap::getCouleur() { return this->couleur; }
+System::String^ articleMap::getTaxe() { return this->taxe; }
 
 
-System::String^ articleMap::Select() { return "SELECT nom AS Nom_article, couleur AS Couleur, prix_article_ht AS Prix, seuil AS Seuil, t.taxe AS Taxe, quantite_stock AS Stock FROM article INNER JOIN taxe AS t ON article.id_taxe = t.id_taxe ORDER BY nom ASC"; }
+System::String^ articleMap::Select() { 
+	return "SELECT article.id_article AS ID, nom AS Nom_article, couleur AS Couleur, prix_article_ht AS Prix, seuil AS Seuil, t.taxe AS Taxe, quantite_stock AS Stock FROM article INNER JOIN taxe AS t ON article.id_taxe = t.id_taxe ORDER BY article.id_article ASC"; 
+}
 System::String^ articleMap::Insert()
 {
-	return "";
+	return "INSERT INTO article VALUES('"+this->id_article+"',"+ this->quantite_stock +","+ this->prix_article+","+ this->seuil+",'"+ this->couleur+"',(SELECT id_taxe FROM taxe WHERE taxe = "+this->taxe + "),'" + this->nom_article + "')";
 }
 System::String^ articleMap::Update() { return "update"; }
 System::String^ articleMap::Delete() { return "delete"; }

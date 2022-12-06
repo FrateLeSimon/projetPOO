@@ -199,7 +199,7 @@ System::Data::DataSet^ articleServices::selectionnerTousLesArticles(System::Stri
 	sql = this->oArticle->Select();
 	return this->oCad->getRows(sql, dataTableName);
 }
-void articleServices::ajouterUnArticle(System::String^ v_nom_art, System::String^ v_quantite_stock, System::String^ v_prix_art, System::String^ v_seuil, System::String^ v_couleur)
+void articleServices::ajouterUnArticle(System::String^ id, System::String^ v_nom_art, System::String^ v_quantite_stock, System::String^ v_prix_art, System::String^ v_seuil, System::String^ v_couleur, System::String^ taxe)
 {
 	System::String^ sql;
 
@@ -208,12 +208,14 @@ void articleServices::ajouterUnArticle(System::String^ v_nom_art, System::String
 	this->oArticle->setPrix_Article(v_prix_art);
 	this->oArticle->setSeuil(v_seuil);
 	this->oArticle->setCouleur(v_couleur);
+	this->oArticle->setTaxe(taxe);
+	this->oArticle->setId_Article(id);
 
 	sql = this->oArticle->Insert();
 
 	this->oCad->actionRows(sql);
 }
-void articleServices::modifierUnArticle(System::String^ id, System::String^ v_nom_art, System::String^ v_quantite_stock, System::String^ v_prix_art, System::String^ v_seuil, System::String^ v_couleur)
+void articleServices::modifierUnArticle(System::String^ id, System::String^ v_nom_art, System::String^ v_quantite_stock, System::String^ v_prix_art, System::String^ v_seuil, System::String^ v_couleur, System::String^ taxe)
 {
 	System::String^ sql;
 
@@ -222,7 +224,9 @@ void articleServices::modifierUnArticle(System::String^ id, System::String^ v_no
 	this->oArticle->setPrix_Article(v_prix_art);
 	this->oArticle->setSeuil(v_seuil);
 	this->oArticle->setCouleur(v_couleur);
-
+	this->oArticle->setTaxe(taxe);
+	this->oArticle->setId_Article(id);
+	
 	this->oArticle->setId_Article(id);
 	sql = this->oArticle->Update();
 
