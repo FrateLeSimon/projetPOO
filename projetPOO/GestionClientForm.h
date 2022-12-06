@@ -470,7 +470,7 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->B_load->Location = System::Drawing::Point(12, 168);
 			this->B_load->Name = L"B_load";
-			this->B_load->Size = System::Drawing::Size(202, 70);
+			this->B_load->Size = System::Drawing::Size(202, 77);
 			this->B_load->TabIndex = 7;
 			this->B_load->Text = L"Charger";
 			this->B_load->UseVisualStyleBackColor = true;
@@ -480,7 +480,7 @@ namespace projetPOO {
 			// 
 			this->B_insert->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_insert->Location = System::Drawing::Point(25, 244);
+			this->B_insert->Location = System::Drawing::Point(25, 251);
 			this->B_insert->Name = L"B_insert";
 			this->B_insert->Size = System::Drawing::Size(174, 50);
 			this->B_insert->TabIndex = 8;
@@ -492,7 +492,7 @@ namespace projetPOO {
 			// 
 			this->B_update->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_update->Location = System::Drawing::Point(25, 300);
+			this->B_update->Location = System::Drawing::Point(25, 307);
 			this->B_update->Name = L"B_update";
 			this->B_update->Size = System::Drawing::Size(174, 50);
 			this->B_update->TabIndex = 9;
@@ -504,7 +504,7 @@ namespace projetPOO {
 			// 
 			this->B_delete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_delete->Location = System::Drawing::Point(25, 356);
+			this->B_delete->Location = System::Drawing::Point(25, 363);
 			this->B_delete->Name = L"B_delete";
 			this->B_delete->Size = System::Drawing::Size(174, 50);
 			this->B_delete->TabIndex = 10;
