@@ -16,7 +16,7 @@ void clientServices::ajouterUnClient(System::String^ v_nom, System::String^ v_pr
 	System::String^ nom_r_f, System::String^ ville_l, System::String^ ville_f, System::String^ code_post_l, System::String^ code_post_f, System::String^ date_n)
 {
 	System::String^ sql;
-
+	
 	this->oClient->setNom(v_nom);
 	this->oClient->setPrenom(v_prenom);
 	this->oClient->setNum_Rue_Livraison(num_r_l);
@@ -28,11 +28,11 @@ void clientServices::ajouterUnClient(System::String^ v_nom, System::String^ v_pr
 	this->oClient->setCode_Postal_Livraison(code_post_l);
 	this->oClient->setCode_Postal_Facturation(code_post_f);
 	this->oClient->setDate_Naissance(date_n);
-
 	
 	sql = this->oClient->Insert();
 
 	this->oCad->actionRows(sql);
+	
 }
 void clientServices::modifierUnClient(System::String^ id,System::String^ v_nom, System::String^ v_prenom, System::String^ num_r_l, System::String^ num_r_f, System::String^ nom_r_l,
 	System::String^ nom_r_f, System::String^ ville_l, System::String^ ville_f, System::String^ code_post_l, System::String^ code_post_f, System::String^ date_n)
