@@ -112,8 +112,12 @@ System::String^ commandeMap::getDate_Emission() { return this->date_emission; }
 System::String^ commandeMap::getMontant_HT() { return this->montant_ht; }
 System::String^ commandeMap::getMontant_TTC() { return this->montant_ttc; }
 
-System::String^ commandeMap::Insert() { return "insert"; }
-System::String^ commandeMap::Select() {
+System::String^ commandeMap::Insert() 
+{
+	return "INSERT INTO facture VALUES ("+this->montant_ht+", 1, 3, "+this->date_emission+", "+this->montant_ttc+"); INSERT INTO VALUES commande("+this->reference+", (SELECT max(id_facture) FROM facture), "+this->id_client+", "+this->date_emission+", "+this->date_livraison+"); "; 
+}
+System::String^ commandeMap::Select() 
+{
 	return "SELECT c.id_commande AS Reference_Commande, c.id_facture AS Facture, h.nom as Nom, prenom as Prenom, d1.c_date AS Date_de_livraison, d2.c_date AS Date_d_emission, art.nom AS Article, ct.quantite AS Quantite, f.montant_total_ht AS Montant_HT FROM commande AS c INNER JOIN facture AS f ON c.id_facture = f.id_facture INNER JOIN humain AS h ON c.id_client = h.id_humain INNER JOIN calendrier AS d1 ON c.id_date_livraison = d1.id_calendrier INNER JOIN calendrier AS d2 ON c.id_date_emission = d2.id_calendrier INNER JOIN contient AS ct ON c.id_commande = ct.id_commande INNER JOIN article AS art ON ct.id_article = art.id_article"; 
 }
 System::String^ commandeMap::Update() { return "update"; }
