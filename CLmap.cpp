@@ -81,9 +81,11 @@ System::String^ personnelMap::getDate_Embauche() { return this->date_embauche; }
 System::String^ personnelMap::getAdmin() { return this->admin; }
 
 System::String^ personnelMap::Insert() { return "insert"; }
-System::String^ personnelMap::Select() { 
-	return "SELECT c.id_commande AS Reference_Commande, c.id_facture AS Facture, h.nom as Nom, prenom as Prenom, d1.c_date AS Date_de_livraison, d2.c_date AS Date_d_emission, art.nom AS Article, ct.quantite AS Quantite, f.montant_total_ht AS Montant_HT FROM commande AS c INNER JOIN facture AS f ON c.id_facture = f.id_facture INNER JOIN humain AS h ON c.id_client = h.id_humain INNER JOIN calendrier AS d1 ON c.id_date_livraison = d1.id_calendrier INNER JOIN calendrier AS d2 ON c.id_date_emission = d2.id_calendrier INNER JOIN contient AS ct ON c.id_commande = ct.id_commande INNER JOIN article AS art ON ct.id_article = art.id_article"; 
+
+System::String^ personnelMap::Select(){ 
+	return "SELECT nom AS Nom, prenom AS Prénom, c.c_date AS Date_d_embauche, a.num_rue AS Num_Rue, a.nom_rue AS Nom_Rue, v.nom_ville AS Ville FROM personnel AS p INNER JOIN humain AS h ON p.id_humain = h.id_humain INNER JOIN calendrier AS c ON p.id_calendrier = c.id_calendrier INNER JOIN adresse AS a ON p.id_adresse = a.id_adresse INNER JOIN ville AS v ON a.id_ville = v.id_ville"; 
 }
+
 System::String^ personnelMap::Update() { return "update"; }
 System::String^ personnelMap::Delete() { return "delete"; }
 
@@ -111,7 +113,7 @@ System::String^ commandeMap::getMontant_HT() { return this->montant_ht; }
 System::String^ commandeMap::getMontant_TTC() { return this->montant_ttc; }
 
 System::String^ commandeMap::Insert() { return "insert"; }
-System::String^ commandeMap::Select() { return "select"; }
+System::String^ commandeMap::Select() { return "SELECT c.id_commande AS Reference_Commande, c.id_facture AS Facture, h.nom as Nom, prenom as Prenom, d1.c_date AS Date_de_livraison, d2.c_date AS Date_d_emission, art.nom AS Article, ct.quantite AS Quantite, f.montant_total_ht AS Montant_HT FROM commande AS c INNER JOIN facture AS f ON c.id_facture = f.id_facture INNER JOIN humain AS h ON c.id_client = h.id_humain INNER JOIN calendrier AS d1 ON c.id_date_livraison = d1.id_calendrier INNER JOIN calendrier AS d2 ON c.id_date_emission = d2.id_calendrier INNER JOIN contient AS ct ON c.id_commande = ct.id_commande INNER JOIN article AS art ON ct.id_article = art.id_article"; }
 System::String^ commandeMap::Update() { return "update"; }
 System::String^ commandeMap::Delete() { return "delete"; }
 
@@ -137,7 +139,7 @@ System::String^ articleMap::getSeuil() { return this->seuil; }
 System::String^ articleMap::getCouleur() { return this->couleur; }
 
 System::String^ articleMap::Insert() { return "insert"; }
-System::String^ articleMap::Select() { return "select"; }
+System::String^ articleMap::Select() { return "SELECT nom AS Nom_artcile, couleur AS Couleur, prix_article_ht AS Prix, seuil AS Seuil, t.taxe AS Taxe, quantite_stock AS Stock FROM article INNER JOIN taxe AS t ON article.id_taxe = t.id_taxe ORDER BY quantite_stock DESC"; }
 System::String^ articleMap::Update() { return "update"; }
 System::String^ articleMap::Delete() { return "delete"; }
 
