@@ -80,9 +80,13 @@ System::String^ personnelMap::getCode_Postal() { return this->code_postal; }
 System::String^ personnelMap::getDate_Embauche() { return this->date_embauche; }
 System::String^ personnelMap::getAdmin() { return this->admin; }
 
-System::String^ personnelMap::Insert() { return "insert"; }
+System::String^ personnelMap::Insert() 
+{ 
+	return "INSERT INTO humain VALUES (this->nom, this->prenom); INSERT INTO calendrier VALUES(this->date_embauche); INSERT INTO adresse VALUES(this->num_rue, this->nom_rue, this->ville); INSERT INTO personnel VALUES((SELECT id_calendrier FROM calendrier WHERE c_date = this->date_embauche), (SELECT id_adresse FROM adresse WHERE(num_rue = this->num_rue and nom_rue = this->nom_rue and id_ville = this->ville)), this->id_superieur, (SELECT id_humain FROM humain WHERE nom = this->nom and prenom = this->prenom), this->admin); "; 
+}
 
-System::String^ personnelMap::Select(){ 
+System::String^ personnelMap::Select()
+{ 
 	return "SELECT nom AS Nom, prenom AS Prénom, c.c_date AS Date_d_embauche, a.num_rue AS Num_Rue, a.nom_rue AS Nom_Rue, v.nom_ville AS Ville FROM personnel AS p INNER JOIN humain AS h ON p.id_humain = h.id_humain INNER JOIN calendrier AS c ON p.id_calendrier = c.id_calendrier INNER JOIN adresse AS a ON p.id_adresse = a.id_adresse INNER JOIN ville AS v ON a.id_ville = v.id_ville ORDER BY nom ASC"; 
 }
 
