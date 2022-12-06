@@ -56,7 +56,7 @@ namespace projetPOO {
 	private: System::Windows::Forms::PictureBox^ Logo;
 
 
-	private: clientServices^ oSvc;
+	private: commandeServices^ oSvc;
 	private: System::Data::DataSet^ oDs;
 
 
@@ -341,13 +341,16 @@ namespace projetPOO {
 		this->DGV_Commande->DataMember = "Rsl";
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		this->oSvc = gcnew commandeServices();
+		this->oSvc->ajouterUneCommande(this->TB_Référence->Text, System::Convert::ToString(this->MC_DateLivraison->SelectionStart), System::Convert::ToString(this->MC_DateEmission->SelectionStart), this->TB_MontantHT->Text, this->TB_MontantTTC->Text);
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		this->oSvc = gcnew commandeServices();
+		this->oSvc->modifierUneCommande(this->TB_Référence->Text, System::Convert::ToString(this->MC_DateLivraison->SelectionStart), System::Convert::ToString(this->MC_DateEmission->SelectionStart), this->TB_MontantHT->Text, this->TB_MontantTTC->Text, this->NUD_idCommande->Text);
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		this->oSvc = gcnew commandeServices();
+		this->oSvc->supprimerUneCommande(this->NUD_idCommande->Text);
 	}
 };
 }
