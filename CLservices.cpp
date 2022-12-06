@@ -253,9 +253,10 @@ System::Data::DataSet^  statsServices::selectionnerPanierMoyen(System::String^ d
 	return this->oCad->getRows(sql, dataTableName);
 	
 }
-System::Data::DataSet^ statsServices::selectionnerChiffreAffaire(System::String^ dataTableName){
+System::Data::DataSet^ statsServices::selectionnerChiffreAffaire(System::String^ dataTableName, System::String^ mois){
 	System::String^ sql;
 
+	this->oStats->setMois(mois);
 	sql = this->oStats->SelectChiffreAffaire();
 	return this->oCad->getRows(sql, dataTableName);
 
@@ -267,10 +268,11 @@ System::Data::DataSet^  statsServices::selectionnerSeuilAppro(System::String^ da
 	sql = this->oStats->SelectSeuilAppro();
 	return this->oCad->getRows(sql, dataTableName);
 }
-System::Data::DataSet^  statsServices::selectionnerMontantTotalAchat(System::String^ dataTableName)
+System::Data::DataSet^  statsServices::selectionnerMontantTotalAchat(System::String^ dataTableName, System::String^ id_client)
 {
 	System::String^ sql;
 
+	this->oStats->setId(id_client);
 	sql = this->oStats->SelectMontantTotalAchat();
 	return this->oCad->getRows(sql, dataTableName);
 }
@@ -302,10 +304,11 @@ System::Data::DataSet^  statsServices::selectionnerValAchatStock(System::String^
 	sql = this->oStats->SelectValAchatStock();
 	return this->oCad->getRows(sql, dataTableName);
 }
-System::Data::DataSet^  statsServices::selectionnerSimulation(System::String^ dataTableName)
+System::Data::DataSet^  statsServices::selectionnerSimulation(System::String^ dataTableName, System::String^ tva)
 {
 	System::String^ sql;
 
+	this->oStats->setTVA(tva);
 	sql = this->oStats->SelectSimulation();
 	return this->oCad->getRows(sql, dataTableName);
 }

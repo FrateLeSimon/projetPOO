@@ -142,21 +142,12 @@ System::String^ articleMap::Delete() { return "delete"; }
 
 
 void statsMap::setMois(System::String^ a) { this->mois = a; }
-void statsMap::setNom(System::String^ a) { this->nom = a; }
-void statsMap::setPrenom(System::String^ a) { this->prenom = a; }
 void statsMap::setId(System::String^ a) { this->id = a; }
 void statsMap::setTVA(System::String^ a) { this->TVA = a; }
-void statsMap::setMarge(System::String^ a) { this->marge = a; }
-void statsMap::setRemise(System::String^ a) { this->remise = a; }
-void statsMap::setDemarque(System::String^ a) { this->demarque = a; }
 System::String^ statsMap::getMois() { return this->mois; }
-System::String^ statsMap::getNom() { return this->nom; }
-System::String^ statsMap::getPrenom() { return this->prenom; }
 System::String^ statsMap::getId() { return this->id; }
 System::String^ statsMap::getTVA() { return this->TVA; }
-System::String^ statsMap::getMarge() { return this->marge; }
-System::String^ statsMap::getRemise() { return this->remise; }
-System::String^ statsMap::getDemarque() { return this->demarque; }
+
 
 
 System::String^ statsMap::SelectPanierMoyen()

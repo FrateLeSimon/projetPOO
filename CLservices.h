@@ -67,14 +67,14 @@ private:
 public:
 	statsServices(void);
 	System::Data::DataSet^ selectionnerPanierMoyen(System::String^);
-	System::Data::DataSet^ selectionnerChiffreAffaire(System::String^);
+	System::Data::DataSet^ selectionnerChiffreAffaire(System::String^, System::String^);
 	System::Data::DataSet^ selectionnerSeuilAppro(System::String^);
-	System::Data::DataSet^ selectionnerMontantTotalAchat(System::String^);
+	System::Data::DataSet^ selectionnerMontantTotalAchat(System::String^, System::String^);
 	System::Data::DataSet^ selectionnerArticlePlusVendu(System::String^);
 	System::Data::DataSet^ selectionnerArticleMoinsVendu(System::String^);
 	System::Data::DataSet^ selectionnerValComStock(System::String^);
 	System::Data::DataSet^ selectionnerValAchatStock(System::String^);
-	System::Data::DataSet^ selectionnerSimulation(System::String^);
+	System::Data::DataSet^ selectionnerSimulation(System::String^, System::String^);
 	
 	
 };

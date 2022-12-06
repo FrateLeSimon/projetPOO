@@ -178,31 +178,18 @@ private:
 	System::String^ sSql;
 
 	System::String^ mois;
-	System::String^ nom;
-	System::String^ prenom;
 	System::String^ id;
 	System::String^ TVA;
-	System::String^ marge;
-	System::String^ remise;
-	System::String^ demarque;
 
 public:
 	void setMois(System::String^);
-	void setNom(System::String^);
-	void setPrenom(System::String^);
 	void setId(System::String^);
 	void setTVA(System::String^);
-	void setMarge(System::String^);
-	void setRemise(System::String^);
-	void setDemarque(System::String^);
+
 	System::String^ getMois();
-	System::String^ getNom();
-	System::String^ getPrenom();
 	System::String^ getId();
 	System::String^ getTVA();
-	System::String^ getMarge();
-	System::String^ getRemise();
-	System::String^ getDemarque();
+
 
 	System::String^ SelectPanierMoyen();
 	System::String^ SelectChiffreAffaire();
