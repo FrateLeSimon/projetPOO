@@ -79,6 +79,8 @@ namespace projetPOO {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionCommandeForm::typeid));
 			this->DGV_Commande = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_Commande = (gcnew System::Windows::Forms::GroupBox());
+			this->NUD_IdClient = (gcnew System::Windows::Forms::NumericUpDown());
+			this->L_IdClient = (gcnew System::Windows::Forms::Label());
 			this->TB_MontantTTC = (gcnew System::Windows::Forms::TextBox());
 			this->TB_MontantHT = (gcnew System::Windows::Forms::TextBox());
 			this->MC_DateEmission = (gcnew System::Windows::Forms::MonthCalendar());
@@ -93,13 +95,11 @@ namespace projetPOO {
 			this->B_update = (gcnew System::Windows::Forms::Button());
 			this->B_delete = (gcnew System::Windows::Forms::Button());
 			this->Logo = (gcnew System::Windows::Forms::PictureBox());
-			this->L_IdClient = (gcnew System::Windows::Forms::Label());
-			this->NUD_IdClient = (gcnew System::Windows::Forms::NumericUpDown());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_Commande))->BeginInit();
 			this->GB_Commande->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdClient))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idCommande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdClient))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// DGV_Commande
@@ -133,6 +133,28 @@ namespace projetPOO {
 			this->GB_Commande->TabStop = false;
 			this->GB_Commande->Text = L"Commande";
 			this->GB_Commande->Enter += gcnew System::EventHandler(this, &GestionCommandeForm::GB_Commande_Enter);
+			// 
+			// NUD_IdClient
+			// 
+			this->NUD_IdClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NUD_IdClient->Location = System::Drawing::Point(66, 81);
+			this->NUD_IdClient->Name = L"NUD_IdClient";
+			this->NUD_IdClient->Size = System::Drawing::Size(111, 22);
+			this->NUD_IdClient->TabIndex = 20;
+			this->NUD_IdClient->ValueChanged += gcnew System::EventHandler(this, &GestionCommandeForm::NUD_IdClient_ValueChanged);
+			// 
+			// L_IdClient
+			// 
+			this->L_IdClient->AutoSize = true;
+			this->L_IdClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->L_IdClient->Location = System::Drawing::Point(6, 83);
+			this->L_IdClient->Name = L"L_IdClient";
+			this->L_IdClient->Size = System::Drawing::Size(54, 16);
+			this->L_IdClient->TabIndex = 19;
+			this->L_IdClient->Text = L"Id Client";
+			this->L_IdClient->Click += gcnew System::EventHandler(this, &GestionCommandeForm::L_IdClient_Click);
 			// 
 			// TB_MontantTTC
 			// 
@@ -289,34 +311,12 @@ namespace projetPOO {
 			this->Logo->TabStop = false;
 			this->Logo->Click += gcnew System::EventHandler(this, &GestionCommandeForm::Logo_Click);
 			// 
-			// L_IdClient
-			// 
-			this->L_IdClient->AutoSize = true;
-			this->L_IdClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->L_IdClient->Location = System::Drawing::Point(6, 83);
-			this->L_IdClient->Name = L"L_IdClient";
-			this->L_IdClient->Size = System::Drawing::Size(54, 16);
-			this->L_IdClient->TabIndex = 19;
-			this->L_IdClient->Text = L"Id Client";
-			this->L_IdClient->Click += gcnew System::EventHandler(this, &GestionCommandeForm::L_IdClient_Click);
-			// 
-			// NUD_IdClient
-			// 
-			this->NUD_IdClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->NUD_IdClient->Location = System::Drawing::Point(66, 81);
-			this->NUD_IdClient->Name = L"NUD_IdClient";
-			this->NUD_IdClient->Size = System::Drawing::Size(111, 22);
-			this->NUD_IdClient->TabIndex = 20;
-			this->NUD_IdClient->ValueChanged += gcnew System::EventHandler(this, &GestionCommandeForm::NUD_IdClient_ValueChanged);
-			// 
 			// GestionCommandeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(960, 389);
+			this->ClientSize = System::Drawing::Size(960, 338);
 			this->Controls->Add(this->Logo);
 			this->Controls->Add(this->B_delete);
 			this->Controls->Add(this->B_update);
@@ -330,9 +330,9 @@ namespace projetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_Commande))->EndInit();
 			this->GB_Commande->ResumeLayout(false);
 			this->GB_Commande->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdClient))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idCommande))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdClient))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -372,11 +372,11 @@ namespace projetPOO {
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew commandeServices();
-		this->oSvc->ajouterUneCommande(this->TB_Référence->Text, System::Convert::ToString(this->MC_DateLivraison->SelectionStart), System::Convert::ToString(this->MC_DateEmission->SelectionStart), this->TB_MontantHT->Text, this->TB_MontantTTC->Text);
+		this->oSvc->ajouterUneCommande(this->NUD_IdClient->Text, this->TB_Référence->Text, System::Convert::ToString(this->MC_DateLivraison->SelectionStart), System::Convert::ToString(this->MC_DateEmission->SelectionStart), this->TB_MontantHT->Text, this->TB_MontantTTC->Text);
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew commandeServices();
-		this->oSvc->modifierUneCommande(this->TB_Référence->Text, System::Convert::ToString(this->MC_DateLivraison->SelectionStart), System::Convert::ToString(this->MC_DateEmission->SelectionStart), this->TB_MontantHT->Text, this->TB_MontantTTC->Text, this->NUD_idCommande->Text);
+		this->oSvc->modifierUneCommande(this->NUD_IdClient->Text, this->TB_Référence->Text, System::Convert::ToString(this->MC_DateLivraison->SelectionStart), System::Convert::ToString(this->MC_DateEmission->SelectionStart), this->TB_MontantHT->Text, this->TB_MontantTTC->Text, this->NUD_idCommande->Text);
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew commandeServices();
