@@ -58,6 +58,8 @@ namespace projetPOO {
 
 	private: commandeServices^ oSvc;
 	private: System::Data::DataSet^ oDs;
+	private: System::Windows::Forms::NumericUpDown^ NUD_IdClient;
+	private: System::Windows::Forms::Label^ L_IdClient;
 
 
 
@@ -91,10 +93,13 @@ namespace projetPOO {
 			this->B_update = (gcnew System::Windows::Forms::Button());
 			this->B_delete = (gcnew System::Windows::Forms::Button());
 			this->Logo = (gcnew System::Windows::Forms::PictureBox());
+			this->L_IdClient = (gcnew System::Windows::Forms::Label());
+			this->NUD_IdClient = (gcnew System::Windows::Forms::NumericUpDown());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_Commande))->BeginInit();
 			this->GB_Commande->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idCommande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdClient))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// DGV_Commande
@@ -108,6 +113,8 @@ namespace projetPOO {
 			// 
 			// GB_Commande
 			// 
+			this->GB_Commande->Controls->Add(this->NUD_IdClient);
+			this->GB_Commande->Controls->Add(this->L_IdClient);
 			this->GB_Commande->Controls->Add(this->TB_MontantTTC);
 			this->GB_Commande->Controls->Add(this->TB_MontantHT);
 			this->GB_Commande->Controls->Add(this->MC_DateEmission);
@@ -121,7 +128,7 @@ namespace projetPOO {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->GB_Commande->Location = System::Drawing::Point(453, 12);
 			this->GB_Commande->Name = L"GB_Commande";
-			this->GB_Commande->Size = System::Drawing::Size(495, 300);
+			this->GB_Commande->Size = System::Drawing::Size(495, 313);
 			this->GB_Commande->TabIndex = 1;
 			this->GB_Commande->TabStop = false;
 			this->GB_Commande->Text = L"Commande";
@@ -153,14 +160,14 @@ namespace projetPOO {
 			// 
 			// MC_DateEmission
 			// 
-			this->MC_DateEmission->Location = System::Drawing::Point(257, 125);
+			this->MC_DateEmission->Location = System::Drawing::Point(262, 141);
 			this->MC_DateEmission->Name = L"MC_DateEmission";
 			this->MC_DateEmission->TabIndex = 16;
 			this->MC_DateEmission->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionCommandeForm::MC_DateEmission_DateChanged);
 			// 
 			// MC_DateLivraison
 			// 
-			this->MC_DateLivraison->Location = System::Drawing::Point(12, 125);
+			this->MC_DateLivraison->Location = System::Drawing::Point(9, 141);
 			this->MC_DateLivraison->Name = L"MC_DateLivraison";
 			this->MC_DateLivraison->TabIndex = 15;
 			this->MC_DateLivraison->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionCommandeForm::MC_DateLivraison_DateChanged);
@@ -170,7 +177,7 @@ namespace projetPOO {
 			this->L_DateEmission->AutoSize = true;
 			this->L_DateEmission->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->L_DateEmission->Location = System::Drawing::Point(317, 100);
+			this->L_DateEmission->Location = System::Drawing::Point(318, 116);
 			this->L_DateEmission->Name = L"L_DateEmission";
 			this->L_DateEmission->Size = System::Drawing::Size(104, 16);
 			this->L_DateEmission->TabIndex = 14;
@@ -182,7 +189,7 @@ namespace projetPOO {
 			this->L_DateLivraison->AutoSize = true;
 			this->L_DateLivraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->L_DateLivraison->Location = System::Drawing::Point(68, 100);
+			this->L_DateLivraison->Location = System::Drawing::Point(69, 116);
 			this->L_DateLivraison->Name = L"L_DateLivraison";
 			this->L_DateLivraison->Size = System::Drawing::Size(108, 16);
 			this->L_DateLivraison->TabIndex = 13;
@@ -229,7 +236,7 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->B_load->Location = System::Drawing::Point(212, 175);
 			this->B_load->Name = L"B_load";
-			this->B_load->Size = System::Drawing::Size(95, 137);
+			this->B_load->Size = System::Drawing::Size(95, 150);
 			this->B_load->TabIndex = 9;
 			this->B_load->Text = L"Charger";
 			this->B_load->UseVisualStyleBackColor = true;
@@ -251,7 +258,7 @@ namespace projetPOO {
 			// 
 			this->B_update->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_update->Location = System::Drawing::Point(313, 224);
+			this->B_update->Location = System::Drawing::Point(313, 231);
 			this->B_update->Name = L"B_update";
 			this->B_update->Size = System::Drawing::Size(134, 38);
 			this->B_update->TabIndex = 11;
@@ -263,7 +270,7 @@ namespace projetPOO {
 			// 
 			this->B_delete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_delete->Location = System::Drawing::Point(313, 275);
+			this->B_delete->Location = System::Drawing::Point(313, 288);
 			this->B_delete->Name = L"B_delete";
 			this->B_delete->Size = System::Drawing::Size(134, 37);
 			this->B_delete->TabIndex = 12;
@@ -282,12 +289,34 @@ namespace projetPOO {
 			this->Logo->TabStop = false;
 			this->Logo->Click += gcnew System::EventHandler(this, &GestionCommandeForm::Logo_Click);
 			// 
+			// L_IdClient
+			// 
+			this->L_IdClient->AutoSize = true;
+			this->L_IdClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->L_IdClient->Location = System::Drawing::Point(6, 83);
+			this->L_IdClient->Name = L"L_IdClient";
+			this->L_IdClient->Size = System::Drawing::Size(54, 16);
+			this->L_IdClient->TabIndex = 19;
+			this->L_IdClient->Text = L"Id Client";
+			this->L_IdClient->Click += gcnew System::EventHandler(this, &GestionCommandeForm::L_IdClient_Click);
+			// 
+			// NUD_IdClient
+			// 
+			this->NUD_IdClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NUD_IdClient->Location = System::Drawing::Point(66, 81);
+			this->NUD_IdClient->Name = L"NUD_IdClient";
+			this->NUD_IdClient->Size = System::Drawing::Size(111, 22);
+			this->NUD_IdClient->TabIndex = 20;
+			this->NUD_IdClient->ValueChanged += gcnew System::EventHandler(this, &GestionCommandeForm::NUD_IdClient_ValueChanged);
+			// 
 			// GestionCommandeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(960, 331);
+			this->ClientSize = System::Drawing::Size(960, 389);
 			this->Controls->Add(this->Logo);
 			this->Controls->Add(this->B_delete);
 			this->Controls->Add(this->B_update);
@@ -303,6 +332,7 @@ namespace projetPOO {
 			this->GB_Commande->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idCommande))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdClient))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -351,6 +381,10 @@ namespace projetPOO {
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew commandeServices();
 		this->oSvc->supprimerUneCommande(this->NUD_idCommande->Text);
+	}
+	private: System::Void L_IdClient_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void NUD_IdClient_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }

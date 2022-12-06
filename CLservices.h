@@ -58,16 +58,6 @@ public:
 };
 
 
-System::String^ panier_moy(void);
-System::String^ chiffre_affaire(void);
-System::String^ seuil_appro(void);
-System::String^ montant_total_achat(void);
-System::String^ arcticle_plus_vendu(void);
-System::String^ article_moins_vendu(void);
-System::String^ val_com_stock(void);
-System::String^ val_achat_stock(void);
-System::String^ simulation(void);
-
 ref class statsServices
 {
 private:
