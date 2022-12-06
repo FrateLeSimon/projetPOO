@@ -1,6 +1,5 @@
 #pragma once
 #include "..\CLservices.h"
-//#include "..\tools.h"
 
 namespace projetPOO {
 
@@ -516,8 +515,12 @@ namespace projetPOO {
 		this->oSvc->ajouterUnClient(this->TB_NomClient->Text, this->TB_PrenomClient->Text, this->TB_NumRueL->Text, this->TB_NumRueF->Text, this->TB_NrueL->Text, this->TB_NrueF->Text, this->CB_NVilleL->Text, this->CB_NvilleF->Text, this->CB_CpostalL->Text, this->CB_CpostalF->Text, System::Convert::ToString(this->MC_DdNaissance->SelectionStart));
 	}	
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew clientServices();
+		this->oSvc->modifierUnClient(this->TB_NomClient->Text, this->TB_PrenomClient->Text, this->TB_NumRueL->Text, this->TB_NumRueF->Text, this->TB_NrueL->Text, this->TB_NrueF->Text, this->CB_NVilleL->Text, this->CB_NvilleF->Text, this->CB_CpostalL->Text, this->CB_CpostalF->Text, System::Convert::ToString(this->MC_DdNaissance->SelectionStart), this->NUD_idClient->Text);
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew clientServices();
+		this->oSvc->supprimerUnClient(this->NUD_idClient->Text);
 	}
 	private: System::Void L_1achat_Click(System::Object^ sender, System::EventArgs^ e) {
 	}

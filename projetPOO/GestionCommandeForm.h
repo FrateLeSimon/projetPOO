@@ -1,5 +1,5 @@
 #pragma once
-//#include "..\tools.h"
+#include "..\CLservices.h"
 
 namespace projetPOO {
 
@@ -56,7 +56,8 @@ namespace projetPOO {
 	private: System::Windows::Forms::PictureBox^ Logo;
 
 
-
+	private: clientServices^ oSvc;
+	private: System::Data::DataSet^ oDs;
 
 
 
@@ -333,12 +334,20 @@ namespace projetPOO {
 	private: System::Void MC_DateEmission_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
 	}
 	private: System::Void B_load_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->DGV_Commande->Refresh();
+		this->oSvc = gcnew commandeServices();
+		this->oDs = this->oSvc->selectionnerToutesLesCommandes("Rsl");
+		this->DGV_Commande->DataSource = this->oDs;
+		this->DGV_Commande->DataMember = "Rsl";
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
+
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
+
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
+
 	}
 };
 }

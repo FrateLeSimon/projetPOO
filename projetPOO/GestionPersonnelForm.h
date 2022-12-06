@@ -1,4 +1,5 @@
 #pragma once
+#include "..\CLservices.h"
 
 namespace projetPOO {
 
@@ -70,6 +71,9 @@ namespace projetPOO {
 	private: System::Windows::Forms::Button^ B_insert;
 	private: System::Windows::Forms::Button^ B_update;
 	private: System::Windows::Forms::Button^ B_delete;
+
+	private: personnelServices^ oSvc;
+	private: System::Data::DataSet^ oDs;
 
 	protected:
 
@@ -438,12 +442,23 @@ namespace projetPOO {
 	private: System::Void Logo_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void B_load_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->DGV_BDD->Refresh();
+		this->oSvc = gcnew personnelServices();
+		this->oDs = this->oSvc->selectionnerTousLesPersonnels("Rsl");
+		this->DGV_BDD->DataSource = this->oDs;
+		this->DGV_BDD->DataMember = "Rsl";
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew personnelServices();
+		this->oSvc->ajouterUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, this->NUD_IdSupérieur->Text, this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, System::Convert::ToString(this->MC_Dembauche->SelectionStart), this->CB_Admin->Text);
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew personnelServices();
+		this->oSvc->modifierUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, this->NUD_IdSupérieur->Text, this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, System::Convert::ToString(this->MC_Dembauche->SelectionStart), this->CB_Admin->Text, this->NUD_idClient->Text);
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew personnelServices();
+		this->oSvc->supprimerUnPersonnel(this->NUD_idClient->Text);
 	}
 };
 }

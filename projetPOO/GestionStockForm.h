@@ -1,5 +1,5 @@
 #pragma once
-//#include "..\tools.h"
+#include "..\CLservices.h"
 
 namespace projetPOO {
 
@@ -54,7 +54,8 @@ namespace projetPOO {
 	private: System::Windows::Forms::Button^ B_delete;
 	private: System::Windows::Forms::PictureBox^ Logo;
 
-
+	private: articleServices^ oSvc;
+	private: System::Data::DataSet^ oDs;
 
 
 
@@ -208,6 +209,7 @@ namespace projetPOO {
 			this->NUD_Qarticle->Name = L"NUD_Qarticle";
 			this->NUD_Qarticle->Size = System::Drawing::Size(90, 22);
 			this->NUD_Qarticle->TabIndex = 11;
+			this->NUD_Qarticle->ValueChanged += gcnew System::EventHandler(this, &GestionStockForm::NUD_Qarticle_ValueChanged);
 			// 
 			// TB_NomArticle
 			// 
@@ -219,6 +221,7 @@ namespace projetPOO {
 			this->TB_NomArticle->Size = System::Drawing::Size(192, 22);
 			this->TB_NomArticle->TabIndex = 3;
 			this->TB_NomArticle->Text = L"Nom de l\'article";
+			this->TB_NomArticle->TextChanged += gcnew System::EventHandler(this, &GestionStockForm::TB_NomArticle_TextChanged);
 			// 
 			// NUD_idArticle
 			// 
@@ -353,12 +356,27 @@ namespace projetPOO {
 	private: System::Void Logo_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew articleServices();
+		this->oSvc->ajouterUnArticle(this->TB_NomArticle->Text, this->NUD_Qarticle->Text, this->TB_PrixArticle->Text, this->NUD_SeuilA->Text, this->CB_CouleurA->Text);
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew articleServices();
+		this->oSvc->modifierUnArticle(this->TB_NomArticle->Text, this->NUD_Qarticle->Text, this->TB_PrixArticle->Text, this->NUD_SeuilA->Text, this->CB_CouleurA->Text, this->NUD_idArticle->Text); 
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew articleServices();
+		this->oSvc->supprimerUnArticle(this->NUD_idArticle->Text);
 	}
 	private: System::Void B_load_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView1->Refresh();
+		this->oSvc = gcnew articleServices();
+		this->oDs = this->oSvc->selectionnerTousLesArticles("Rsl");
+		this->dataGridView1->DataSource = this->oDs;
+		this->dataGridView1->DataMember = "Rsl";
+	}
+	private: System::Void TB_NomArticle_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void NUD_Qarticle_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }
