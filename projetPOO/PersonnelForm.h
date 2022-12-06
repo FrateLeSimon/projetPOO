@@ -1,7 +1,5 @@
 
-#include "GestionClientForm.h"
-#include "GestionCommandeForm.h"
-#include "GestionStockForm.h"
+#include "GestionStatForm1.h"
 
 namespace projetPOO {
 

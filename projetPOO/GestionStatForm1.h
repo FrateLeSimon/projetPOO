@@ -1,4 +1,5 @@
 #pragma once
+#include "GestionPersonnelForm.h"
 
 namespace projetPOO {
 

@@ -1,4 +1,5 @@
 #pragma once
+#include "GestionClientForm.h"
 
 namespace projetPOO {
 
