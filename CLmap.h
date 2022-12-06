@@ -169,7 +169,6 @@ public:
 };
 
 
-
 ref class statsMap
 {
 private:
@@ -202,14 +201,15 @@ public:
 	System::String^ getRemise();
 	System::String^ getDemarque();
 
-	System::String^ panier_moy(void);
-	System::String^ chiffre_affaire(void);
-	System::String^ seuil_appro(void);
-	System::String^ montant_total_achat(void);
-	System::String^ arcticle_plus_vendu(void);
-	System::String^ article_moins_vendu(void);
-	System::String^ val_com_stock(void);
-	System::String^ val_achat_stock(void);
-	System::String^ simulation(void);
+	System::String^ SelectPanierMoyen();
+	System::String^ SelectChiffreAffaire();
+	System::String^ SelectSeuilAppro();
+	System::String^ SelectMontantTotalAchat();
+	System::String^ SelectArticlePlusVendu();
+	System::String^ SelectArticleMoinsVendu();
+	System::String^ SelectValComStock();
+	System::String^ SelectValAchatStock();
+	System::String^ SelectSimulation();
+	
 };
 

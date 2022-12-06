@@ -156,34 +156,52 @@ System::String^ statsMap::getMarge() { return this->marge; }
 System::String^ statsMap::getRemise() { return this->remise; }
 System::String^ statsMap::getDemarque() { return this->demarque; }
 
-System::String^ statsMap::panier_moy(void){
-	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
-}
-System::String^ statsMap::chiffre_affaire(void){
-	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
-}
-System::String^ statsMap::seuil_appro(void){
-	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
-}
-System::String^ statsMap::montant_total_achat(void){
-	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
-}
-System::String^ statsMap::arcticle_plus_vendu(void){
-	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
-}
-System::String^ statsMap::article_moins_vendu(void){
-	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
-}
-System::String^ statsMap::val_com_stock(void){
-	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
-}
-System::String^ statsMap::val_achat_stock(void){
-	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
-}
-System::String^ statsMap::simulation(void){
-	return "select mois, nom, prenom, id, TVA, marge, remise, demarque from stats";
+
+System::String^ statsMap::SelectPanierMoyen()
+{
+	return "SELECT AVG(montant_ttc) FROM commande";
+	
 }
 
+System::String^ statsMap::SelectChiffreAffaire()
+{
+	return "SELECT SUM(montant_ttc) FROM commande";
+}
+
+System::String^ statsMap::SelectSeuilAppro()
+{
+	return "SELECT SUM(quantite_stock) FROM article WHERE quantite_stock < seuil";
+}
+
+System::String^ statsMap::SelectMontantTotalAchat()
+{
+	return "SELECT SUM(prix_article) FROM article";
+}
+
+System::String^ statsMap::SelectArticlePlusVendu()
+{
+	return "SELECT nom_article, SUM(quantite) FROM article, commande, ligne_commande WHERE article.id_article = ligne_commande.id_article AND commande.id_commande = ligne_commande.id_commande GROUP BY nom_article ORDER BY SUM(quantite) DESC";
+}
+
+System::String^ statsMap::SelectArticleMoinsVendu()
+{
+	return "SELECT nom_article, SUM(quantite) FROM article, commande, ligne_commande WHERE article.id_article = ligne_commande.id_article AND commande.id_commande = ligne_commande.id_commande GROUP BY nom_article ORDER BY SUM(quantite) ASC";
+}
+
+System::String^ statsMap::SelectValComStock()
+{
+	return "SELECT SUM(prix_article) FROM article WHERE quantite_stock > seuil";
+}
+
+System::String^ statsMap::SelectValAchatStock()
+{
+	return "SELECT SUM(prix_article) FROM article WHERE quantite_stock < seuil";
+}
+
+System::String^ statsMap::SelectSimulation()
+{
+	return "SELECT SUM(prix_article) FROM article WHERE quantite_stock < seuil";
+}
 
 
 

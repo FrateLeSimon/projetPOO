@@ -56,3 +56,34 @@ public:
 	void modifierUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 	void supprimerUnArticle(System::String^);
 };
+
+
+System::String^ panier_moy(void);
+System::String^ chiffre_affaire(void);
+System::String^ seuil_appro(void);
+System::String^ montant_total_achat(void);
+System::String^ arcticle_plus_vendu(void);
+System::String^ article_moins_vendu(void);
+System::String^ val_com_stock(void);
+System::String^ val_achat_stock(void);
+System::String^ simulation(void);
+
+ref class statsServices
+{
+private:
+	NS_Comp_Data::CLcad^ oCad;
+	statsMap^ oStats;
+public:
+	statsServices(void);
+	System::Data::DataSet^ selectionnerPanierMoyen(System::String^);
+	System::Data::DataSet^ selectionnerChiffreAffaire(System::String^);
+	System::Data::DataSet^ selectionnerSeuilAppro(System::String^);
+	System::Data::DataSet^ selectionnerMontantTotalAchat(System::String^);
+	System::Data::DataSet^ selectionnerArticlePlusVendu(System::String^);
+	System::Data::DataSet^ selectionnerArticleMoinsVendu(System::String^);
+	System::Data::DataSet^ selectionnerValComStock(System::String^);
+	System::Data::DataSet^ selectionnerValAchatStock(System::String^);
+	System::Data::DataSet^ selectionnerSimulation(System::String^);
+	
+	
+};

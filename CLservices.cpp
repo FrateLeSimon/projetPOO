@@ -236,3 +236,96 @@ void articleServices::supprimerUnArticle(System::String^ id)
 
 	this->oCad->actionRows(sql);
 }
+
+
+ref class statsServices
+{
+private:
+	NS_Comp_Data::CLcad^ oCad;
+	statsMap^ oStats;
+public:
+	statsServices(void);
+	System::Data::DataSet^ selectionnerPanierMoyen(System::String^);
+	System::Data::DataSet^ selectionnerChiffreAffaire(System::String^);
+	System::Data::DataSet^ selectionnerSeuilAppro(System::String^);
+	System::Data::DataSet^ selectionnerMontantTotalAchat(System::String^);
+	System::Data::DataSet^ selectionnerArticlePlusVendu(System::String^);
+	System::Data::DataSet^ selectionnerArticleMoinsVendu(System::String^);
+	System::Data::DataSet^ selectionnerValComStock(System::String^);
+	System::Data::DataSet^ selectionnerValAchatStock(System::String^);
+	System::Data::DataSet^ selectionnerSimulation(System::String^);
+
+
+};
+
+statsServices::statsServices()
+{
+	this->oCad = gcnew NS_Comp_Data::CLcad();
+	this->oStats = gcnew statsMap();
+}
+System::Data::DataSet^ selectionnerPanierMoyen(System::String^) {
+
+	System::String^ sql;
+
+	sql = this->oStats->SelectPanierMoyen();
+	return this->oCad->getRows(sql, dataTableName);
+	
+}
+System::Data::DataSet^ selectionnerChiffreAffaire(System::String^){
+System::String^ sql;
+
+sql = this->oStats->SelectChiffreAffaire();
+return this->oCad->getRows(sql, dataTableName);
+
+}
+System::Data::DataSet^ selectionnerSeuilAppro(System::String^)
+{
+	System::String^ sql;
+
+	sql = this->oStats->SelectSeuilAppro();
+	return this->oCad->getRows(sql, dataTableName);
+}
+System::Data::DataSet^ selectionnerMontantTotalAchat(System::String^)
+{
+	System::String^ sql;
+
+	sql = this->oStats->SelectMontantTotalAchat();
+	return this->oCad->getRows(sql, dataTableName);
+}
+System::Data::DataSet^ selectionnerArticlePlusVendu(System::String^)
+{
+	System::String^ sql;
+
+	sql = this->oStats->SelectArticlePlusVendu();
+	return this->oCad->getRows(sql, dataTableName);
+}
+System::Data::DataSet^ selectionnerArticleMoinsVendu(System::String^)
+{
+	System::String^ sql;
+
+	sql = this->oStats->SelectArticleMoinsVendu();
+	return this->oCad->getRows(sql, dataTableName);
+}
+System::Data::DataSet^ selectionnerValComStock(System::String^)
+{
+	System::String^ sql;
+
+	sql = this->oStats->SelectValComStock();
+	return this->oCad->getRows(sql, dataTableName);
+}
+System::Data::DataSet^ selectionnerValAchatStock(System::String^)
+{
+	System::String^ sql;
+
+	sql = this->oStats->SelectValAchatStock();
+	return this->oCad->getRows(sql, dataTableName);
+}
+System::Data::DataSet^ selectionnerSimulation(System::String^)
+{
+	System::String^ sql;
+
+	sql = this->oStats->SelectSimulation();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
+
