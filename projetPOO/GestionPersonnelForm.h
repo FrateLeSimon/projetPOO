@@ -219,9 +219,12 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->NUD_jour->Location = System::Drawing::Point(64, 25);
 			this->NUD_jour->Margin = System::Windows::Forms::Padding(2);
+			this->NUD_jour->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 31, 0, 0, 0 });
+			this->NUD_jour->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUD_jour->Name = L"NUD_jour";
 			this->NUD_jour->Size = System::Drawing::Size(116, 22);
 			this->NUD_jour->TabIndex = 23;
+			this->NUD_jour->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUD_jour->ValueChanged += gcnew System::EventHandler(this, &GestionPersonnelForm::NUD_jour_ValueChanged);
 			// 
 			// NUD_annee
@@ -230,9 +233,12 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->NUD_annee->Location = System::Drawing::Point(64, 82);
 			this->NUD_annee->Margin = System::Windows::Forms::Padding(2);
+			this->NUD_annee->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2022, 0, 0, 0 });
+			this->NUD_annee->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1900, 0, 0, 0 });
 			this->NUD_annee->Name = L"NUD_annee";
 			this->NUD_annee->Size = System::Drawing::Size(116, 22);
 			this->NUD_annee->TabIndex = 26;
+			this->NUD_annee->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2022, 0, 0, 0 });
 			this->NUD_annee->ValueChanged += gcnew System::EventHandler(this, &GestionPersonnelForm::NUD_annee_ValueChanged);
 			// 
 			// L_mois
@@ -254,9 +260,12 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->NUD_mois->Location = System::Drawing::Point(64, 54);
 			this->NUD_mois->Margin = System::Windows::Forms::Padding(2);
+			this->NUD_mois->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 12, 0, 0, 0 });
+			this->NUD_mois->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUD_mois->Name = L"NUD_mois";
 			this->NUD_mois->Size = System::Drawing::Size(116, 22);
 			this->NUD_mois->TabIndex = 24;
+			this->NUD_mois->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUD_mois->ValueChanged += gcnew System::EventHandler(this, &GestionPersonnelForm::NUD_mois_ValueChanged);
 			// 
 			// CB_Admin
@@ -542,11 +551,11 @@ namespace projetPOO {
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew personnelServices();
-		this->oSvc->ajouterUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, this->NUD_IdSupérieur->Text, this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value, this->CB_Admin->Text);
+		this->oSvc->ajouterUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, System::Convert::ToString(this->NUD_IdSupérieur->Value), this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value, System::Convert::ToString(this->CB_Admin->Checked));
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew personnelServices();
-		this->oSvc->modifierUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, this->NUD_IdSupérieur->Text, this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value, this->CB_Admin->Text, System::Convert::ToString(this->NUD_idPersonnel->Value));
+		this->oSvc->modifierUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, System::Convert::ToString(this->NUD_IdSupérieur->Value), this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value, System::Convert::ToString(this->CB_Admin->Checked), System::Convert::ToString(this->NUD_idPersonnel->Value));
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew personnelServices();

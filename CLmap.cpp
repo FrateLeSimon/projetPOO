@@ -82,12 +82,12 @@ System::String^ personnelMap::getAdmin() { return this->admin; }
 
 System::String^ personnelMap::Select()
 { 
-	return "SELECT id_personnel AS ID, nom AS Nom, prenom AS Prénom, c.c_date AS Date_d_embauche, a.num_rue AS Num_Rue, a.nom_rue AS Nom_Rue, v.nom_ville AS Ville FROM personnel AS p INNER JOIN humain AS h ON p.id_humain = h.id_humain INNER JOIN calendrier AS c ON p.id_calendrier = c.id_calendrier INNER JOIN adresse AS a ON p.id_adresse = a.id_adresse INNER JOIN ville AS v ON a.id_ville = v.id_ville ORDER BY id_personnel ASC"; 
+	return "SELECT id_personnel AS ID, nom AS Nom, prenom AS Prénom, c.c_date AS Date_d_embauche, a.num_rue AS Num_Rue, a.nom_rue AS Nom_Rue, v.nom_ville AS Ville, admin FROM personnel AS p INNER JOIN humain AS h ON p.id_humain = h.id_humain INNER JOIN calendrier AS c ON p.id_calendrier = c.id_calendrier INNER JOIN adresse AS a ON p.id_adresse = a.id_adresse INNER JOIN ville AS v ON a.id_ville = v.id_ville ORDER BY id_personnel ASC"; 
 }
 
 System::String^ personnelMap::Insert()
 {
-	return "INSERT INTO humain VALUES (" + this->nom + "," + this->prenom + "); INSERT INTO calendrier VALUES(" + this->date_embauche + "); INSERT INTO adresse VALUES(" + this->num_rue + "," + this->nom_rue + "," + this->ville + "); INSERT INTO personnel VALUES((SELECT id_calendrier FROM calendrier WHERE c_date =" + this->date_embauche + "), (SELECT id_adresse FROM adresse WHERE(num_rue =" + this->num_rue + " and nom_rue =" + this->nom_rue + "and id_ville =" + this->ville + "))," + this->id_superieur + ", (SELECT id_humain FROM humain WHERE nom =" + this->nom + "and prenom =" + this->prenom + ")," + this->admin + ");";
+	return "INSERT INTO humain VALUES ('" + this->nom + "','" + this->prenom + "'); INSERT INTO calendrier VALUES('" + this->date_embauche + "'); INSERT INTO adresse VALUES('" + this->num_rue + "','" + this->nom_rue + "',(SELECT id_ville from ville WHERE nom_ville='" + this->ville + "'));INSERT INTO personnel VALUES((SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '" + this->date_embauche + "' GROUP BY c_date), (SELECT id_adresse FROM adresse WHERE(num_rue ='" + this->num_rue + "' and nom_rue ='" + this->nom_rue + "'and id_ville =(SELECT id_ville from ville WHERE nom_ville='" + this->ville + "')))," + this->id_superieur + ", (SELECT AVG(id_humain) FROM humain WHERE nom ='" + this->nom + "'and prenom ='" + this->prenom + "' GROUP BY id_humain),'" + this->admin + "');";
 }
 
 System::String^ personnelMap::Update() { return "update"; }
@@ -119,12 +119,12 @@ System::String^ commandeMap::getMontant_TTC() { return this->montant_ttc; }
 
 System::String^ commandeMap::Select() 
 {
-	return "SELECT c.id_commande AS Reference_Commande, c.id_facture AS Facture, h.nom as Nom, prenom as Prenom, d1.c_date AS Date_de_livraison, d2.c_date AS Date_d_emission, art.nom AS Article, ct.quantite AS Quantite, f.montant_total_ht AS Montant_HT FROM commande AS c INNER JOIN facture AS f ON c.id_facture = f.id_facture INNER JOIN humain AS h ON c.id_client = h.id_humain INNER JOIN calendrier AS d1 ON c.id_date_livraison = d1.id_calendrier INNER JOIN calendrier AS d2 ON c.id_date_emission = d2.id_calendrier INNER JOIN contient AS ct ON c.id_commande = ct.id_commande INNER JOIN article AS art ON ct.id_article = art.id_article"; 
+	return "SELECT c.id_commande AS ID, AVG(c.id_client) AS id_client, h.nom as Nom, h.prenom as Prenom, d1.c_date AS Date_de_livraison, d2.c_date AS Date_d_emission, AVG(f.montant_total_ht) AS Montant_HT FROM commande AS c LEFT JOIN facture AS f ON c.id_facture = f.id_facture LEFT JOIN humain AS h ON c.id_client = h.id_humain LEFT JOIN calendrier AS d1 ON c.id_date_livraison = d1.id_calendrier LEFT JOIN calendrier AS d2 ON c.id_date_emission = d2.id_calendrier LEFT JOIN contient AS ct ON c.id_commande = ct.id_commande LEFT JOIN article AS art ON ct.id_article = art.id_article GROUP BY c.id_commande, h.nom, h.prenom, d1.c_date, d2.c_date"; 
 }
 
 System::String^ commandeMap::Insert()
 {
-	return "INSERT INTO facture VALUES (" + this->montant_ht + ", 1, 3, " + this->date_emission + ", " + this->montant_ttc + "); INSERT INTO VALUES commande(" + this->reference + ", (SELECT max(id_facture) FROM facture), " + this->id_client + ", " + this->date_emission + ", " + this->date_livraison + "); ";
+	return "INSERT INTO calendrier VALUES ('" +this->date_emission +"'),('" + this->date_livraison + "'); INSERT INTO facture VALUES(" + this->montant_ht + ", 1, 3, (SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '"+ this->date_emission + "' GROUP BY c_date), " + this->montant_ttc + "); INSERT INTO commande VALUES('" + this->reference + "', (SELECT max(id_facture) FROM facture), " + this->id_client + ", (SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '" + this->date_emission + "' GROUP BY c_date), (SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '"+ this->date_livraison + "' GROUP BY c_date)); ";
 }
 System::String^ commandeMap::Update() { return "update"; }
 System::String^ commandeMap::Delete() { return "delete"; }
