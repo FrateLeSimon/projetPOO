@@ -84,7 +84,7 @@ namespace projetPOO {
 			// 
 			// B_Gestionpersonnel
 			// 
-			this->B_Gestionpersonnel->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->B_Gestionpersonnel->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->B_Gestionpersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->B_Gestionpersonnel->Location = System::Drawing::Point(64, 42);
@@ -97,7 +97,7 @@ namespace projetPOO {
 			// 
 			// B_GestionStat
 			// 
-			this->B_GestionStat->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->B_GestionStat->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->B_GestionStat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->B_GestionStat->Location = System::Drawing::Point(64, 109);
@@ -112,7 +112,7 @@ namespace projetPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->ClientSize = System::Drawing::Size(394, 247);
 			this->Controls->Add(this->GB_Admin);
 			this->Name = L"AdminForm";

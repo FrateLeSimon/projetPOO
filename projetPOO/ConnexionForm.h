@@ -78,7 +78,7 @@ namespace projetPOO {
 			// 
 			// GB_connexion
 			// 
-			this->GB_connexion->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->GB_connexion->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->GB_connexion->Controls->Add(this->B_connexion);
 			this->GB_connexion->Controls->Add(this->TB_mdp);
 			this->GB_connexion->Controls->Add(this->TB_id);

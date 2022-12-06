@@ -72,11 +72,11 @@ namespace projetPOO {
 			// 
 			// B_Gestionclient
 			// 
-			this->B_Gestionclient->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->B_Gestionclient->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->B_Gestionclient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->B_Gestionclient->Location = System::Drawing::Point(64, 42);
-			this->B_Gestionclient->Name = L"B_GestionClient";
+			this->B_Gestionclient->Name = L"B_Gestionclient";
 			this->B_Gestionclient->Size = System::Drawing::Size(122, 46);
 			this->B_Gestionclient->TabIndex = 0;
 			this->B_Gestionclient->Text = L"Gestion client";
@@ -85,7 +85,7 @@ namespace projetPOO {
 			// 
 			// B_Gestioncommande
 			// 
-			this->B_Gestioncommande->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->B_Gestioncommande->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->B_Gestioncommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->B_Gestioncommande->Location = System::Drawing::Point(64, 109);
@@ -98,11 +98,11 @@ namespace projetPOO {
 			// 
 			// B_gestionstock
 			// 
-			this->B_gestionstock->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->B_gestionstock->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->B_gestionstock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->B_gestionstock->Location = System::Drawing::Point(64, 180);
-			this->B_gestionstock->Name = L"B_GestionStock";
+			this->B_gestionstock->Name = L"B_gestionstock";
 			this->B_gestionstock->Size = System::Drawing::Size(122, 47);
 			this->B_gestionstock->TabIndex = 2;
 			this->B_gestionstock->Text = L"Gestion stock";
@@ -117,6 +117,7 @@ namespace projetPOO {
 			this->GB_Personnel->Controls->Add(this->B_Gestioncommande);
 			this->GB_Personnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->GB_Personnel->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->GB_Personnel->Location = System::Drawing::Point(85, 36);
 			this->GB_Personnel->Name = L"GB_Personnel";
 			this->GB_Personnel->Size = System::Drawing::Size(254, 247);
@@ -129,7 +130,7 @@ namespace projetPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->ClientSize = System::Drawing::Size(430, 315);
 			this->Controls->Add(this->GB_Personnel);
 			this->Name = L"PersonnelForm";
