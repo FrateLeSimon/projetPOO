@@ -38,9 +38,9 @@ namespace projetPOO {
 	private: System::Windows::Forms::DataGridView^ DGV_BDD;
 	private: System::Windows::Forms::GroupBox^ GB_Personnel;
 
-	private: System::Windows::Forms::MonthCalendar^ MC_Dembauche;
 
-	private: System::Windows::Forms::Label^ L_Dembauche;
+
+
 
 	private: System::Windows::Forms::GroupBox^ GB_Apersonnel;
 	private: System::Windows::Forms::TextBox^ TB_NumRue;
@@ -75,6 +75,13 @@ namespace projetPOO {
 	private: personnelServices^ oSvc;
 	private: System::Data::DataSet^ oDs;
 	private: System::Windows::Forms::PictureBox^ Logo;
+	private: System::Windows::Forms::GroupBox^ GB_embauche;
+	private: System::Windows::Forms::Label^ L_jour;
+	private: System::Windows::Forms::Label^ L_annee;
+	private: System::Windows::Forms::NumericUpDown^ NUD_jour;
+	private: System::Windows::Forms::NumericUpDown^ NUD_annee;
+	private: System::Windows::Forms::Label^ L_mois;
+	private: System::Windows::Forms::NumericUpDown^ NUD_mois;
 
 	protected:
 
@@ -94,11 +101,16 @@ namespace projetPOO {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionPersonnelForm::typeid));
 			this->DGV_BDD = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_Personnel = (gcnew System::Windows::Forms::GroupBox());
+			this->GB_embauche = (gcnew System::Windows::Forms::GroupBox());
+			this->L_jour = (gcnew System::Windows::Forms::Label());
+			this->L_annee = (gcnew System::Windows::Forms::Label());
+			this->NUD_jour = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUD_annee = (gcnew System::Windows::Forms::NumericUpDown());
+			this->L_mois = (gcnew System::Windows::Forms::Label());
+			this->NUD_mois = (gcnew System::Windows::Forms::NumericUpDown());
 			this->CB_Admin = (gcnew System::Windows::Forms::CheckBox());
 			this->NUD_IdSupérieur = (gcnew System::Windows::Forms::NumericUpDown());
 			this->L_IdSupérieur = (gcnew System::Windows::Forms::Label());
-			this->MC_Dembauche = (gcnew System::Windows::Forms::MonthCalendar());
-			this->L_Dembauche = (gcnew System::Windows::Forms::Label());
 			this->GB_Apersonnel = (gcnew System::Windows::Forms::GroupBox());
 			this->TB_NumRue = (gcnew System::Windows::Forms::TextBox());
 			this->CB_Cpostal = (gcnew System::Windows::Forms::ComboBox());
@@ -115,6 +127,10 @@ namespace projetPOO {
 			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->BeginInit();
 			this->GB_Personnel->SuspendLayout();
+			this->GB_embauche->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_jour))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_annee))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_mois))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdSupérieur))->BeginInit();
 			this->GB_Apersonnel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->BeginInit();
@@ -133,11 +149,10 @@ namespace projetPOO {
 			// GB_Personnel
 			// 
 			this->GB_Personnel->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->GB_Personnel->Controls->Add(this->GB_embauche);
 			this->GB_Personnel->Controls->Add(this->CB_Admin);
 			this->GB_Personnel->Controls->Add(this->NUD_IdSupérieur);
 			this->GB_Personnel->Controls->Add(this->L_IdSupérieur);
-			this->GB_Personnel->Controls->Add(this->MC_Dembauche);
-			this->GB_Personnel->Controls->Add(this->L_Dembauche);
 			this->GB_Personnel->Controls->Add(this->GB_Apersonnel);
 			this->GB_Personnel->Controls->Add(this->NUD_idClient);
 			this->GB_Personnel->Controls->Add(this->TB_PrenomPersonnel);
@@ -147,11 +162,101 @@ namespace projetPOO {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->GB_Personnel->Location = System::Drawing::Point(12, 200);
 			this->GB_Personnel->Name = L"GB_Personnel";
-			this->GB_Personnel->Size = System::Drawing::Size(791, 203);
+			this->GB_Personnel->Size = System::Drawing::Size(791, 164);
 			this->GB_Personnel->TabIndex = 7;
 			this->GB_Personnel->TabStop = false;
 			this->GB_Personnel->Text = L"Personnel";
 			this->GB_Personnel->Enter += gcnew System::EventHandler(this, &GestionPersonnelForm::GB_Personnel_Enter);
+			// 
+			// GB_embauche
+			// 
+			this->GB_embauche->Controls->Add(this->L_jour);
+			this->GB_embauche->Controls->Add(this->L_annee);
+			this->GB_embauche->Controls->Add(this->NUD_jour);
+			this->GB_embauche->Controls->Add(this->NUD_annee);
+			this->GB_embauche->Controls->Add(this->L_mois);
+			this->GB_embauche->Controls->Add(this->NUD_mois);
+			this->GB_embauche->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->GB_embauche->Location = System::Drawing::Point(555, 22);
+			this->GB_embauche->Name = L"GB_embauche";
+			this->GB_embauche->Size = System::Drawing::Size(200, 119);
+			this->GB_embauche->TabIndex = 32;
+			this->GB_embauche->TabStop = false;
+			this->GB_embauche->Text = L"Date d\'embauche";
+			this->GB_embauche->Enter += gcnew System::EventHandler(this, &GestionPersonnelForm::GB_embauche_Enter);
+			// 
+			// L_jour
+			// 
+			this->L_jour->AutoSize = true;
+			this->L_jour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->L_jour->Location = System::Drawing::Point(9, 27);
+			this->L_jour->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->L_jour->Name = L"L_jour";
+			this->L_jour->Size = System::Drawing::Size(33, 16);
+			this->L_jour->TabIndex = 27;
+			this->L_jour->Text = L"Jour";
+			this->L_jour->Click += gcnew System::EventHandler(this, &GestionPersonnelForm::L_jour_Click);
+			// 
+			// L_annee
+			// 
+			this->L_annee->AutoSize = true;
+			this->L_annee->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->L_annee->Location = System::Drawing::Point(9, 82);
+			this->L_annee->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->L_annee->Name = L"L_annee";
+			this->L_annee->Size = System::Drawing::Size(46, 16);
+			this->L_annee->TabIndex = 29;
+			this->L_annee->Text = L"Année";
+			this->L_annee->Click += gcnew System::EventHandler(this, &GestionPersonnelForm::L_annee_Click);
+			// 
+			// NUD_jour
+			// 
+			this->NUD_jour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NUD_jour->Location = System::Drawing::Point(64, 25);
+			this->NUD_jour->Margin = System::Windows::Forms::Padding(2);
+			this->NUD_jour->Name = L"NUD_jour";
+			this->NUD_jour->Size = System::Drawing::Size(116, 22);
+			this->NUD_jour->TabIndex = 23;
+			this->NUD_jour->ValueChanged += gcnew System::EventHandler(this, &GestionPersonnelForm::NUD_jour_ValueChanged);
+			// 
+			// NUD_annee
+			// 
+			this->NUD_annee->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NUD_annee->Location = System::Drawing::Point(64, 82);
+			this->NUD_annee->Margin = System::Windows::Forms::Padding(2);
+			this->NUD_annee->Name = L"NUD_annee";
+			this->NUD_annee->Size = System::Drawing::Size(116, 22);
+			this->NUD_annee->TabIndex = 26;
+			this->NUD_annee->ValueChanged += gcnew System::EventHandler(this, &GestionPersonnelForm::NUD_annee_ValueChanged);
+			// 
+			// L_mois
+			// 
+			this->L_mois->AutoSize = true;
+			this->L_mois->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->L_mois->Location = System::Drawing::Point(9, 56);
+			this->L_mois->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->L_mois->Name = L"L_mois";
+			this->L_mois->Size = System::Drawing::Size(36, 16);
+			this->L_mois->TabIndex = 28;
+			this->L_mois->Text = L"Mois";
+			this->L_mois->Click += gcnew System::EventHandler(this, &GestionPersonnelForm::L_mois_Click);
+			// 
+			// NUD_mois
+			// 
+			this->NUD_mois->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NUD_mois->Location = System::Drawing::Point(64, 54);
+			this->NUD_mois->Margin = System::Windows::Forms::Padding(2);
+			this->NUD_mois->Name = L"NUD_mois";
+			this->NUD_mois->Size = System::Drawing::Size(116, 22);
+			this->NUD_mois->TabIndex = 24;
+			this->NUD_mois->ValueChanged += gcnew System::EventHandler(this, &GestionPersonnelForm::NUD_mois_ValueChanged);
 			// 
 			// CB_Admin
 			// 
@@ -188,25 +293,6 @@ namespace projetPOO {
 			this->L_IdSupérieur->Text = L"Id Supérieur";
 			this->L_IdSupérieur->Click += gcnew System::EventHandler(this, &GestionPersonnelForm::L_IdSupérieur_Click);
 			// 
-			// MC_Dembauche
-			// 
-			this->MC_Dembauche->Location = System::Drawing::Point(556, 31);
-			this->MC_Dembauche->Name = L"MC_Dembauche";
-			this->MC_Dembauche->TabIndex = 21;
-			this->MC_Dembauche->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionPersonnelForm::MC_Dembauche_DateChanged);
-			// 
-			// L_Dembauche
-			// 
-			this->L_Dembauche->AutoSize = true;
-			this->L_Dembauche->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->L_Dembauche->Location = System::Drawing::Point(617, 12);
-			this->L_Dembauche->Name = L"L_Dembauche";
-			this->L_Dembauche->Size = System::Drawing::Size(114, 16);
-			this->L_Dembauche->TabIndex = 20;
-			this->L_Dembauche->Text = L"Date d\'embauche";
-			this->L_Dembauche->Click += gcnew System::EventHandler(this, &GestionPersonnelForm::L_Dembauche_Click);
-			// 
 			// GB_Apersonnel
 			// 
 			this->GB_Apersonnel->Controls->Add(this->TB_NumRue);
@@ -215,7 +301,7 @@ namespace projetPOO {
 			this->GB_Apersonnel->Controls->Add(this->CB_NVille);
 			this->GB_Apersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Underline,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GB_Apersonnel->Location = System::Drawing::Point(247, 12);
+			this->GB_Apersonnel->Location = System::Drawing::Point(247, 22);
 			this->GB_Apersonnel->Name = L"GB_Apersonnel";
 			this->GB_Apersonnel->Size = System::Drawing::Size(281, 86);
 			this->GB_Apersonnel->TabIndex = 18;
@@ -370,9 +456,9 @@ namespace projetPOO {
 			// Logo
 			// 
 			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
-			this->Logo->Location = System::Drawing::Point(809, 200);
+			this->Logo->Location = System::Drawing::Point(843, 200);
 			this->Logo->Name = L"Logo";
-			this->Logo->Size = System::Drawing::Size(266, 203);
+			this->Logo->Size = System::Drawing::Size(208, 164);
 			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->Logo->TabIndex = 25;
 			this->Logo->TabStop = false;
@@ -382,7 +468,7 @@ namespace projetPOO {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(1087, 412);
+			this->ClientSize = System::Drawing::Size(1087, 374);
 			this->Controls->Add(this->Logo);
 			this->Controls->Add(this->B_delete);
 			this->Controls->Add(this->B_update);
@@ -396,6 +482,11 @@ namespace projetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->EndInit();
 			this->GB_Personnel->ResumeLayout(false);
 			this->GB_Personnel->PerformLayout();
+			this->GB_embauche->ResumeLayout(false);
+			this->GB_embauche->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_jour))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_annee))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_mois))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdSupérieur))->EndInit();
 			this->GB_Apersonnel->ResumeLayout(false);
 			this->GB_Apersonnel->PerformLayout();
@@ -459,6 +550,20 @@ namespace projetPOO {
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew personnelServices();
 		this->oSvc->supprimerUnPersonnel(this->NUD_idClient->Text);
+	}
+	private: System::Void GB_embauche_Enter(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void L_jour_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void NUD_jour_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void L_mois_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void NUD_mois_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void L_annee_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void NUD_annee_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }
