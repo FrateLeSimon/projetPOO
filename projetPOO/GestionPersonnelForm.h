@@ -37,7 +37,7 @@ namespace projetPOO {
 		}
 	private: System::Windows::Forms::DataGridView^ DGV_BDD;
 	private: System::Windows::Forms::GroupBox^ GB_Personnel;
-	private: System::Windows::Forms::PictureBox^ Logo;
+
 	private: System::Windows::Forms::MonthCalendar^ MC_Dembauche;
 
 	private: System::Windows::Forms::Label^ L_Dembauche;
@@ -74,6 +74,7 @@ namespace projetPOO {
 
 	private: personnelServices^ oSvc;
 	private: System::Data::DataSet^ oDs;
+	private: System::Windows::Forms::PictureBox^ Logo;
 
 	protected:
 
@@ -96,7 +97,6 @@ namespace projetPOO {
 			this->CB_Admin = (gcnew System::Windows::Forms::CheckBox());
 			this->NUD_IdSupérieur = (gcnew System::Windows::Forms::NumericUpDown());
 			this->L_IdSupérieur = (gcnew System::Windows::Forms::Label());
-			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			this->MC_Dembauche = (gcnew System::Windows::Forms::MonthCalendar());
 			this->L_Dembauche = (gcnew System::Windows::Forms::Label());
 			this->GB_Apersonnel = (gcnew System::Windows::Forms::GroupBox());
@@ -112,12 +112,13 @@ namespace projetPOO {
 			this->B_insert = (gcnew System::Windows::Forms::Button());
 			this->B_update = (gcnew System::Windows::Forms::Button());
 			this->B_delete = (gcnew System::Windows::Forms::Button());
+			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_BDD))->BeginInit();
 			this->GB_Personnel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdSupérieur))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			this->GB_Apersonnel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// DGV_BDD
@@ -125,7 +126,7 @@ namespace projetPOO {
 			this->DGV_BDD->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->DGV_BDD->Location = System::Drawing::Point(12, 12);
 			this->DGV_BDD->Name = L"DGV_BDD";
-			this->DGV_BDD->Size = System::Drawing::Size(343, 150);
+			this->DGV_BDD->Size = System::Drawing::Size(791, 182);
 			this->DGV_BDD->TabIndex = 6;
 			this->DGV_BDD->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionPersonnelForm::DGV_BDD_CellContentClick);
 			// 
@@ -135,7 +136,6 @@ namespace projetPOO {
 			this->GB_Personnel->Controls->Add(this->CB_Admin);
 			this->GB_Personnel->Controls->Add(this->NUD_IdSupérieur);
 			this->GB_Personnel->Controls->Add(this->L_IdSupérieur);
-			this->GB_Personnel->Controls->Add(this->Logo);
 			this->GB_Personnel->Controls->Add(this->MC_Dembauche);
 			this->GB_Personnel->Controls->Add(this->L_Dembauche);
 			this->GB_Personnel->Controls->Add(this->GB_Apersonnel);
@@ -145,9 +145,9 @@ namespace projetPOO {
 			this->GB_Personnel->Controls->Add(this->TB_NomPersonnel);
 			this->GB_Personnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GB_Personnel->Location = System::Drawing::Point(373, 12);
+			this->GB_Personnel->Location = System::Drawing::Point(12, 200);
 			this->GB_Personnel->Name = L"GB_Personnel";
-			this->GB_Personnel->Size = System::Drawing::Size(554, 300);
+			this->GB_Personnel->Size = System::Drawing::Size(791, 203);
 			this->GB_Personnel->TabIndex = 7;
 			this->GB_Personnel->TabStop = false;
 			this->GB_Personnel->Text = L"Personnel";
@@ -188,20 +188,9 @@ namespace projetPOO {
 			this->L_IdSupérieur->Text = L"Id Supérieur";
 			this->L_IdSupérieur->Click += gcnew System::EventHandler(this, &GestionPersonnelForm::L_IdSupérieur_Click);
 			// 
-			// Logo
-			// 
-			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
-			this->Logo->Location = System::Drawing::Point(46, 161);
-			this->Logo->Name = L"Logo";
-			this->Logo->Size = System::Drawing::Size(171, 127);
-			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->Logo->TabIndex = 22;
-			this->Logo->TabStop = false;
-			this->Logo->Click += gcnew System::EventHandler(this, &GestionPersonnelForm::Logo_Click);
-			// 
 			// MC_Dembauche
 			// 
-			this->MC_Dembauche->Location = System::Drawing::Point(280, 126);
+			this->MC_Dembauche->Location = System::Drawing::Point(556, 31);
 			this->MC_Dembauche->Name = L"MC_Dembauche";
 			this->MC_Dembauche->TabIndex = 21;
 			this->MC_Dembauche->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &GestionPersonnelForm::MC_Dembauche_DateChanged);
@@ -211,7 +200,7 @@ namespace projetPOO {
 			this->L_Dembauche->AutoSize = true;
 			this->L_Dembauche->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->L_Dembauche->Location = System::Drawing::Point(338, 107);
+			this->L_Dembauche->Location = System::Drawing::Point(617, 12);
 			this->L_Dembauche->Name = L"L_Dembauche";
 			this->L_Dembauche->Size = System::Drawing::Size(114, 16);
 			this->L_Dembauche->TabIndex = 20;
@@ -334,9 +323,9 @@ namespace projetPOO {
 			// 
 			this->B_load->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_load->Location = System::Drawing::Point(12, 168);
+			this->B_load->Location = System::Drawing::Point(809, 12);
 			this->B_load->Name = L"B_load";
-			this->B_load->Size = System::Drawing::Size(152, 132);
+			this->B_load->Size = System::Drawing::Size(99, 182);
 			this->B_load->TabIndex = 8;
 			this->B_load->Text = L"Charger";
 			this->B_load->UseVisualStyleBackColor = true;
@@ -346,9 +335,9 @@ namespace projetPOO {
 			// 
 			this->B_insert->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_insert->Location = System::Drawing::Point(181, 168);
+			this->B_insert->Location = System::Drawing::Point(914, 12);
 			this->B_insert->Name = L"B_insert";
-			this->B_insert->Size = System::Drawing::Size(174, 41);
+			this->B_insert->Size = System::Drawing::Size(161, 56);
 			this->B_insert->TabIndex = 9;
 			this->B_insert->Text = L"Insérer";
 			this->B_insert->UseVisualStyleBackColor = true;
@@ -358,9 +347,9 @@ namespace projetPOO {
 			// 
 			this->B_update->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_update->Location = System::Drawing::Point(181, 214);
+			this->B_update->Location = System::Drawing::Point(914, 74);
 			this->B_update->Name = L"B_update";
-			this->B_update->Size = System::Drawing::Size(174, 41);
+			this->B_update->Size = System::Drawing::Size(161, 56);
 			this->B_update->TabIndex = 10;
 			this->B_update->Text = L"Modifier";
 			this->B_update->UseVisualStyleBackColor = true;
@@ -370,20 +359,31 @@ namespace projetPOO {
 			// 
 			this->B_delete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_delete->Location = System::Drawing::Point(181, 259);
+			this->B_delete->Location = System::Drawing::Point(914, 138);
 			this->B_delete->Name = L"B_delete";
-			this->B_delete->Size = System::Drawing::Size(174, 41);
+			this->B_delete->Size = System::Drawing::Size(161, 56);
 			this->B_delete->TabIndex = 11;
 			this->B_delete->Text = L"Supprimer";
 			this->B_delete->UseVisualStyleBackColor = true;
 			this->B_delete->Click += gcnew System::EventHandler(this, &GestionPersonnelForm::B_delete_Click);
+			// 
+			// Logo
+			// 
+			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
+			this->Logo->Location = System::Drawing::Point(809, 200);
+			this->Logo->Name = L"Logo";
+			this->Logo->Size = System::Drawing::Size(266, 203);
+			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->Logo->TabIndex = 25;
+			this->Logo->TabStop = false;
 			// 
 			// GestionPersonnelForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(945, 324);
+			this->ClientSize = System::Drawing::Size(1087, 412);
+			this->Controls->Add(this->Logo);
 			this->Controls->Add(this->B_delete);
 			this->Controls->Add(this->B_update);
 			this->Controls->Add(this->B_insert);
@@ -397,10 +397,10 @@ namespace projetPOO {
 			this->GB_Personnel->ResumeLayout(false);
 			this->GB_Personnel->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdSupérieur))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->GB_Apersonnel->ResumeLayout(false);
 			this->GB_Apersonnel->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idClient))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->ResumeLayout(false);
 
 		}
