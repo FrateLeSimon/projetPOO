@@ -108,7 +108,7 @@ namespace projetPOO {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(12, 12);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(251, 204);
+			this->dataGridView1->Size = System::Drawing::Size(767, 204);
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionStockForm::DGV_CellContentClick);
 			// 
@@ -126,7 +126,7 @@ namespace projetPOO {
 			this->GB_article->Controls->Add(this->L_idArticle);
 			this->GB_article->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GB_article->Location = System::Drawing::Point(293, 12);
+			this->GB_article->Location = System::Drawing::Point(269, 222);
 			this->GB_article->Name = L"GB_article";
 			this->GB_article->Size = System::Drawing::Size(208, 204);
 			this->GB_article->TabIndex = 1;
@@ -251,7 +251,7 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->B_load->Location = System::Drawing::Point(12, 222);
 			this->B_load->Name = L"B_load";
-			this->B_load->Size = System::Drawing::Size(112, 152);
+			this->B_load->Size = System::Drawing::Size(112, 204);
 			this->B_load->TabIndex = 8;
 			this->B_load->Text = L"Charger";
 			this->B_load->UseVisualStyleBackColor = true;
@@ -263,7 +263,7 @@ namespace projetPOO {
 				static_cast<System::Byte>(0)));
 			this->B_insert->Location = System::Drawing::Point(130, 222);
 			this->B_insert->Name = L"B_insert";
-			this->B_insert->Size = System::Drawing::Size(133, 48);
+			this->B_insert->Size = System::Drawing::Size(133, 61);
 			this->B_insert->TabIndex = 9;
 			this->B_insert->Text = L"Insérer";
 			this->B_insert->UseVisualStyleBackColor = true;
@@ -273,9 +273,9 @@ namespace projetPOO {
 			// 
 			this->B_update->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_update->Location = System::Drawing::Point(130, 274);
+			this->B_update->Location = System::Drawing::Point(130, 291);
 			this->B_update->Name = L"B_update";
-			this->B_update->Size = System::Drawing::Size(133, 48);
+			this->B_update->Size = System::Drawing::Size(133, 61);
 			this->B_update->TabIndex = 10;
 			this->B_update->Text = L"Modifier";
 			this->B_update->UseVisualStyleBackColor = true;
@@ -285,9 +285,9 @@ namespace projetPOO {
 			// 
 			this->B_delete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->B_delete->Location = System::Drawing::Point(130, 326);
+			this->B_delete->Location = System::Drawing::Point(130, 362);
 			this->B_delete->Name = L"B_delete";
-			this->B_delete->Size = System::Drawing::Size(133, 48);
+			this->B_delete->Size = System::Drawing::Size(133, 64);
 			this->B_delete->TabIndex = 11;
 			this->B_delete->Text = L"Supprimer";
 			this->B_delete->UseVisualStyleBackColor = true;
@@ -296,9 +296,9 @@ namespace projetPOO {
 			// Logo
 			// 
 			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
-			this->Logo->Location = System::Drawing::Point(293, 219);
+			this->Logo->Location = System::Drawing::Point(493, 222);
 			this->Logo->Name = L"Logo";
-			this->Logo->Size = System::Drawing::Size(208, 165);
+			this->Logo->Size = System::Drawing::Size(286, 204);
 			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->Logo->TabIndex = 23;
 			this->Logo->TabStop = false;
@@ -309,7 +309,7 @@ namespace projetPOO {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(514, 386);
+			this->ClientSize = System::Drawing::Size(792, 436);
 			this->Controls->Add(this->Logo);
 			this->Controls->Add(this->B_delete);
 			this->Controls->Add(this->B_update);
