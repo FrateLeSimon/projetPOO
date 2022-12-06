@@ -88,18 +88,20 @@ System::String^ personnelMap::Delete() { return "delete"; }
 
 
 commandeMap::commandeMap()
-	: id_commande(""), reference(""), date_livraison(""), date_emission(""), montant_ht(""), montant_ttc("")
+	: id_commande(""), id_client(""), reference(""), date_livraison(""), date_emission(""), montant_ht(""), montant_ttc("")
 {}
-commandeMap::commandeMap(System::String^ id_com, System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::String^ v_montant_ht, System::String^ v_montant_ttc)
-	: id_commande(id_com), reference(v_ref), date_livraison(v_date_liv), date_emission(v_date_em), montant_ht(v_montant_ht), montant_ttc(v_montant_ttc)
+commandeMap::commandeMap(System::String^ id_com, System::String^ id_cli, System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::String^ v_montant_ht, System::String^ v_montant_ttc)
+	: id_commande(id_com), id_client(id_cli), reference(v_ref), date_livraison(v_date_liv), date_emission(v_date_em), montant_ht(v_montant_ht), montant_ttc(v_montant_ttc)
 {}
 void commandeMap::setId_Commande(System::String^ a) { this->id_commande = a; }
+void commandeMap::setId_Client(System::String^ a) { this->id_client = a; }
 void commandeMap::setReference(System::String^ a) { this->reference = a; }
 void commandeMap::setDate_Livraison(System::String^ a) { this->date_livraison = a; }
 void commandeMap::setDate_Emission(System::String^ a) { this->date_emission = a; }
 void commandeMap::setMontant_HT(System::String^ a) { this->montant_ht = a; }
 void commandeMap::setMontant_TTC(System::String^ a) { this->montant_ttc = a; }
 System::String^ commandeMap::getId_Commande() { return this->id_commande; }
+System::String^ commandeMap::getId_Client() { return this->id_client; }
 System::String^ commandeMap::getReference() { return this->reference; }
 System::String^ commandeMap::getDate_Livraison() { return this->date_livraison; }
 System::String^ commandeMap::getDate_Emission() { return this->date_emission; }

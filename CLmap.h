@@ -106,6 +106,7 @@ private:
 	System::String^ sSql;
 	
 	System::String^ id_commande;
+	System::String^ id_client;
 	System::String^ reference;
 	System::String^ date_livraison;
 	System::String^ date_emission;
@@ -113,14 +114,16 @@ private:
 	System::String^ montant_ttc;
 public:
 	commandeMap();
-	commandeMap(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	commandeMap(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 	void setId_Commande(System::String^);
+	void setId_Client(System::String^);
 	void setReference(System::String^);
 	void setDate_Livraison(System::String^);
 	void setDate_Emission(System::String^);
 	void setMontant_HT(System::String^);
 	void setMontant_TTC(System::String^);
 	System::String^ getId_Commande();
+	System::String^ getId_Client();
 	System::String^ getReference();
 	System::String^ getDate_Livraison();
 	System::String^ getDate_Emission();

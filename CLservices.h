@@ -38,8 +38,8 @@ private:
 public:
 	commandeServices(void);
 	System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);
-	void ajouterUneCommande(System::String^, System::String^, System::String^, System::String^, System::String^);
-	void modifierUneCommande(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	void ajouterUneCommande(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+	void modifierUneCommande(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 	void supprimerUneCommande(System::String^);
 };
 
@@ -56,6 +56,7 @@ public:
 	void modifierUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 	void supprimerUnArticle(System::String^);
 };
+
 
 
 ref class statsServices

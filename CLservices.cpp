@@ -145,10 +145,11 @@ System::Data::DataSet^ commandeServices::selectionnerToutesLesCommandes(System::
 	sql = this->oCommande->Select();
 	return this->oCad->getRows(sql, dataTableName);
 }
-void commandeServices::ajouterUneCommande(System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::String^ v_montant_ht, System::String^ v_montant_ttc)
+void commandeServices::ajouterUneCommande(System::String^ i_client,  System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::String^ v_montant_ht, System::String^ v_montant_ttc)
 {
 	System::String^ sql;
 
+	this->oCommande->setId_Client(i_client);
 	this->oCommande->setReference(v_ref);
 	this->oCommande->setDate_Livraison(v_date_liv);
 	this->oCommande->setDate_Emission(v_date_em);
@@ -159,10 +160,11 @@ void commandeServices::ajouterUneCommande(System::String^ v_ref, System::String^
 
 	this->oCad->actionRows(sql);
 }
-void commandeServices::modifierUneCommande(System::String^ id, System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::String^ v_montant_ht, System::String^ v_montant_ttc)
+void commandeServices::modifierUneCommande(System::String^ id, System::String^ i_client, System::String^ v_ref, System::String^ v_date_liv, System::String^ v_date_em, System::String^ v_montant_ht, System::String^ v_montant_ttc)
 {
 	System::String^ sql;
 
+	this->oCommande->setId_Client(i_client);
 	this->oCommande->setReference(v_ref);
 	this->oCommande->setDate_Livraison(v_date_liv);
 	this->oCommande->setDate_Emission(v_date_em);
@@ -238,32 +240,13 @@ void articleServices::supprimerUnArticle(System::String^ id)
 }
 
 
-ref class statsServices
-{
-private:
-	NS_Comp_Data::CLcad^ oCad;
-	statsMap^ oStats;
-public:
-	statsServices(void);
-	System::Data::DataSet^ selectionnerPanierMoyen(System::String^);
-	System::Data::DataSet^ selectionnerChiffreAffaire(System::String^);
-	System::Data::DataSet^ selectionnerSeuilAppro(System::String^);
-	System::Data::DataSet^ selectionnerMontantTotalAchat(System::String^);
-	System::Data::DataSet^ selectionnerArticlePlusVendu(System::String^);
-	System::Data::DataSet^ selectionnerArticleMoinsVendu(System::String^);
-	System::Data::DataSet^ selectionnerValComStock(System::String^);
-	System::Data::DataSet^ selectionnerValAchatStock(System::String^);
-	System::Data::DataSet^ selectionnerSimulation(System::String^);
-
-
-};
 
 statsServices::statsServices()
 {
 	this->oCad = gcnew NS_Comp_Data::CLcad();
 	this->oStats = gcnew statsMap();
 }
-statsServices::selectionnerPanierMoyen(System::String^) {
+System::Data::DataSet^  statsServices::selectionnerPanierMoyen(System::String^ dataTableName) {
 
 	System::String^ sql;
 
@@ -271,56 +254,56 @@ statsServices::selectionnerPanierMoyen(System::String^) {
 	return this->oCad->getRows(sql, dataTableName);
 	
 }
-System::Data::DataSet^ selectionnerChiffreAffaire(System::String^){
-System::String^ sql;
+System::Data::DataSet^ statsServices::selectionnerChiffreAffaire(System::String^ dataTableName){
+	System::String^ sql;
 
-sql = this->oStats->SelectChiffreAffaire();
-return this->oCad->getRows(sql, dataTableName);
+	sql = this->oStats->SelectChiffreAffaire();
+	return this->oCad->getRows(sql, dataTableName);
 
 }
-System::Data::DataSet^ selectionnerSeuilAppro(System::String^)
+System::Data::DataSet^  statsServices::selectionnerSeuilAppro(System::String^ dataTableName)
 {
 	System::String^ sql;
 
 	sql = this->oStats->SelectSeuilAppro();
 	return this->oCad->getRows(sql, dataTableName);
 }
-System::Data::DataSet^ selectionnerMontantTotalAchat(System::String^)
+System::Data::DataSet^  statsServices::selectionnerMontantTotalAchat(System::String^ dataTableName)
 {
 	System::String^ sql;
 
 	sql = this->oStats->SelectMontantTotalAchat();
 	return this->oCad->getRows(sql, dataTableName);
 }
-System::Data::DataSet^ selectionnerArticlePlusVendu(System::String^)
+System::Data::DataSet^  statsServices::selectionnerArticlePlusVendu(System::String^ dataTableName)
 {
 	System::String^ sql;
 
 	sql = this->oStats->SelectArticlePlusVendu();
 	return this->oCad->getRows(sql, dataTableName);
 }
-System::Data::DataSet^ selectionnerArticleMoinsVendu(System::String^)
+System::Data::DataSet^  statsServices::selectionnerArticleMoinsVendu(System::String^ dataTableName)
 {
 	System::String^ sql;
 
 	sql = this->oStats->SelectArticleMoinsVendu();
 	return this->oCad->getRows(sql, dataTableName);
 }
-System::Data::DataSet^ selectionnerValComStock(System::String^)
+System::Data::DataSet^  statsServices::selectionnerValComStock(System::String^ dataTableName)
 {
 	System::String^ sql;
 
 	sql = this->oStats->SelectValComStock();
 	return this->oCad->getRows(sql, dataTableName);
 }
-System::Data::DataSet^ selectionnerValAchatStock(System::String^)
+System::Data::DataSet^  statsServices::selectionnerValAchatStock(System::String^ dataTableName)
 {
 	System::String^ sql;
 
 	sql = this->oStats->SelectValAchatStock();
 	return this->oCad->getRows(sql, dataTableName);
 }
-System::Data::DataSet^ selectionnerSimulation(System::String^)
+System::Data::DataSet^  statsServices::selectionnerSimulation(System::String^ dataTableName)
 {
 	System::String^ sql;
 
