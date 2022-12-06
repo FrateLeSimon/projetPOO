@@ -82,7 +82,7 @@ System::String^ personnelMap::getAdmin() { return this->admin; }
 
 System::String^ personnelMap::Insert() 
 { 
-	return "INSERT INTO humain VALUES (this->nom, this->preom); INSERT INTO calendrier VALUES(this->date_embauche); INSERT INTO adresse VALUES(this->num_rue, this->nom_rue, this->ville); INSERT INTO personnel VALUES((SELECT id_calendrier FROM calendrier WHERE c_date = this->date_embauche), (SELECT id_adresse FROM adresse WHERE(num_rue = this->num_rue and nom_rue = this->nom_rue and id_ville = this->ville)), this->id_superieur, (SELECT id_humain FROM humain WHERE nom = this->nom and prenom = this->prenom), this->admin); "; 
+	return "INSERT INTO humain VALUES (this->nom, this->prenom); INSERT INTO calendrier VALUES(this->date_embauche); INSERT INTO adresse VALUES(this->num_rue, this->nom_rue, this->ville); INSERT INTO personnel VALUES((SELECT id_calendrier FROM calendrier WHERE c_date = this->date_embauche), (SELECT id_adresse FROM adresse WHERE(num_rue = this->num_rue and nom_rue = this->nom_rue and id_ville = this->ville)), this->id_superieur, (SELECT id_humain FROM humain WHERE nom = this->nom and prenom = this->prenom), this->admin); "; 
 }
 
 System::String^ personnelMap::Select()
