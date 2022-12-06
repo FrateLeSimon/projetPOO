@@ -45,6 +45,9 @@ namespace projetPOO {
 
 	private: System::Windows::Forms::Label^ L_id;
 	private: System::Windows::Forms::Button^ B_connexion;
+	private: System::Windows::Forms::PictureBox^ Logo;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+
 
 	protected:
 
@@ -61,18 +64,23 @@ namespace projetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ConnexionForm::typeid));
 			this->GB_connexion = (gcnew System::Windows::Forms::GroupBox());
 			this->B_connexion = (gcnew System::Windows::Forms::Button());
 			this->TB_mdp = (gcnew System::Windows::Forms::TextBox());
 			this->TB_id = (gcnew System::Windows::Forms::TextBox());
 			this->L_mdp = (gcnew System::Windows::Forms::Label());
 			this->L_id = (gcnew System::Windows::Forms::Label());
+			this->Logo = (gcnew System::Windows::Forms::PictureBox());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->GB_connexion->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// GB_connexion
 			// 
-			this->GB_connexion->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->GB_connexion->BackColor = System::Drawing::SystemColors::AppWorkspace;
 			this->GB_connexion->Controls->Add(this->B_connexion);
 			this->GB_connexion->Controls->Add(this->TB_mdp);
 			this->GB_connexion->Controls->Add(this->TB_id);
@@ -80,7 +88,7 @@ namespace projetPOO {
 			this->GB_connexion->Controls->Add(this->L_id);
 			this->GB_connexion->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GB_connexion->Location = System::Drawing::Point(28, 22);
+			this->GB_connexion->Location = System::Drawing::Point(88, 143);
 			this->GB_connexion->Name = L"GB_connexion";
 			this->GB_connexion->Size = System::Drawing::Size(224, 227);
 			this->GB_connexion->TabIndex = 0;
@@ -90,7 +98,7 @@ namespace projetPOO {
 			// 
 			// B_connexion
 			// 
-			this->B_connexion->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->B_connexion->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->B_connexion->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->B_connexion->Location = System::Drawing::Point(59, 168);
@@ -146,18 +154,41 @@ namespace projetPOO {
 			this->L_id->Text = L"Identifiant";
 			this->L_id->Click += gcnew System::EventHandler(this, &ConnexionForm::L_id_Click);
 			// 
+			// Logo
+			// 
+			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
+			this->Logo->Location = System::Drawing::Point(38, 11);
+			this->Logo->Name = L"Logo";
+			this->Logo->Size = System::Drawing::Size(146, 108);
+			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->Logo->TabIndex = 25;
+			this->Logo->TabStop = false;
+			this->Logo->Click += gcnew System::EventHandler(this, &ConnexionForm::Logo_Click);
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->Logo);
+			this->groupBox1->Location = System::Drawing::Point(88, 12);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(224, 125);
+			this->groupBox1->TabIndex = 26;
+			this->groupBox1->TabStop = false;
+			// 
 			// ConnexionForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->ClientSize = System::Drawing::Size(396, 393);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->GB_connexion);
 			this->Name = L"ConnexionForm";
 			this->Text = L"ConnexionForm";
 			this->Load += gcnew System::EventHandler(this, &ConnexionForm::ConnexionForm_Load);
 			this->GB_connexion->ResumeLayout(false);
 			this->GB_connexion->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
+			this->groupBox1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -200,5 +231,7 @@ namespace projetPOO {
 		}
 
 	}
-	};
+	private: System::Void Logo_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
