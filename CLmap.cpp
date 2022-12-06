@@ -140,7 +140,7 @@ System::String^ articleMap::getSeuil() { return this->seuil; }
 System::String^ articleMap::getCouleur() { return this->couleur; }
 
 System::String^ articleMap::Insert() { return "insert"; }
-System::String^ articleMap::Select() { return "SELECT nom AS Nom_artcile, couleur AS Couleur, prix_article_ht AS Prix, seuil AS Seuil, t.taxe AS Taxe, quantite_stock AS Stock FROM article INNER JOIN taxe AS t ON article.id_taxe = t.id_taxe ORDER BY quantite_stock DESC"; }
+System::String^ articleMap::Select() { return "SELECT nom AS Nom_artcile, couleur AS Couleur, prix_article_ht AS Prix, seuil AS Seuil, t.taxe AS Taxe, quantite_stock AS Stock FROM article INNER JOIN taxe AS t ON article.id_taxe = t.id_taxe ORDER BY nom_article DESC"; }
 System::String^ articleMap::Update() { return "update"; }
 System::String^ articleMap::Delete() { return "delete"; }
 
