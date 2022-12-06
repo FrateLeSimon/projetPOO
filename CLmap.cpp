@@ -81,7 +81,9 @@ System::String^ personnelMap::getDate_Embauche() { return this->date_embauche; }
 System::String^ personnelMap::getAdmin() { return this->admin; }
 
 System::String^ personnelMap::Insert() { return "insert"; }
-System::String^ personnelMap::Select() { return "select"; }
+System::String^ personnelMap::Select() { 
+	return "SELECT c.id_commande AS Reference_Commande, c.id_facture AS Facture, h.nom as Nom, prenom as Prenom, d1.c_date AS Date_de_livraison, d2.c_date AS Date_d_emission, art.nom AS Article, ct.quantite AS Quantite, f.montant_total_ht AS Montant_HT FROM commande AS c INNER JOIN facture AS f ON c.id_facture = f.id_facture INNER JOIN humain AS h ON c.id_client = h.id_humain INNER JOIN calendrier AS d1 ON c.id_date_livraison = d1.id_calendrier INNER JOIN calendrier AS d2 ON c.id_date_emission = d2.id_calendrier INNER JOIN contient AS ct ON c.id_commande = ct.id_commande INNER JOIN article AS art ON ct.id_article = art.id_article"; 
+}
 System::String^ personnelMap::Update() { return "update"; }
 System::String^ personnelMap::Delete() { return "delete"; }
 
