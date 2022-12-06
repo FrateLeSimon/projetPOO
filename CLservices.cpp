@@ -263,7 +263,7 @@ statsServices::statsServices()
 	this->oCad = gcnew NS_Comp_Data::CLcad();
 	this->oStats = gcnew statsMap();
 }
-System::Data::DataSet^ selectionnerPanierMoyen(System::String^) {
+statsServices::selectionnerPanierMoyen(System::String^) {
 
 	System::String^ sql;
 
