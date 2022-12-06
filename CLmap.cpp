@@ -82,7 +82,7 @@ System::String^ personnelMap::getAdmin() { return this->admin; }
 
 System::String^ personnelMap::Insert() 
 { 
-	return "INSERT INTO humain VALUES ("+this->nom+","+this->prenom+"); INSERT INTO calendrier VALUES("+this->date_embauche+"); INSERT INTO adresse VALUES("+this->num_rue+", "+this->nom_rue+", "+this->ville+"); INSERT INTO personnel VALUES((SELECT id_calendrier FROM calendrier WHERE c_date = "+this->date_embauche+"), (SELECT id_adresse FROM adresse WHERE(num_rue ="+this->num_rue+" and nom_rue = "+this->nom_rue+" and id_ville = "+this->ville+")), this->id_superieur, (SELECT id_humain FROM humain WHERE nom = "+this->nom+" and prenom = "+this->prenom+"), "+this->admin+"); ";
+	System::Console::WriteLine("INSERT INTO humain VALUES ("+this->nom+","+this->prenom+"); INSERT INTO calendrier VALUES("+this->date_embauche+"); INSERT INTO adresse VALUES("+this->num_rue+", "+this->nom_rue+", "+this->ville+"); INSERT INTO personnel VALUES((SELECT id_calendrier FROM calendrier WHERE c_date = "+this->date_embauche+"), (SELECT id_adresse FROM adresse WHERE(num_rue ="+this->num_rue+" and nom_rue = "+this->nom_rue+" and id_ville = "+this->ville+")), this->id_superieur, (SELECT id_humain FROM humain WHERE nom = "+this->nom+" and prenom = "+this->prenom+"), "+this->admin+"); ");
 }
 
 System::String^ personnelMap::Select()
@@ -143,7 +143,10 @@ System::String^ articleMap::getPrix_Article() { return this->prix_article; }
 System::String^ articleMap::getSeuil() { return this->seuil; }
 System::String^ articleMap::getCouleur() { return this->couleur; }
 
-System::String^ articleMap::Insert() { return "insert"; }
+System::String^ articleMap::Insert() 
+{ 
+	System::Console::WriteLine("INSERT INTO article VALUES ("+this->id_article+", "+this->quantite_stock+", "+this->prix_article+", "+this->seuil+", "+this->couleur+", 3, "+this->nom_article+")");
+}
 System::String^ articleMap::Select() { return "SELECT nom AS Nom_article, couleur AS Couleur, prix_article_ht AS Prix, seuil AS Seuil, t.taxe AS Taxe, quantite_stock AS Stock FROM article INNER JOIN taxe AS t ON article.id_taxe = t.id_taxe ORDER BY nom ASC"; }
 System::String^ articleMap::Update() { return "update"; }
 System::String^ articleMap::Delete() { return "delete"; }
