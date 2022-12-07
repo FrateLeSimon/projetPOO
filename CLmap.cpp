@@ -45,8 +45,12 @@ System::String^ clientMap::Insert(){
 	return "INSERT INTO humain VALUES('" + this->nom + "','" + this->prenom + "'); INSERT INTO calendrier VALUES('" + this->date_naissance + "'); INSERT INTO adresse VALUES('" + this->num_rue_facturation + "', '" + this->nom_rue_facturation + "', (SELECT id_ville from ville WHERE nom_ville='" + this->ville_facturation + "')),('" + this->num_rue_livraison + "', '" + this->nom_rue_livraison + "', (SELECT id_ville from ville WHERE nom_ville='" + this->ville_livraison + "')); INSERT INTO client VALUES((SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '" + this->date_naissance + "' GROUP BY c_date), (SELECT id_adresse FROM adresse WHERE(num_rue ='" + this->num_rue_livraison + "' and nom_rue ='" + this->nom_rue_livraison + "'and id_ville = (SELECT id_ville FROM ville WHERE nom_ville ='" + this->ville_livraison + "'))), (SELECT id_adresse FROM adresse WHERE(num_rue ='" + this->num_rue_facturation + "'and nom_rue ='" + this->nom_rue_facturation + "'and id_ville = (SELECT id_ville FROM ville WHERE nom_ville ='" + this->ville_facturation + "'))), (SELECT AVG(id_humain) FROM humain WHERE nom ='" + this->nom + "' and prenom ='" + this->prenom + "'GROUP BY id_humain)); ";
 	
 }
-System::String^ clientMap::Update(){return "update";}
-System::String^ clientMap::Delete(){return "delete";}
+System::String^ clientMap::Update(){
+	return "UPDATE humain SET nom = '" + this->nom + "', prenom = '" + this->prenom + "' WHERE id_humain = (SELECT id_humain FROM client WHERE id_client=" + this->id_client + "); UPDATE calendrier SET c_date = '" + this->date_naissance + "' WHERE id_calendrier = " + this->id_client + "; UPDATE adresse SET num_rue = '" + this->num_rue_livraison + "', nom_rue = '" + this->nom_rue_livraison + "', id_ville = (SELECT id_ville FROM ville WHERE nom_ville = '" + this->ville_livraison + "') WHERE id_adresse = (SELECT id_adresse_livraison FROM client WHERE id_client = " + this->id_client + "); UPDATE adresse SET num_rue = '" + this->num_rue_facturation + "', nom_rue = '" + this->nom_rue_facturation + "', id_ville = (SELECT id_ville FROM ville WHERE nom_ville = '" + this->ville_facturation + "') WHERE id_adresse = (SELECT id_adresse_facturation FROM client WHERE id_client = " + this->id_client + ");";
+}
+System::String^ clientMap::Delete(){
+	return "DELETE FROM client WHERE id_client=" + this->id_client + "; EXEC trash;";
+}
 
 
 
@@ -90,8 +94,12 @@ System::String^ personnelMap::Insert()
 	return "INSERT INTO humain VALUES ('" + this->nom + "','" + this->prenom + "'); INSERT INTO calendrier VALUES('" + this->date_embauche + "'); INSERT INTO adresse VALUES('" + this->num_rue + "','" + this->nom_rue + "',(SELECT id_ville from ville WHERE nom_ville='" + this->ville + "'));INSERT INTO personnel VALUES((SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '" + this->date_embauche + "' GROUP BY c_date), (SELECT id_adresse FROM adresse WHERE(num_rue ='" + this->num_rue + "' and nom_rue ='" + this->nom_rue + "'and id_ville =(SELECT id_ville from ville WHERE nom_ville='" + this->ville + "')))," + this->id_superieur + ", (SELECT AVG(id_humain) FROM humain WHERE nom ='" + this->nom + "'and prenom ='" + this->prenom + "' GROUP BY id_humain),'" + this->admin + "');";
 }
 
-System::String^ personnelMap::Update() { return "update"; }
-System::String^ personnelMap::Delete() { return "delete"; }
+System::String^ personnelMap::Update() { 
+	return "update"; 
+}
+System::String^ personnelMap::Delete() { 
+	return "DELETE FROM personnel WHERE id_personnel ="+ this->id_personnel +"; EXEC trash; "; 
+}
 
 
 
@@ -127,7 +135,9 @@ System::String^ commandeMap::Insert()
 	return "INSERT INTO calendrier VALUES ('" +this->date_emission +"'),('" + this->date_livraison + "'); INSERT INTO facture VALUES(" + this->montant_ht + ", 1, 3, (SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '"+ this->date_emission + "' GROUP BY c_date), " + this->montant_ttc + "); INSERT INTO commande VALUES('" + this->reference + "', (SELECT max(id_facture) FROM facture), " + this->id_client + ", (SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '" + this->date_emission + "' GROUP BY c_date), (SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '"+ this->date_livraison + "' GROUP BY c_date)); ";
 }
 System::String^ commandeMap::Update() { return "update"; }
-System::String^ commandeMap::Delete() { return "delete"; }
+System::String^ commandeMap::Delete() { 
+	return "DELETE FROM commande WHERE id_commande ="+ this->id_commande+"; EXEC trash; "; 
+}
 
 
 
@@ -162,7 +172,9 @@ System::String^ articleMap::Insert()
 	return "INSERT INTO article VALUES('"+this->id_article+"',"+ this->quantite_stock +","+ this->prix_article+","+ this->seuil+",'"+ this->couleur+"',(SELECT id_taxe FROM taxe WHERE taxe = "+this->taxe + "),'" + this->nom_article + "')";
 }
 System::String^ articleMap::Update() { return "update"; }
-System::String^ articleMap::Delete() { return "delete"; }
+System::String^ articleMap::Delete() { 
+	return "DELETE FROM article WHERE id_article ="+ this->id_article +";";
+}
 
 
 

@@ -647,7 +647,7 @@ namespace projetPOO {
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew clientServices();
-		this->oSvc->modifierUnClient(this->TB_NomClient->Text, this->TB_PrenomClient->Text, this->TB_NumRueL->Text, this->TB_NumRueF->Text, this->TB_NrueL->Text, this->TB_NrueF->Text, this->CB_NVilleL->Text, this->CB_NvilleF->Text, this->CB_CpostalL->Text, this->CB_CpostalF->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value, System::Convert::ToString(this->NUD_idClient->Value));
+		this->oSvc->modifierUnClient(System::Convert::ToString(this->NUD_idClient->Value), this->TB_NomClient->Text, this->TB_PrenomClient->Text, this->TB_NumRueL->Text, this->TB_NumRueF->Text, this->TB_NrueL->Text, this->TB_NrueF->Text, this->CB_NVilleL->Text, this->CB_NvilleF->Text, this->CB_CpostalL->Text, this->CB_CpostalF->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value);
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew clientServices();
