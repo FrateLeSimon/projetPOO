@@ -550,8 +550,28 @@ namespace projetPOO {
 		this->DGV_BDD->DataMember = "Rsl";
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
+	/**	String^ Nom = this->TB_NomPersonnel->Text;
+		String^ Prenom = this->TB_PrenomPersonnel->Text;
+		String^ NumRue = this->TB_NumRue->Text;
+		String^ Nrue = this->TB_Nrue->Text;
+		String^ Nville = this->CB_NVille->Text;
+		String^ Cpostal = this->CB_Cpostal->Text;
+
+
+		if(Nom->Length == 0 || Prenom->Length == 0 || NumRue->Length == 0 || Nrue->Length == 0 || Nville->Length == 0 || Cpostal->Length == 0){
+			MessageBox::Show("Veuillez entrer votre identifiant et/ou votre mot de passe",
+				"Identifiant ou mot de passe manquant", MessageBoxButtons::OK);
+			return;
+		}
+
+		else {
+			this->oSvc = gcnew personnelServices();
+			this->oSvc->ajouterUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, System::Convert::ToString(this->NUD_IdSupérieur->Value), this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value, System::Convert::ToString(this->CB_Admin->Checked));
+		}**/
+
 		this->oSvc = gcnew personnelServices();
 		this->oSvc->ajouterUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, System::Convert::ToString(this->NUD_IdSupérieur->Value), this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value, System::Convert::ToString(this->CB_Admin->Checked));
+
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew personnelServices();
