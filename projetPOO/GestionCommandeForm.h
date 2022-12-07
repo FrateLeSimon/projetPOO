@@ -41,7 +41,7 @@ namespace projetPOO {
 	protected:
 	private: System::Windows::Forms::GroupBox^ GB_Commande;
 	private: System::Windows::Forms::Label^ L_idCommande;
-	private: System::Windows::Forms::NumericUpDown^ NUD_idCommande;
+
 	private: System::Windows::Forms::TextBox^ TB_Référence;
 
 
@@ -80,6 +80,8 @@ namespace projetPOO {
 
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::NumericUpDown^ NUD_moisE;
+	private: System::Windows::Forms::NumericUpDown^ NUD_IdCommande;
+
 
 
 
@@ -100,6 +102,7 @@ namespace projetPOO {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionCommandeForm::typeid));
 			this->DGV_Commande = (gcnew System::Windows::Forms::DataGridView());
 			this->GB_Commande = (gcnew System::Windows::Forms::GroupBox());
+			this->NUD_IdCommande = (gcnew System::Windows::Forms::NumericUpDown());
 			this->GB_emission = (gcnew System::Windows::Forms::GroupBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -119,7 +122,6 @@ namespace projetPOO {
 			this->TB_MontantTTC = (gcnew System::Windows::Forms::TextBox());
 			this->TB_MontantHT = (gcnew System::Windows::Forms::TextBox());
 			this->TB_Référence = (gcnew System::Windows::Forms::TextBox());
-			this->NUD_idCommande = (gcnew System::Windows::Forms::NumericUpDown());
 			this->L_idCommande = (gcnew System::Windows::Forms::Label());
 			this->B_load = (gcnew System::Windows::Forms::Button());
 			this->B_insert = (gcnew System::Windows::Forms::Button());
@@ -128,6 +130,7 @@ namespace projetPOO {
 			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_Commande))->BeginInit();
 			this->GB_Commande->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdCommande))->BeginInit();
 			this->GB_emission->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_jourE))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_anneeE))->BeginInit();
@@ -137,7 +140,6 @@ namespace projetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_anneeL))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_moisL))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdClient))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idCommande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -152,6 +154,7 @@ namespace projetPOO {
 			// 
 			// GB_Commande
 			// 
+			this->GB_Commande->Controls->Add(this->NUD_IdCommande);
 			this->GB_Commande->Controls->Add(this->GB_emission);
 			this->GB_Commande->Controls->Add(this->GB_livraison);
 			this->GB_Commande->Controls->Add(this->NUD_IdClient);
@@ -159,7 +162,6 @@ namespace projetPOO {
 			this->GB_Commande->Controls->Add(this->TB_MontantTTC);
 			this->GB_Commande->Controls->Add(this->TB_MontantHT);
 			this->GB_Commande->Controls->Add(this->TB_Référence);
-			this->GB_Commande->Controls->Add(this->NUD_idCommande);
 			this->GB_Commande->Controls->Add(this->L_idCommande);
 			this->GB_Commande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -170,6 +172,16 @@ namespace projetPOO {
 			this->GB_Commande->TabStop = false;
 			this->GB_Commande->Text = L"Commande";
 			this->GB_Commande->Enter += gcnew System::EventHandler(this, &GestionCommandeForm::GB_Commande_Enter);
+			// 
+			// NUD_IdCommande
+			// 
+			this->NUD_IdCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NUD_IdCommande->Location = System::Drawing::Point(103, 29);
+			this->NUD_IdCommande->Name = L"NUD_IdCommande";
+			this->NUD_IdCommande->Size = System::Drawing::Size(111, 22);
+			this->NUD_IdCommande->TabIndex = 33;
+			this->NUD_IdCommande->ValueChanged += gcnew System::EventHandler(this, &GestionCommandeForm::NUD_IdCommande_ValueChanged_1);
 			// 
 			// GB_emission
 			// 
@@ -427,16 +439,6 @@ namespace projetPOO {
 			this->TB_Référence->Text = L"Référence";
 			this->TB_Référence->TextChanged += gcnew System::EventHandler(this, &GestionCommandeForm::TB_Référence_TextChanged);
 			// 
-			// NUD_idCommande
-			// 
-			this->NUD_idCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->NUD_idCommande->Location = System::Drawing::Point(103, 29);
-			this->NUD_idCommande->Name = L"NUD_idCommande";
-			this->NUD_idCommande->Size = System::Drawing::Size(105, 22);
-			this->NUD_idCommande->TabIndex = 11;
-			this->NUD_idCommande->ValueChanged += gcnew System::EventHandler(this, &GestionCommandeForm::NUD_idCommande_ValueChanged);
-			// 
 			// L_idCommande
 			// 
 			this->L_idCommande->AutoSize = true;
@@ -527,6 +529,7 @@ namespace projetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGV_Commande))->EndInit();
 			this->GB_Commande->ResumeLayout(false);
 			this->GB_Commande->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdCommande))->EndInit();
 			this->GB_emission->ResumeLayout(false);
 			this->GB_emission->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_jourE))->EndInit();
@@ -538,7 +541,6 @@ namespace projetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_anneeL))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_moisL))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_IdClient))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUD_idCommande))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->ResumeLayout(false);
 
@@ -579,15 +581,15 @@ namespace projetPOO {
 	}
 	private: System::Void B_insert_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew commandeServices();
-		this->oSvc->ajouterUneCommande(this->NUD_IdClient->Text, this->TB_Référence->Text, this->NUD_anneeL->Value + "-" + this->NUD_moisL->Value + "-" + this->NUD_jourL->Value, this->NUD_anneeE->Value + "-" + this->NUD_moisE->Value + "-" + this->NUD_jourE->Value, this->TB_MontantHT->Text, this->TB_MontantTTC->Text);
+		this->oSvc->ajouterUneCommande(System::Convert::ToString(this->NUD_IdCommande->Value), this->TB_Référence->Text, this->NUD_anneeL->Value + "-" + this->NUD_moisL->Value + "-" + this->NUD_jourL->Value, this->NUD_anneeE->Value + "-" + this->NUD_moisE->Value + "-" + this->NUD_jourE->Value, this->TB_MontantHT->Text, this->TB_MontantTTC->Text);
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew commandeServices();
-		this->oSvc->modifierUneCommande(this->NUD_IdClient->Text, this->TB_Référence->Text, this->NUD_anneeL->Value + "-" + this->NUD_moisL->Value + "-" + this->NUD_jourL->Value, this->NUD_anneeE->Value + "-" + this->NUD_moisE->Value + "-" + this->NUD_jourE->Value, this->TB_MontantHT->Text, this->TB_MontantTTC->Text, System::Convert::ToString(this->NUD_idCommande->Value));
+		this->oSvc->modifierUneCommande(System::Convert::ToString(this->NUD_IdCommande->Value), System::Convert::ToString(this->NUD_IdClient->Value), this->TB_Référence->Text, this->NUD_anneeL->Value + "-" + this->NUD_moisL->Value + "-" + this->NUD_jourL->Value, this->NUD_anneeE->Value + "-" + this->NUD_moisE->Value + "-" + this->NUD_jourE->Value, this->TB_MontantHT->Text, this->TB_MontantTTC->Text);
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew commandeServices();
-		this->oSvc->supprimerUneCommande(System::Convert::ToString(this->NUD_idCommande->Value));
+		this->oSvc->supprimerUneCommande(System::Convert::ToString(this->NUD_IdCommande->Value));
 	}
 	private: System::Void L_IdClient_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -621,5 +623,7 @@ namespace projetPOO {
 	}
 	private: System::Void NUD_anneeE_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void NUD_IdCommande_ValueChanged_1(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

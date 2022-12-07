@@ -95,7 +95,7 @@ System::String^ personnelMap::Insert()
 }
 
 System::String^ personnelMap::Update() { 
-	return "update"; 
+	return "UPDATE personnel SET admin = '" + this->admin + "' WHERE id_personnel = " + this->id_personnel + "; UPDATE humain SET nom = '" + this->nom + "', prenom = '" + this->prenom + "' WHERE id_humain = (SELECT id_humain FROM personnel WHERE id_personnel = " + this->id_personnel + "); UPDATE adresse SET num_rue = '" + this->num_rue + "', nom_rue = '" + this->nom_rue + "', id_ville = (SELECT id_ville FROM ville WHERE nom_ville = '" + this->ville + "') WHERE id_adresse = (SELECT id_adresse FROM personnel WHERE id_personnel = " + this->id_personnel + "); UPDATE calendrier SET c_date = '" + this->date_embauche + "' WHERE id_calendrier = (SELECT id_calendrier FROM personnel WHERE id_personnel = " + this->id_personnel + ");";
 }
 System::String^ personnelMap::Delete() { 
 	return "DELETE FROM personnel WHERE id_personnel ="+ this->id_personnel +"; EXEC trash; "; 
@@ -134,9 +134,11 @@ System::String^ commandeMap::Insert()
 {
 	return "INSERT INTO calendrier VALUES ('" +this->date_emission +"'),('" + this->date_livraison + "'); INSERT INTO facture VALUES(" + this->montant_ht + ", 1, 3, (SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '"+ this->date_emission + "' GROUP BY c_date), " + this->montant_ttc + "); INSERT INTO commande VALUES('" + this->reference + "', (SELECT max(id_facture) FROM facture), " + this->id_client + ", (SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '" + this->date_emission + "' GROUP BY c_date), (SELECT AVG(id_calendrier) FROM calendrier WHERE c_date = '"+ this->date_livraison + "' GROUP BY c_date)); ";
 }
-System::String^ commandeMap::Update() { return "update"; }
+System::String^ commandeMap::Update() { 
+	return "UPDATE commande SET id_client = " + this->id_client + " WHERE id_commande = " + this->id_commande + "; UPDATE facture SET montant_total_ht = " + this->montant_ht + ", montant_total_ttc = " + this->montant_ttc + " WHERE id_facture = (SELECT id_facture FROM commande WHERE id_commande = " + this->id_commande + "); UPDATE calendrier SET c_date = '" + this->date_emission + "' WHERE id_calendrier = (SELECT id_date_emission FROM commande WHERE id_commande = " + this->id_commande + "); UPDATE calendrier SET c_date = '" + this->date_livraison + "' WHERE id_calendrier = (SELECT id_date_livraison FROM commande WHERE id_commande = " + this->id_commande + ");";
+}
 System::String^ commandeMap::Delete() { 
-	return "DELETE FROM commande WHERE id_commande ="+ this->id_commande+"; EXEC trash; "; 
+	return "DELETE FROM contient WHERE id_commande IN (SELECT contient.id_commande FROM contient INNER JOIN commande ON commande.id_commande = contient.id_commande WHERE commande.id_commande ="+ this->id_commande+"); DELETE FROM commande WHERE id_commande = "+ this->id_commande+"; EXEC trash; "; 
 }
 
 
@@ -171,7 +173,9 @@ System::String^ articleMap::Insert()
 {
 	return "INSERT INTO article VALUES('"+this->id_article+"',"+ this->quantite_stock +","+ this->prix_article+","+ this->seuil+",'"+ this->couleur+"',(SELECT id_taxe FROM taxe WHERE taxe = "+this->taxe + "),'" + this->nom_article + "')";
 }
-System::String^ articleMap::Update() { return "update"; }
+System::String^ articleMap::Update() { 
+	return "UPDATE article SET nom = '" + this->nom_article + "', couleur = '" + this->couleur + "', prix_article_ht = " + this->prix_article + ", seuil = " + this->seuil + ", id_taxe = (SELECT id_taxe FROM taxe WHERE taxe = " + this->taxe + "), quantite_stock = " + this->quantite_stock + " WHERE id_article = " + this->id_article + ";";
+}
 System::String^ articleMap::Delete() { 
 	return "DELETE FROM article WHERE id_article ="+ this->id_article +";";
 }

@@ -575,7 +575,7 @@ namespace projetPOO {
 	}
 	private: System::Void B_update_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew personnelServices();
-		this->oSvc->modifierUnPersonnel(this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, System::Convert::ToString(this->NUD_IdSupérieur->Value), this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value, System::Convert::ToString(this->CB_Admin->Checked), System::Convert::ToString(this->NUD_idPersonnel->Value));
+		this->oSvc->modifierUnPersonnel(System::Convert::ToString(this->NUD_idPersonnel->Value), this->TB_NomPersonnel->Text, this->TB_PrenomPersonnel->Text, System::Convert::ToString(this->NUD_IdSupérieur->Value), this->TB_NumRue->Text, this->TB_Nrue->Text, this->CB_NVille->Text, this->CB_Cpostal->Text, this->NUD_annee->Value + "-" + this->NUD_mois->Value + "-" + this->NUD_jour->Value, System::Convert::ToString(this->CB_Admin->Checked));
 	}
 	private: System::Void B_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew personnelServices();
