@@ -251,7 +251,7 @@ statsServices::statsServices()
 }
 System::Data::DataSet^  statsServices::selectionnerPanierMoyen(System::String^ dataTableName) {
 
-	System::String^ sql;
+	System::String^ sql;	
 
 	sql = this->oStats->SelectPanierMoyen();
 	return this->oCad->getRows(sql, dataTableName);
